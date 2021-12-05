@@ -1,9 +1,10 @@
 {
-  "name": "server",
+  "name": "green-wise-server",
   "version": "1.0.0",
   "description": "server side for greenwise app -by felipe franco",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,6 +20,9 @@
   "author": "felipe franco",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "uniqid": "^5.4.0"
   }
 }
