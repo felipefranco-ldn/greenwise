@@ -1,0 +1,217 @@
+// Font faces
+
+// Regular
+
+// @font-face {
+//     font-family: "Titillium Web", sans-serif;
+//     src: url(../../assets/fonts/TitilliumWeb-Regular.ttf) format("ttf");
+//     font-weight: 400;
+// }
+
+// Semi-bold
+
+// @font-face {
+//     font-family: "Titillium Web", sans-serif;
+//     src: url(../../assets/fonts/TitilliumWeb-SemiBold.ttf) format("ttf");
+//     font-weight: 600;
+// }
+
+// ! Mobile Text Styles
+
+@mixin page-header-mobile(
+  $fontFamily,
+  $fontSize: 2.8rem,
+  $lineHeight: 3.6rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin subheader-mobile(
+  $fontFamily,
+  $fontSize: 2rem,
+  $lineHeight: 2.8rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin labels-links-buttons-mobile(
+  $fontFamily,
+  $fontSize: 1.3rem,
+  $lineHeight: 2rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin table-header-mobile(
+  $fontFamily,
+  $fontSize: 1.1rem,
+  $lineHeight: 1.6rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-large-mobile(
+  $fontFamily,
+  $fontSize: 1.5rem,
+  $lineHeight: 2.6rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-medium-mobile(
+  $fontFamily,
+  $fontSize: 1.3rem,
+  $lineHeight: 2rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-small-mobile(
+  $fontFamily,
+  $fontSize: 1.1rem,
+  $lineHeight: 1.6rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+// ! Desktop and Tablet Text Styles
+
+@mixin page-header(
+  $fontFamily,
+  $fontSize: 3.2rem,
+  $lineHeight: 4rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin subheader(
+  $fontFamily,
+  $fontSize: 2.4rem,
+  $lineHeight: 3.2rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin labels-links-buttons(
+  $fontFamily,
+  $fontSize: 1.4rem,
+  $lineHeight: 2.2rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin table-header(
+  $fontFamily,
+  $fontSize: 1.2rem,
+  $lineHeight: 1.8rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-large(
+  $fontFamily,
+  $fontSize: 1.6rem,
+  $lineHeight: 2.8rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-medium(
+  $fontFamily,
+  $fontSize: 1.4rem,
+  $lineHeight: 2.2rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-small(
+  $fontFamily,
+  $fontSize: 1.2rem,
+  $lineHeight: 1.8rem,
+  $fontWeight: 400,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}

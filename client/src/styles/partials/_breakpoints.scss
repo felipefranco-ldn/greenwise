@@ -1,0 +1,38 @@
+//Breakpoint
+
+/* small - mobile: screen sizes below 767px */
+/* medium - tablet: screen sizes between 768px and 1279px*/
+/* large - desktop: screen sizes over 1280px */
+
+$small: 767px;
+$medium: 768px;
+$large: 1280px;
+
+/* media query for mobile */
+
+@mixin mobile {
+  // media query
+  @media only screen and (max-width: $small) {
+    // css will be provided when the mixin small will be used.
+    // @content is a directive that is just a placeholder for css that will be applied in future when this mixin is used.
+    @content;
+  }
+}
+
+/* media query for tablet */
+
+@mixin tablet {
+  // media query
+  @media only screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+/* media query for desktop */
+
+@mixin desktop {
+  // media query
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}

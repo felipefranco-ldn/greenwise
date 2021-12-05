@@ -1,0 +1,27 @@
+@use "../styles/partials/colors" as theme;
+@use "../styles/partials/fonts" as f;
+@use "../styles/partials/breakpoints" as bp;
+@use "../styles/partials/mixins" as *;
+
+// Resets
+
+// Font size reset to base 10 (10px) in order to
+// make relative font size calculations easier
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: "Titillium Web";
+}
+
+// if box sizing is changed to content-box, please inherit box-sizing from the parent
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// End of resets
