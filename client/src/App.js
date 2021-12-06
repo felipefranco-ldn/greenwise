@@ -18,7 +18,7 @@ export default class App extends Component {
               <Route path="/estimate" exact component={Estimate} />
               <Route path="/reduce" exact component={Reduce} />
               <Route path="/offset" exact component={Offset} />
-              <Route path="/profile" exact component={Profile} />
+              <Route path="/my-account" exact component={Profile} />
             </Switch>
           </div>
         </BrowserRouter>

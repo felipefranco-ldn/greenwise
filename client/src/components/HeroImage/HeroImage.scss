@@ -1,0 +1,16 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.hero {
+  &-container {
+    width: 100vw;
+    z-index: -1;
+  }
+
+  &-image {
+    width: 100vw;
+    display: block;
+  }
+}

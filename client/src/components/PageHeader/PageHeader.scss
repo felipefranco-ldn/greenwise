@@ -2,3 +2,113 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.header {
+  width: 100vw;
+  //   height: 30rem;
+  background-color: theme.$gw-white;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  z-index: 3;
+
+  &__link {
+    text-decoration: none;
+    // width: 50%;
+    height: 0.5rem;
+    text-align: center;
+    // border-radius: 2rem;
+    margin: 0;
+    transition: all 0.25s ease-in-out;
+    // padding-top: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: theme.$gw-green;
+    }
+
+    &:hover .header__button-text {
+      color: theme.$gw-black;
+      //   text-decoration: underline;
+    }
+
+    // Changes styling of Warehouse or Inventory buttons when active, depending on url
+
+    &.active {
+      background-color: theme.$gw-green;
+
+      & .header__button-text {
+        color: theme.$gw-black;
+      }
+    }
+  }
+
+  &__main-container {
+    // @include section-padding-mobile;
+    // height: 13.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 8rem;
+    display: block;
+
+    &-container {
+      margin: 0;
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  &__button-spacer {
+    width: 5rem;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__button-text {
+    @include f.labels-links-buttons('Titillium Web');
+    margin: -1.5rem 0.5rem 0;
+    color: theme.$gw-slate;
+    transition: all 0.25s ease-in-out;
+
+    &--active {
+      color: theme.$gw-black;
+    }
+  }
+}
+
+@include bp.tablet {
+  .header {
+    // height: 18.6rem;
+    display: flex;
+    justify-content: center;
+
+    &__main-container {
+      padding: 1rem 0;
+      //   @include section-margin-padding-tablet;
+      //   height: 9.2rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 110rem;
+    }
+
+    &__buttons-container {
+      justify-content: flex-end;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    &__link {
+      width: auto;
+      margin: 0;
+    }
+  }
+}

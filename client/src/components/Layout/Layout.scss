@@ -2,3 +2,29 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.layout {
+  //   z-index: 2;
+  //   background-color: theme.$light-grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__box {
+    z-index: -2;
+    // width: 90vw;
+    background-color: theme.$gw-white;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+    // border-radius: 0.4rem;
+  }
+}
+
+@include bp.tablet {
+  .layout {
+    &__box {
+      width: 100%;
+      //   margin: -9.5rem 3.2rem 0 3.2rem;
+      max-width: 102rem;
+    }
+  }
+}
