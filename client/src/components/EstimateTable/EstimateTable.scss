@@ -1,0 +1,48 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.estimate {
+  &__main-box {
+    width: 100%;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: row;
+    background-color: theme.$gw-light-grey;
+    margin: 4rem auto;
+    max-width: 110rem;
+  }
+
+  &__content-box {
+    width: 85%;
+    padding: 2rem;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    background-color: theme.$gw-white;
+  }
+}
+
+.aside {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid theme.$gw-white;
+    border-right: 0;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}

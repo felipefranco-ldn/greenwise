@@ -4,9 +4,11 @@
 @use '../../styles/partials/mixins' as *;
 
 .hero {
+  position: relative;
   &-container {
+    position: relative;
+    z-index: -2;
     width: 100vw;
-    z-index: -1;
   }
 
   &-image {
