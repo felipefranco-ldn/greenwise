@@ -10,12 +10,24 @@ axios.defaults.headers.common = { Authorization: `Bearer ${EXT_API_KEY}` };
 export default class ElectricityChart extends Component {
   state = {
     userHomeType: '',
-    userNumberOfBedrooms: '',
     userCountry: '',
+    userElValue: 0,
+    isApartment: false,
   };
 
   // set state while the user types
   handleChange = (event) => {
+    if (event.target.value === 'apartment') {
+      this.setState({
+        [event.target.name]: event.target.value,
+        isApartment: true,
+      });
+    } else if (event.target.value === 'house') {
+      this.setState({
+        [event.target.name]: event.target.value,
+        isApartment: false,
+      });
+    }
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -33,7 +45,7 @@ export default class ElectricityChart extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    //  kwh per month
+    // kwh per month
     //        flat    house
     // 1bed   200     300
     // 2bed   300     400
@@ -49,22 +61,26 @@ export default class ElectricityChart extends Component {
     // }
 
     // get electricity consumption info
+
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${EXT_API_KEY}`,
+    };
+
     axios
       .post(
-        { EXT_API_URL },
-
+        `${EXT_API_URL}`,
         {
           type: 'electricity',
           country: this.userCountry,
           electricity_unit: 'kwh',
-          electricity_value: 200,
-        }
+          electricity_value: this.userElValue,
+        },
+        { headers: headers }
       )
-
       .then((response) => {
         const data = response.data;
       })
-
       .catch((err) =>
         console.log(
           'Something went wrong while fetching the electricity consumption data: ',
@@ -74,6 +90,7 @@ export default class ElectricityChart extends Component {
   };
 
   render() {
+    console.log(this.state.isApartment);
     return (
       <div className="el-container">
         <div className="el-input">
@@ -87,10 +104,9 @@ export default class ElectricityChart extends Component {
               placeholder="Please select"
               onChange={this.handleChange}
               value={this.userCountry}
+              //   defaultValue="please select"
             >
-              <option selected="true" value="" className="default" disabled>
-                please select
-              </option>
+              <option value="">please select</option>
               <option value="gb">united kingdom</option>
               <option value="us">united states of america</option>
               <option value="ca">canada</option>
@@ -154,15 +170,6 @@ export default class ElectricityChart extends Component {
               // onClick={this.handleDisable}
             />
 
-            {/* <div className="edit__form-error-container status-check">
-            <img
-              className="edit__form-error-icon"
-              src={errorIcon}
-              alt="error icon"
-            />
-            <p className="edit__form-error-text">This field is required</p>
-          </div> */}
-
             <label className="el-input__form-label">
               how many bedrooms are there in your home?
             </label>
@@ -177,8 +184,8 @@ export default class ElectricityChart extends Component {
               className="el-input__form-radio"
               type="radio"
               id="1bedroom"
-              name="userNumberOfBedrooms"
-              value="1"
+              name="userElValue"
+              value={this.state.isApartment ? '200' : '300'}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -193,8 +200,8 @@ export default class ElectricityChart extends Component {
               className="el-input__form-radio"
               type="radio"
               id="2bedrooms"
-              name="userNumberOfBedrooms"
-              value="2"
+              name="userElValue"
+              value={this.state.isApartment ? '300' : '400'}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -209,8 +216,8 @@ export default class ElectricityChart extends Component {
               className="el-input__form-radio"
               type="radio"
               id="3bedrooms"
-              name="userNumberOfBedrooms"
-              value="3"
+              name="userElValue"
+              value={this.state.isApartment ? '380' : '500'}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -225,8 +232,8 @@ export default class ElectricityChart extends Component {
               className="el-input__form-radio"
               type="radio"
               id="4bedrooms"
-              name="userNumberOfBedrooms"
-              value="4"
+              name="userElValue"
+              value={this.state.isApartment ? '450' : '600'}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
