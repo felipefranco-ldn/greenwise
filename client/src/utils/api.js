@@ -1,6 +1,6 @@
 //! External API url
 
-export const EXT_API_URL = 'https://www.carboninterface.com/api/v1';
+export const EXT_API_URL = 'https://www.carboninterface.com/api/v1/estimates';
 
 export const EXT_API_KEY = 'bYV6YirMybml4bGRTdWsg';
 
