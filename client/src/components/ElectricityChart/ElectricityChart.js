@@ -13,6 +13,7 @@ export default class ElectricityChart extends Component {
     userCountry: '',
     userElValue: 0,
     isApartment: false,
+    userElCo2: 0,
   };
 
   // set state while the user types
@@ -45,41 +46,28 @@ export default class ElectricityChart extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // kwh per month
-    //        flat    house
-    // 1bed   200     300
-    // 2bed   300     400
-    // 3bed   380     500
-    // 4bed   450     600
-
-    // Object example
-    //   {
-    //     "type": "electricity",
-    //     "country": "hu",
-    //     "electricity_unit": "kwh",
-    //     "electricity_value": 100.0
-    // }
-
     // get electricity consumption info
-
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${EXT_API_KEY}`,
-    };
 
     axios
       .post(
         `${EXT_API_URL}`,
         {
           type: 'electricity',
-          country: this.userCountry,
+          country: this.state.userCountry,
           electricity_unit: 'kwh',
-          electricity_value: this.userElValue,
+          electricity_value: this.state.userElValue,
         },
-        { headers: headers }
+        {
+          headers: { Authorization: `Bearer ${EXT_API_KEY}` },
+        }
       )
       .then((response) => {
         const data = response.data;
+        console.log(data);
+        this.setState({
+          userElCo2: data.data.attributes.carbon_kg,
+        });
+        console.log('This is the data:', this.state.userElCo2);
       })
       .catch((err) =>
         console.log(
@@ -185,7 +173,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="1bedroom"
               name="userElValue"
-              value={this.state.isApartment ? '200' : '300'}
+              value={this.state.isApartment ? 200 : 300}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -201,7 +189,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="2bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? '300' : '400'}
+              value={this.state.isApartment ? 300 : 400}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -217,7 +205,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="3bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? '380' : '500'}
+              value={this.state.isApartment ? 380 : 500}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -233,7 +221,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="4bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? '450' : '600'}
+              value={this.state.isApartment ? 450 : 600}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
