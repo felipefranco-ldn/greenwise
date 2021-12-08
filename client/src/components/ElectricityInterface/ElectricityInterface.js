@@ -2,111 +2,11 @@ import React, { Component } from 'react';
 import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 import './ElectricityInterface.scss';
 import axios from 'axios';
+import ElectricityChart from '../ElectricityChart/ElectricityChart';
 import { cloneDeep } from 'lodash';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { chartData } from '../ElectricityChart/chartData';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-const chartOptions = {
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false,
-      position: 'top',
-      labels: {
-        font: {
-          family: 'Titillium Web',
-        },
-      },
-    },
-    title: {
-      display: true,
-      font: {
-        family: 'Titillium Web',
-        size: 16,
-      },
-      text: 'kg of co2 emitted by electricity usage of average home, per year',
-    },
-  },
-};
-
-const labels = [
-  '🇺🇸 united states',
-  '🇦🇺 australia',
-  '🇨🇦 canada',
-  '🇩🇪 germany',
-  '🇬🇧 united kingdom',
-  '🇷🇺 russia',
-  '🇪🇸 spain',
-  '🇪🇺 eu',
-  '🇿🇦 south africa',
-  '🇮🇹 italy',
-  '🌎 world',
-  '🇫🇷 france',
-  '🇯🇵 japan',
-  '🇧🇷 brazil',
-  '🇲🇽 mexico',
-  '🇨🇳 china',
-  '🇮🇳 india',
-  '🇳🇬 nigeria',
-  '',
-  '🏠 your home',
-];
-
-const chartData = {
-  labels,
-  datasets: [
-    {
-      label: 'yearly co2 emissions',
-      data: [
-        2918, 2176, 1544, 1056, 971, 851, 784, 732, 719, 589, 569, 348, 303,
-        300, 296, 221, 147, 93, 0,
-      ],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 180, 0)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(0, 255, 0)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(255, 99, 132, 0.25)',
-        'rgba(0, 255, 255)',
-      ],
-      borderColor: ['rgba(0,0,0,.5)'],
-      borderWidth: 0.6,
-    },
-  ],
-};
-
-export default class ElectricityChart extends Component {
+export default class ElectricityInterface extends Component {
   state = {
     userCountry: '',
     userElValue: 0,
@@ -117,13 +17,13 @@ export default class ElectricityChart extends Component {
   // set state while the user types
   handleChange = (event) => {
     if (event.target.value === 'apartment') {
+      console.log('apartment', event.target.value);
       this.setState({
-        [event.target.name]: event.target.value,
         isApartment: true,
       });
     } else if (event.target.value === 'house') {
+      console.log('house', event.target.value);
       this.setState({
-        [event.target.name]: event.target.value,
         isApartment: false,
       });
     }
@@ -132,11 +32,18 @@ export default class ElectricityChart extends Component {
     });
   };
 
+  handleBedroomsChange = (event) => {
+    this.setState({
+      userElValue: event.target.value,
+    });
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
 
     // get electricity consumption info
 
+    console.log('sent', this.state.userCountry, this.state.userElValue);
     axios
       .post(
         `${EXT_API_URL}`,
@@ -159,7 +66,7 @@ export default class ElectricityChart extends Component {
         newChartData.datasets[0].data.push(userElCo2);
         console.log('newChartData"', newChartData);
         this.setState({
-          myChartData: newChartData,
+          chartData: newChartData,
         });
       })
       .catch((err) =>
@@ -262,7 +169,7 @@ export default class ElectricityChart extends Component {
               id="1bedroom"
               name="userElValue"
               value={this.state.isApartment ? 3100 : 4000}
-              onChange={this.handleChange}
+              onChange={this.handleBedroomsChange}
             />
 
             <label
@@ -277,7 +184,7 @@ export default class ElectricityChart extends Component {
               id="2bedrooms"
               name="userElValue"
               value={this.state.isApartment ? 4600 : 5500}
-              onChange={this.handleChange}
+              onChange={this.handleBedroomsChange}
             />
 
             <label
@@ -292,7 +199,7 @@ export default class ElectricityChart extends Component {
               id="3bedrooms"
               name="userElValue"
               value={this.state.isApartment ? 7300 : 8000}
-              onChange={this.handleChange}
+              onChange={this.handleBedroomsChange}
             />
 
             <label
@@ -307,7 +214,7 @@ export default class ElectricityChart extends Component {
               id="4bedrooms"
               name="userElValue"
               value={this.state.isApartment ? 9000 : 10000}
-              onChange={this.handleChange}
+              onChange={this.handleBedroomsChange}
             />
 
             <div className="el-input__form-button-box">
@@ -318,8 +225,8 @@ export default class ElectricityChart extends Component {
           </form>
         </div>
         <div className="el-output">
-          {this.state.myChartData ? (
-            <Bar options={chartOptions} data={this.state.myChartData} />
+          {this.state.chartData ? (
+            <ElectricityChart chartData={this.state.chartData} />
           ) : (
             <div>hello</div>
           )}

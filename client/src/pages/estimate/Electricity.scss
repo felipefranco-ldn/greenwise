@@ -17,41 +17,12 @@
   &__content-box {
     width: 85%;
     padding: 2rem;
+    height: 60rem;
   }
 
   &__content {
     width: 100%;
     height: 100%;
     background-color: theme.$gw-white;
-  }
-}
-
-.aside {
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  &__link {
-    text-decoration: none;
-  }
-
-  &__card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid theme.$gw-white;
-    border-right: 0;
-
-    &-title {
-      @include f.labels-links-buttons('Titillium Web');
-      color: theme.$gw-black;
-    }
-  }
-
-  &__link {
-    cursor: pointer;
   }
 }
