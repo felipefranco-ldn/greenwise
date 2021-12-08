@@ -1,11 +1,34 @@
 import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
 import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 // import errorIcon from '../../assets/images/icons/error-24px.svg';
 import './ElectricityChart.scss';
 import axios from 'axios';
+import { defaults } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+// import faker from 'faker';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+// import { Chart as ChartJS } from 'chart.js/auto';
+// import { Chart } from 'react-chartjs-2';
 axios.defaults.baseURL = `${EXT_API_URL}`;
 axios.defaults.headers.common = { Authorization: `Bearer ${EXT_API_KEY}` };
-// export default axios;
 
 export default class ElectricityChart extends Component {
   state = {
@@ -95,36 +118,36 @@ export default class ElectricityChart extends Component {
               //   defaultValue="please select"
             >
               <option value="">please select</option>
-              <option value="gb">united kingdom</option>
-              <option value="us">united states of america</option>
-              <option value="ca">canada</option>
-              <option value="at">austria</option>
-              <option value="be">belgium</option>
-              <option value="bg">bulgaria</option>
-              <option value="hr">croatia</option>
-              <option value="cy">cyprus</option>
-              <option value="cz">czechia</option>
-              <option value="dk">denmark</option>
-              <option value="ee">estonia</option>
-              <option value="fi">finland</option>
-              <option value="fr">france</option>
-              <option value="de">germany</option>
-              <option value="gr">greece</option>
-              <option value="hu">hungary</option>
-              <option value="ie">ireland</option>
-              <option value="it">italy</option>
-              <option value="lv">latvia</option>
-              <option value="lt">lithuania</option>
-              <option value="lu">luxembourg</option>
-              <option value="mt">malta</option>
-              <option value="nl">netherlands</option>
-              <option value="pl">poland</option>
-              <option value="po">portugal</option>
-              <option value="ro">romania</option>
-              <option value="sk">slovakia</option>
-              <option value="si">slovenia</option>
-              <option value="es">spain</option>
-              <option value="se">sweden</option>
+              <option value="gb">🇬🇧 united kingdom</option>
+              <option value="us">🇺🇸 united states of america</option>
+              <option value="ca">🇨🇦 canada</option>
+              <option value="at">🇦🇹 austria</option>
+              <option value="be">🇧🇪 belgium</option>
+              <option value="bg">🇧🇬 bulgaria</option>
+              <option value="hr">🇭🇷 croatia</option>
+              <option value="cy">🇨🇾 cyprus</option>
+              <option value="cz">🇨🇿 czechia</option>
+              <option value="dk">🇩🇰 denmark</option>
+              <option value="ee">🇪🇪 estonia</option>
+              <option value="fi">🇫🇮 finland</option>
+              <option value="fr">🇫🇷 france</option>
+              <option value="de">🇩🇪 germany</option>
+              <option value="gr">🇬🇷 greece</option>
+              <option value="hu">🇭🇺 hungary</option>
+              <option value="ie">🇮🇪 ireland</option>
+              <option value="it">🇮🇹 italy</option>
+              <option value="lv">🇱🇻 latvia</option>
+              <option value="lt">🇱🇹 lithuania</option>
+              <option value="lu">🇱🇺 luxembourg</option>
+              <option value="mt">🇲🇹 malta</option>
+              <option value="nl">🇳🇱 netherlands</option>
+              <option value="pl">🇵🇱 poland</option>
+              <option value="po">🇵🇹 portugal</option>
+              <option value="ro">🇷🇴 romania</option>
+              <option value="sk">🇷🇸 slovakia</option>
+              <option value="si">🇸🇰 slovenia</option>
+              <option value="es">🇪🇸 spain</option>
+              <option value="se">🇸🇪 sweden</option>
             </select>
 
             <label className="el-input__form-label">
@@ -173,7 +196,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="1bedroom"
               name="userElValue"
-              value={this.state.isApartment ? 200 : 300}
+              value={this.state.isApartment ? 3100 : 4000}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -189,7 +212,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="2bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? 300 : 400}
+              value={this.state.isApartment ? 4600 : 5500}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -205,7 +228,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="3bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? 380 : 500}
+              value={this.state.isApartment ? 7300 : 8000}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -221,7 +244,7 @@ export default class ElectricityChart extends Component {
               type="radio"
               id="4bedrooms"
               name="userElValue"
-              value={this.state.isApartment ? 450 : 600}
+              value={this.state.isApartment ? 9000 : 10000}
               onChange={this.handleChange}
               // onClick={this.handleDisable}
             />
@@ -233,8 +256,102 @@ export default class ElectricityChart extends Component {
             </div>
           </form>
         </div>
-        <div className="el-output"></div>
+        <div className="el-output">
+          <Bar options={options} data={data} />
+        </div>
       </div>
     );
   }
 }
+
+// Bar.defaults.font.size = 16;
+
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+      position: 'top',
+      labels: {
+        font: {
+          family: 'Titillium Web',
+        },
+      },
+    },
+    title: {
+      display: true,
+      font: {
+        family: 'Titillium Web',
+        size: 16,
+      },
+      text: 'kg of co2 emissions generated by electricity usage of average home, per month',
+    },
+  },
+};
+
+const labels = [
+  'united states',
+  'australia',
+  'canada',
+  'germany',
+  'united kingdom',
+  'russia',
+  'spain',
+  'eu',
+  'south africa',
+  'italy',
+  'world',
+  'france',
+  'japan',
+  'brazil',
+  'mexico',
+  'china',
+  'india',
+  'nigeria',
+  '',
+  'your home',
+];
+
+// defaults.global.defaultFontFamily = 'yourFont';
+
+// defaults.font.family = 'Titillium Web';
+
+// Chart.defaults.global.defaultFontColor = 'red';
+
+const data = {
+  labels,
+  datasets: [
+    {
+      label: 'yearly co2 emissions',
+      data: [
+        2918, 2176, 1544, 1056, 971, 851, 784, 732, 719, 589, 569, 348, 303,
+        300, 296, 221, 147, 93, 0, 961,
+        // this.state.userElCo2,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 180, 0)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(0, 255, 0)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(255, 99, 132, 0.25)',
+        'rgba(0, 255, 255)',
+      ],
+      borderColor: ['rgba(0,0,0,.5)'],
+      borderWidth: 0.6,
+    },
+  ],
+};

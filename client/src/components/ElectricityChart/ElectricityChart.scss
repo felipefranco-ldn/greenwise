@@ -6,20 +6,24 @@
 .el-container {
   display: flex;
   padding: 2rem;
+  height: 100%;
 }
 
 .el-input {
-  width: 40%;
+  width: 30%;
   border-right: 2px solid theme.$gw-light-grey;
   padding-right: 2rem;
   @include f.body-large('Titillium Web');
 
   &__form {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 }
 
 .el-output {
-  width: 60%;
+  width: 70%;
+  padding-left: 2rem;
 }
