@@ -3311,7 +3311,7 @@
   "resolved" "https://registry.npmjs.org/char-regex/-/char-regex-1.0.2.tgz"
   "version" "1.0.2"
 
-"chart.js@^3.5.0", "chart.js@^3.6.2":
+"chart.js@^3.6.2":
   "integrity" "sha512-Xz7f/fgtVltfQYWq0zL1Xbv7N2inpG+B54p3D5FSvpCdy3sM+oZhbqa42eNuYXltaVvajgX5UpKCU2GeeJIgxg=="
   "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-3.6.2.tgz"
   "version" "3.6.2"
