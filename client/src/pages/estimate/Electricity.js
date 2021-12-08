@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ElectricityChart from '../../components/ElectricityChart/ElectricityChart';
+import ElectricityInterface from '../../components/ElectricityInterface/ElectricityInterface';
 import EstimateTable from '../../components/EstimateTable/EstimateTable';
 import Layout from '../../components/Layout/Layout';
 
@@ -8,7 +8,7 @@ export default class Electricity extends Component {
     return (
       <Layout>
         <EstimateTable>
-          <ElectricityChart />
+          <ElectricityInterface />
         </EstimateTable>
       </Layout>
     );
