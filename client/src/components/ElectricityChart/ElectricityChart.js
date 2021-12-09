@@ -32,7 +32,7 @@ export default function ElectricityChart({ chartData }) {
         },
       },
       title: {
-        display: true,
+        display: false,
         font: {
           family: 'Titillium Web',
           size: 16,
@@ -42,9 +42,5 @@ export default function ElectricityChart({ chartData }) {
     },
   };
 
-  return (
-    <div>
-      <Bar options={chartOptions} data={chartData} />
-    </div>
-  );
+  return <Bar options={chartOptions} data={chartData} />;
 }

@@ -2,27 +2,3 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
-
-.estimate {
-  &__main-box {
-    width: 100%;
-    min-height: 50rem;
-    display: flex;
-    flex-direction: row;
-    background-color: theme.$gw-light-grey;
-    margin: 4rem auto;
-    max-width: 110rem;
-  }
-
-  &__content-box {
-    width: 85%;
-    padding: 2rem;
-    height: 60rem;
-  }
-
-  &__content {
-    width: 100%;
-    height: 100%;
-    background-color: theme.$gw-white;
-  }
-}

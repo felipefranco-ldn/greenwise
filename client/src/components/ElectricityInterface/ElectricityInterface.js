@@ -5,6 +5,7 @@ import axios from 'axios';
 import ElectricityChart from '../ElectricityChart/ElectricityChart';
 import { cloneDeep } from 'lodash';
 import { chartData } from '../ElectricityChart/chartData';
+import electricityImage from '../../assets/images/images/electricity-image.png';
 
 export default class ElectricityInterface extends Component {
   state = {
@@ -60,10 +61,11 @@ export default class ElectricityInterface extends Component {
       .then((response) => {
         const data = response.data;
         console.log(data);
-        const userElCo2 = data.data.attributes.carbon_kg;
+        const userElCo2Data = data.data.attributes.carbon_kg;
+        this.setState({ userElCo2: userElCo2Data });
         const newChartData = cloneDeep(chartData);
 
-        newChartData.datasets[0].data.push(userElCo2);
+        newChartData.datasets[0].data.push(userElCo2Data);
         console.log('newChartData"', newChartData);
         this.setState({
           chartData: newChartData,
@@ -81,6 +83,8 @@ export default class ElectricityInterface extends Component {
     console.log(this.state.isApartment);
     return (
       <div className="el-container">
+        {/* //! input section (left side) starts here */}
+
         <div className="el-input">
           <form className="el-input__form" onSubmit={this.handleSubmit}>
             <div>
@@ -173,7 +177,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="1bedroom"
                   name="userElValue"
-                  value={this.state.isApartment ? 3100 : 4000}
+                  value={this.state.isApartment ? 3100 : 3900}
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="1bedroom">
@@ -185,7 +189,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="2bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 4600 : 5500}
+                  value={this.state.isApartment ? 4650 : 5800}
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="2bedrooms">
@@ -199,7 +203,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="3bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 7300 : 8000}
+                  value={this.state.isApartment ? 7450 : 9300}
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="3bedrooms">
@@ -211,7 +215,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="4bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 9000 : 10000}
+                  value={this.state.isApartment ? 9100 : 11300}
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="4bedrooms">
@@ -227,16 +231,56 @@ export default class ElectricityInterface extends Component {
             </div>
           </form>
         </div>
+
+        {/* //! output section (right side) starts here */}
         <div className="el-output">
           {this.state.chartData ? (
             <div className="el-output__content">
+              <div className="el-output__content-title">
+                average home in selected countries vs. your home:
+                <br />
+                kilograms of co2 emitted by annual electricity usage
+              </div>
               <ElectricityChart chartData={this.state.chartData} />
+              <div className="el-output__content-text">
+                your homes consumes approx.{' '}
+                <span className="span--bold">
+                  {' '}
+                  {this.state.userElValue} kwh per year{' '}
+                </span>
+                ,
+                <br />
+                which releases into the atmosphere{' '}
+                <span className="span--bold">
+                  {' '}
+                  {this.state.userElCo2} kilograms of co2{' '}
+                </span>
+                . <br />
+                this is{' '}
+                <span className="span--bold">
+                  {' '}
+                  {Number((this.state.userElCo2 / 569).toFixed(2))} times{' '}
+                </span>{' '}
+                the consumption of an average home in the planet.
+              </div>
+              <div className="el-output__content-button-box">
+                <button className="el-output__content-button">
+                  save this estimate in my dashboard
+                  <span className="span">&gt;&gt; </span>
+                </button>
+              </div>
             </div>
           ) : (
             <div className="el-output__intro">
               <h3 className="el-output__intro-title">
-                let's find out how what's your home's co2 footprint!
+                would you like to know your home's co2 footprint? <br />
+                let's find out!
               </h3>
+              <img
+                className="el-output__intro-image"
+                alt="home electricity consumption and network"
+                src={electricityImage}
+              />
             </div>
           )}
         </div>

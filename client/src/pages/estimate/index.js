@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EstimateOptions from '../../components/EstimateOptions/EstimateOptions';
 import Layout from '../../components/Layout/Layout';
+import './index.scss';
 
 export default class Estimate extends Component {
   render() {
