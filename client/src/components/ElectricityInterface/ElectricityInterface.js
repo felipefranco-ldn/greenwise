@@ -64,11 +64,14 @@ export default class ElectricityInterface extends Component {
         const userElCo2Data = data.data.attributes.carbon_kg;
         this.setState({ userElCo2: userElCo2Data });
         const newChartData = cloneDeep(chartData);
-
-        newChartData.datasets[0].data.push(userElCo2Data);
+        newChartData.datasets[0].data.unshift(userElCo2Data);
         console.log('newChartData"', newChartData);
         this.setState({
           chartData: newChartData,
+          // userCountry: '',
+          // userElValue: 0,
+          // isApartment: false,
+          // userElCo2: 0,
         });
       })
       .catch((err) =>
@@ -177,6 +180,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="1bedroom"
                   name="userElValue"
+                  // value={Math.random() * 1000}
                   value={this.state.isApartment ? 3100 : 3900}
                   onChange={this.handleBedroomsChange}
                 />
@@ -266,7 +270,7 @@ export default class ElectricityInterface extends Component {
               <div className="el-output__content-button-box">
                 <button className="el-output__content-button">
                   save this estimate in my dashboard
-                  <span className="span">&gt;&gt; </span>
+                  <span className="span"> &gt;&gt; </span>
                 </button>
               </div>
             </div>

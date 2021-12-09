@@ -16,19 +16,27 @@ export default function PageHeader() {
         </Link>
         <div className="header__buttons-container">
           <NavLink className="header__link" to="/estimate">
-            <h3 className="header__button-text ">&lt; 1. estimate &gt;</h3>
+            <h3 className="header__button-text ">
+              1. estimate <span className="span"> &gt;&gt; </span>{' '}
+            </h3>
           </NavLink>
           <div className="header__button-spacer"></div>
           <NavLink className="header__link" to="/reduce">
-            <h3 className="header__button-text">&lt; 2. reduce &gt;</h3>
+            <h3 className="header__button-text">
+              2. reduce <span className="span"> &gt;&gt; </span>{' '}
+            </h3>
           </NavLink>
           <div className="header__button-spacer"></div>
           <NavLink className="header__link" to="/offset">
-            <h3 className="header__button-text">&lt; 3. offset &gt;</h3>
+            <h3 className="header__button-text">
+              3. offset <span className="span"> &gt;&gt; </span>
+            </h3>
           </NavLink>
           <div className="header__button-spacer"></div>
           <NavLink className="header__link" to="/my-account">
-            <h3 className="header__button-text">&lt; my account &gt;</h3>
+            <h3 className="header__button-text">
+              my account <span className="span"> &gt;&gt; </span>
+            </h3>
           </NavLink>
         </div>
       </div>
