@@ -162,9 +162,9 @@
 
 @mixin table-header(
   $fontFamily,
-  $fontSize: 1.2rem,
-  $lineHeight: 1.8rem,
-  $fontWeight: 400,
+  $fontSize: 1.6rem,
+  $lineHeight: 2.8rem,
+  $fontWeight: 600,
   $fontStyle: normal
 ) {
   font-family: $fontFamily;

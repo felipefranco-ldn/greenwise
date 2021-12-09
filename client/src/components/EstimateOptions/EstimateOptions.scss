@@ -12,10 +12,12 @@
   &__link {
     text-decoration: none;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: theme.$gw-smoke;
+    transition: all 0.25s ease-in-out;
 
     &.active {
       background-color: theme.$gw-light-grey;
+      transition: all 0.25s ease-in-out;
 
       & .aside__card {
         border-right: 0;
@@ -25,6 +27,7 @@
       & .aside__card-title {
         color: theme.$gw-black;
         font-weight: 600;
+        transition: all 0.25s ease-in-out;
       }
     }
   }

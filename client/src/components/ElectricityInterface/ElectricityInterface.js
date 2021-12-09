@@ -83,152 +83,161 @@ export default class ElectricityInterface extends Component {
       <div className="el-container">
         <div className="el-input">
           <form className="el-input__form" onSubmit={this.handleSubmit}>
-            <label htmlFor="userCountry" className="el-input__form-label">
-              please select your country of residence
-            </label>
-            <select
-              name="userCountry"
-              className="el-input__select"
-              onChange={this.handleChange}
-              value={this.userCountry}
-            >
-              <option value="">please select:</option>
-              <option value="gb">🇬🇧 united kingdom</option>
-              <option value="us">🇺🇸 united states of america</option>
-              <option value="ca">🇨🇦 canada</option>
-              <option value="at">🇦🇹 austria</option>
-              <option value="be">🇧🇪 belgium</option>
-              <option value="bg">🇧🇬 bulgaria</option>
-              <option value="hr">🇭🇷 croatia</option>
-              <option value="cy">🇨🇾 cyprus</option>
-              <option value="cz">🇨🇿 czechia</option>
-              <option value="dk">🇩🇰 denmark</option>
-              <option value="ee">🇪🇪 estonia</option>
-              <option value="fi">🇫🇮 finland</option>
-              <option value="fr">🇫🇷 france</option>
-              <option value="de">🇩🇪 germany</option>
-              <option value="gr">🇬🇷 greece</option>
-              <option value="hu">🇭🇺 hungary</option>
-              <option value="ie">🇮🇪 ireland</option>
-              <option value="it">🇮🇹 italy</option>
-              <option value="lv">🇱🇻 latvia</option>
-              <option value="lt">🇱🇹 lithuania</option>
-              <option value="lu">🇱🇺 luxembourg</option>
-              <option value="mt">🇲🇹 malta</option>
-              <option value="nl">🇳🇱 netherlands</option>
-              <option value="pl">🇵🇱 poland</option>
-              <option value="po">🇵🇹 portugal</option>
-              <option value="ro">🇷🇴 romania</option>
-              <option value="sk">🇷🇸 slovakia</option>
-              <option value="si">🇸🇰 slovenia</option>
-              <option value="es">🇪🇸 spain</option>
-              <option value="se">🇸🇪 sweden</option>
-            </select>
+            <div>
+              <label htmlFor="userCountry" className="el-input__form-label">
+                <span className="span">&gt;&gt; </span> first, please select
+                your country of residence
+              </label>
+              <select
+                name="userCountry"
+                className="el-input__form-select"
+                onChange={this.handleChange}
+                value={this.userCountry}
+              >
+                <option value="">where is your home?</option>
+                <option value="gb">🇬🇧 united kingdom</option>
+                <option value="us">🇺🇸 united states of america</option>
+                <option value="ca">🇨🇦 canada</option>
+                <option value="at">🇦🇹 austria</option>
+                <option value="be">🇧🇪 belgium</option>
+                <option value="bg">🇧🇬 bulgaria</option>
+                <option value="hr">🇭🇷 croatia</option>
+                <option value="cy">🇨🇾 cyprus</option>
+                <option value="cz">🇨🇿 czechia</option>
+                <option value="dk">🇩🇰 denmark</option>
+                <option value="ee">🇪🇪 estonia</option>
+                <option value="fi">🇫🇮 finland</option>
+                <option value="fr">🇫🇷 france</option>
+                <option value="de">🇩🇪 germany</option>
+                <option value="gr">🇬🇷 greece</option>
+                <option value="hu">🇭🇺 hungary</option>
+                <option value="ie">🇮🇪 ireland</option>
+                <option value="it">🇮🇹 italy</option>
+                <option value="lv">🇱🇻 latvia</option>
+                <option value="lt">🇱🇹 lithuania</option>
+                <option value="lu">🇱🇺 luxembourg</option>
+                <option value="mt">🇲🇹 malta</option>
+                <option value="nl">🇳🇱 netherlands</option>
+                <option value="pl">🇵🇱 poland</option>
+                <option value="po">🇵🇹 portugal</option>
+                <option value="ro">🇷🇴 romania</option>
+                <option value="sk">🇷🇸 slovakia</option>
+                <option value="si">🇸🇰 slovenia</option>
+                <option value="es">🇪🇸 spain</option>
+                <option value="se">🇸🇪 sweden</option>
+              </select>
+            </div>
 
-            <label className="el-input__form-label">
-              select your type of home
-            </label>
+            <div>
+              <label className="el-input__form-label">
+                <span className="span">&gt;&gt; </span> now select your type of
+                home
+              </label>
 
-            <label className="el-input__form-home-type" htmlFor="userHomeType">
-              apartment
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="apartment"
-              name="userHomeType"
-              value="apartment"
-              onChange={this.handleChange}
-            />
+              <div className="el-input__form-home-box">
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="apartment"
+                  name="userHomeType"
+                  value="apartment"
+                  onChange={this.handleChange}
+                />
+                <label className="el-input__form-home-type" htmlFor="apartment">
+                  apartment
+                </label>
 
-            <label className="el-input__form-home-type" htmlFor="userHomeType">
-              house
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="house"
-              name="userHomeType"
-              value="house"
-              onChange={this.handleChange}
-            />
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="house"
+                  name="userHomeType"
+                  value="house"
+                  onChange={this.handleChange}
+                />
+                <label className="el-input__form-home-type" htmlFor="house">
+                  house
+                </label>
+              </div>
+            </div>
 
-            <label className="el-input__form-label">
-              how many bedrooms are there in your home?
-            </label>
+            <div>
+              <label className="el-input__form-label">
+                <span className="span">&gt;&gt; </span> and finally, how many
+                bedrooms are there in your home?
+              </label>
 
-            <label
-              className="el-input__form-bedrooms"
-              htmlFor="userNumberOfBedrooms"
-            >
-              1 bedroom
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="1bedroom"
-              name="userElValue"
-              value={this.state.isApartment ? 3100 : 4000}
-              onChange={this.handleBedroomsChange}
-            />
+              <div className="el-input__form-bedrooms-box">
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="1bedroom"
+                  name="userElValue"
+                  value={this.state.isApartment ? 3100 : 4000}
+                  onChange={this.handleBedroomsChange}
+                />
+                <label className="el-input__form-bedrooms" htmlFor="1bedroom">
+                  1 bedroom
+                </label>
 
-            <label
-              className="el-input__form-bedrooms"
-              htmlFor="userNumberOfBedrooms"
-            >
-              2 bedrooms
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="2bedrooms"
-              name="userElValue"
-              value={this.state.isApartment ? 4600 : 5500}
-              onChange={this.handleBedroomsChange}
-            />
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="2bedrooms"
+                  name="userElValue"
+                  value={this.state.isApartment ? 4600 : 5500}
+                  onChange={this.handleBedroomsChange}
+                />
+                <label className="el-input__form-bedrooms" htmlFor="2bedrooms">
+                  2 bedrooms
+                </label>
+              </div>
 
-            <label
-              className="el-input__form-bedrooms"
-              htmlFor="userNumberOfBedrooms"
-            >
-              3 bedrooms
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="3bedrooms"
-              name="userElValue"
-              value={this.state.isApartment ? 7300 : 8000}
-              onChange={this.handleBedroomsChange}
-            />
+              <div className="el-input__form-bedrooms-box">
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="3bedrooms"
+                  name="userElValue"
+                  value={this.state.isApartment ? 7300 : 8000}
+                  onChange={this.handleBedroomsChange}
+                />
+                <label className="el-input__form-bedrooms" htmlFor="3bedrooms">
+                  3 bedrooms
+                </label>
 
-            <label
-              className="el-input__form-bedrooms"
-              htmlFor="userNumberOfBedrooms"
-            >
-              4 or more bedrooms
-            </label>
-            <input
-              className="el-input__form-radio"
-              type="radio"
-              id="4bedrooms"
-              name="userElValue"
-              value={this.state.isApartment ? 9000 : 10000}
-              onChange={this.handleBedroomsChange}
-            />
+                <input
+                  className="el-input__form-radio"
+                  type="radio"
+                  id="4bedrooms"
+                  name="userElValue"
+                  value={this.state.isApartment ? 9000 : 10000}
+                  onChange={this.handleBedroomsChange}
+                />
+                <label className="el-input__form-bedrooms" htmlFor="4bedrooms">
+                  4 bedrooms +
+                </label>
+              </div>
+            </div>
 
             <div className="el-input__form-button-box">
               <button className="el-input__form-button">
-                show my estimate &gt;&gt;
+                show my estimate <span className="span">&gt;&gt; </span>
               </button>
             </div>
           </form>
         </div>
         <div className="el-output">
           {this.state.chartData ? (
-            <ElectricityChart chartData={this.state.chartData} />
+            <div className="el-output__content">
+              <ElectricityChart chartData={this.state.chartData} />
+            </div>
           ) : (
-            <div>hello</div>
+            <div className="el-output__intro">
+              <h3 className="el-output__intro-title">
+                let's find out how what's your home's co2 footprint!
+              </h3>
+            </div>
           )}
         </div>
       </div>

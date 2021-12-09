@@ -9,8 +9,13 @@
   height: 100%;
 }
 
+.span {
+  font-weight: 600;
+  color: theme.$gw-green;
+}
+
 .el-input {
-  width: 30%;
+  width: 35%;
   border-right: 2px solid theme.$gw-light-grey;
   padding-right: 2rem;
   @include f.body-large('Titillium Web');
@@ -20,10 +25,109 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    &-label {
+      @include f.table-header('Titillium Web');
+    }
+
+    &-select {
+      height: 4rem;
+      width: 100%;
+      margin: 1.2rem 0;
+      @include f.body-large('Titillium Web');
+      color: theme.$gw-black;
+      padding: 0 1.4rem;
+      border-radius: 2rem;
+      border: 2px solid theme.$gw-light-grey;
+      background-color: rgba(0, 0, 0, 0.03);
+      background: url(../../assets/images/icons/arrow_drop_down-24px.svg)
+        no-repeat right;
+      -webkit-appearance: none;
+      background-position: 98%;
+
+      // &:focus {
+      //   border: 2px solid theme.$gw-light-grey;
+      // }
+    }
+
+    &-radio {
+      -webkit-appearance: none;
+      appearance: none;
+      display: none;
+      &:checked + label {
+        background-color: theme.$gw-cloud;
+        border-color: theme.$gw-cloud;
+        color: theme.$gw-white;
+        font-weight: 600;
+      }
+    }
+
+    &-home-box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-home-type {
+      width: 47%;
+      height: 4rem;
+      margin: 1.2rem 0;
+      text-align: center;
+      border-radius: 2rem;
+      border: 2px solid theme.$gw-light-grey;
+      padding: 0.3rem;
+      cursor: pointer;
+    }
+
+    &-bedrooms-box {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &-bedrooms {
+      width: 47%;
+      height: 4rem;
+      margin: 1.2rem 0;
+      text-align: center;
+      border-radius: 2rem;
+      border: 2px solid theme.$gw-light-grey;
+      padding: 0.3rem;
+      cursor: pointer;
+    }
+
+    &-button {
+      width: 100%;
+      height: 4rem;
+      @include f.body-large('Titillium Web');
+      font-weight: 600;
+      color: theme.$gw-white;
+      padding: 0.3rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      border: 2px solid theme.$gw-slate;
+      background-color: theme.$gw-slate;
+      &:active {
+        border-color: theme.$gw-black;
+        background-color: theme.$gw-black;
+        color: theme.$gw-white;
+      }
+    }
   }
 }
 
 .el-output {
-  width: 70%;
+  width: 65%;
   padding-left: 2rem;
+
+  &__content {
+    margin: auto;
+  }
+
+  &__intro {
+    margin: auto;
+
+    &-title {
+      @include f.subheader('Titillium Web');
+    }
+  }
 }
