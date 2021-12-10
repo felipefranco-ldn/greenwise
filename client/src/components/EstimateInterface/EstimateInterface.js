@@ -9,7 +9,7 @@ export default function EstimateInterface() {
   return (
     <div className="landing">
       <div className="landing__title">
-        first things first:
+        <span className="span--dark">first things first:</span>
         <br /> in order to start your journey, <br />
         you need to know how big your environmental footrpint is! <br />
         greenwise will help you estimate it in three fronts:
@@ -47,9 +47,7 @@ export default function EstimateInterface() {
         </Link>
       </div>
       <Link className="landing__button" to="/estimate/electricity">
-        <p className="landing__subtitle">
-          let's get started <span className="span"> &gt;&gt; </span>{' '}
-        </p>
+        let's get started <span className="span"> &gt;&gt; </span>{' '}
       </Link>
     </div>
   );
