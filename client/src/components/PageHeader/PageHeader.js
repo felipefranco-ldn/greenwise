@@ -10,7 +10,7 @@ export default function PageHeader() {
         <Link className="header__logo-container" to="/">
           <img
             className="header__logo"
-            alt="inStock logo"
+            alt="green-wise logo"
             src={greenWiseLogo}
           />
         </Link>

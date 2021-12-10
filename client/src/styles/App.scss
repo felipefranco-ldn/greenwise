@@ -1,8 +1,8 @@
 @use '../styles/partials/colors' as theme;
 
-.App {
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: theme.$gw-light-grey;
+  justify-content: space-between;
 }

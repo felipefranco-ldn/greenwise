@@ -90,7 +90,7 @@ export default class ElectricityInterface extends Component {
 
         <div className="el-input">
           <form className="el-input__form" onSubmit={this.handleSubmit}>
-            <div>
+            <div className="el-input__form-question">
               <label htmlFor="userCountry" className="el-input__form-label">
                 <span className="span">&gt;&gt; </span> first, please select
                 your country of residence
@@ -135,7 +135,7 @@ export default class ElectricityInterface extends Component {
               </select>
             </div>
 
-            <div>
+            <div className="el-input__form-question">
               <label className="el-input__form-label">
                 <span className="span">&gt;&gt; </span> now select your type of
                 home
@@ -168,7 +168,7 @@ export default class ElectricityInterface extends Component {
               </div>
             </div>
 
-            <div>
+            <div className="el-input__form-question">
               <label className="el-input__form-label">
                 <span className="span">&gt;&gt; </span> and finally, how many
                 bedrooms are there in your home?
