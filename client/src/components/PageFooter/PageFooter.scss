@@ -44,14 +44,19 @@
   }
 
   &__text-box {
-    padding: 0 0 0 4rem;
+    padding: 0 0 0 5rem;
     vertical-align: middle;
+  }
+
+  &__anchor {
+    text-decoration: none;
   }
 
   &__text {
     position: relative;
     @include f.body-large('Titillium Web');
     color: theme.$gw-slate;
+    font-weight: 400;
     // color: theme.$gw-white;
     // color: theme.$gw-black;
     // text-shadow: 0px 0px 5px black;
@@ -63,7 +68,7 @@
     height: 3rem;
 
     &--light {
-      filter: brightness(1.17);
+      filter: brightness(1.15);
     }
   }
 }

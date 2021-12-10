@@ -15,27 +15,40 @@ export default function PageFooter() {
         </Link>
         <div className="footer__right-box">
           <div className="footer__text-box">
-            <p className="footer__text">contact</p>
+            <a
+              className="footer__anchor"
+              href="mailto:felipefranco8610@gmail.com"
+              target="_blank"
+            >
+              <p className="footer__text">contact</p>
+            </a>
           </div>
           <div className="footer__text-box">
             <p className="footer__text">about</p>
           </div>
           <div className="footer__text-box">
             <p className="footer__text">felipe franco</p>
-          </div>{' '}
-          <div className="footer__text-box">
-            <img
-              className="footer__icon"
-              alt="green-wise logo"
-              src={githubIcon}
-            />
           </div>
           <div className="footer__text-box">
-            <img
-              className="footer__icon footer__icon--light"
-              alt="green-wise logo"
-              src={linkedInIcon}
-            />
+            <a href="https://github.com/felipefranco-ldn" target="_blank">
+              <img
+                className="footer__icon"
+                alt="green-wise logo"
+                src={githubIcon}
+              />
+            </a>
+          </div>
+          <div className="footer__text-box">
+            <a
+              href="https://www.linkedin.com/in/felipefranco-ldn/"
+              target="_blank"
+            >
+              <img
+                className="footer__icon footer__icon--light"
+                alt="green-wise logo"
+                src={linkedInIcon}
+              />
+            </a>
           </div>
         </div>
       </div>
