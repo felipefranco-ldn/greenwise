@@ -2,3 +2,58 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100%;
+
+  &__title {
+    @include f.subheader('Titillium Web');
+    text-align: center;
+    margin: 0 0 2rem 0;
+    color: theme.$gw-slate;
+  }
+
+  &__middle-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31%;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      .landing__subtitle {
+        color: theme.$gw-black;
+      }
+      .landing__image {
+        filter: saturate(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__subtitle {
+    @include f.table-header('Titillium Web');
+    text-align: center;
+    margin: 0;
+    color: theme.$gw-slate;
+    text-decoration: none;
+    padding: 2rem;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__image {
+    width: 100%;
+    margin-top: auto;
+    filter: saturate(0.4);
+    transition: all 0.25s ease-in-out;
+  }
+}

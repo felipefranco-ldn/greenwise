@@ -5,7 +5,7 @@ import electricityIcon from '../../assets/images/icons/electricity-icon.png';
 import flightsIcon from '../../assets/images/icons/flights-icon.png';
 import vehiclesIcon from '../../assets/images/icons/vehicles-icon.png';
 
-export default function EstimateTable() {
+export default function EstimateOptions() {
   return (
     <aside className="aside">
       <NavLink className="aside__link" to="/estimate/electricity">
