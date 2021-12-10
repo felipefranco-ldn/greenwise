@@ -15,13 +15,29 @@
     background-color: theme.$gw-smoke;
     transition: all 0.25s ease-in-out;
 
+    &:hover {
+      color: theme.$gw-black;
+      & .aside__card-title {
+        // color: theme.$gw-black;
+        font-weight: 600;
+        transition: all 0.25s ease-in-out;
+      }
+
+      & .aside__card-icon {
+        filter: grayscale(50%);
+        transition: all 0.25s ease-in-out;
+      }
+    }
+
     &.active {
       background-color: theme.$gw-light-grey;
       transition: all 0.25s ease-in-out;
+      color: theme.$gw-black;
 
       & .aside__card {
         border-right: 0;
         border-left: 10px solid theme.$gw-green;
+        // color: theme.$gw-black;
       }
 
       & .aside__card-title {
@@ -29,29 +45,42 @@
         font-weight: 600;
         transition: all 0.25s ease-in-out;
       }
+
+      & .aside__card-icon {
+        filter: grayscale(25%);
+        transition: all 0.25s ease-in-out;
+      }
     }
   }
 
   &__card {
     height: 100%;
-
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid theme.$gw-white;
     border-right: -3px;
     border-left: 0;
+    border-left: 11px solid theme.$gw-smoke;
+
     // box-sizing: content-box;
 
     &-title {
       @include f.labels-links-buttons('Titillium Web');
       color: theme.$gw-slate;
       // font-weight: 400;
+      margin: 0 0 1rem 0;
 
       &:hover {
         color: theme.$gw-black;
       }
+    }
+
+    &-icon {
+      width: 7rem;
+      filter: grayscale(100%);
     }
 
     // Changes styling of Warehouse or Inventory buttons when active, depending on url

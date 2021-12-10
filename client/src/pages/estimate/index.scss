@@ -18,6 +18,8 @@
     width: 85%;
     padding: 2rem;
     height: 60rem;
+    border: 1px solid theme.$gw-white;
+    border-left: 0;
   }
 
   &__content {
