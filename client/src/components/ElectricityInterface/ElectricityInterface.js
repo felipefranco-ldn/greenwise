@@ -272,7 +272,7 @@ export default class ElectricityInterface extends Component {
                 This is{' '}
                 <span className="span--bold">
                   {' '}
-                  {Number((this.state.userElCo2 / 569).toFixed(2))} times{' '}
+                  {Number((this.state.userElCo2 / 569).toFixed(0))} times{' '}
                 </span>{' '}
                 the consumption of an average home in the planet.
               </div>

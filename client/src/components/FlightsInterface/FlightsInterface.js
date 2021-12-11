@@ -3,12 +3,34 @@ import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 import './FlightsInterface.scss';
 import axios from 'axios';
 import flightsMap from '../../assets/images/images/flights-map.png';
+import { Link } from 'react-router-dom';
+import FlightsChart from '../FligthsChart/FligthsChart';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 export default class FlightsInterface extends Component {
   state = {
     userFlightDuration: '',
     userFlightClass: '',
     userFlightCo2: 0,
+    totalFlightCo2: 0,
   };
 
   handleChange = (event) => {
@@ -99,6 +121,101 @@ export default class FlightsInterface extends Component {
     }
   };
 
+  getCo2 = () => {
+    switch (this.state.userFlightClass) {
+      case 'Economy':
+        this.setState({ totalFlightCo2: this.state.userFlightCo2 });
+        break;
+      case 'PremiumEconomy':
+        this.setState({ totalFlightCo2: this.state.userFlightCo2 * 1.66 });
+        break;
+      case 'Business':
+        this.setState({ totalFlightCo2: this.state.userFlightCo2 * 3.48 });
+        break;
+      case 'First':
+        this.setState({ totalFlightCo2: this.state.userFlightCo2 * 5.45 });
+        break;
+      default:
+        console.log('No flights found');
+    }
+  };
+
+  chartData = () => {
+    const chartData = {
+      labels: [
+        this.state.userFlightClass === 'Economy'
+          ? 'Your flight in Economy class'
+          : 'Economy Class',
+        this.state.userFlightClass === 'PremiumEconomy'
+          ? 'Your flight in Premium Economy'
+          : 'Premium Economy',
+        this.state.userFlightClass === 'Business'
+          ? 'Your flight in Business class'
+          : 'Business Class',
+        this.state.userFlightClass === 'First'
+          ? 'Your flight in First class'
+          : 'First Class',
+      ],
+
+      datasets: [
+        {
+          label: 'Flight CO2 emissions',
+          data: [
+            this.state.userFlightCo2,
+            this.state.userFlightCo2 * 1.66,
+            this.state.userFlightCo2 * 3.48,
+            this.state.userFlightCo2 * 5.45,
+          ],
+          backgroundColor: [
+            this.state.userFlightClass === 'Economy'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+            this.state.userFlightClass === 'PremiumEconomy'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+            this.state.userFlightClass === 'Business'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+            this.state.userFlightClass === 'First'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+          ],
+          borderColor: ['rgba(0,0,0,.5)'],
+          borderWidth: 0.8,
+        },
+      ],
+    };
+
+    return chartData;
+  };
+
+  flightsChart = () => {
+    const chartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+          position: 'top',
+          labels: {
+            font: {
+              family: 'Titillium Web',
+            },
+          },
+        },
+        title: {
+          display: false,
+          font: {
+            family: 'Titillium Web',
+            size: 16,
+          },
+          text: 'kg of CO2 emitted by selected flight duration and class',
+        },
+      },
+    };
+
+    return <Bar options={chartOptions} data={this.chartData} />;
+  };
+
   getData = () => {
     if (this.state.userFlightDuration && this.state.userFlightClass) {
       axios
@@ -110,7 +227,17 @@ export default class FlightsInterface extends Component {
           console.log('flights data:', data);
           const userFlCo2Data = data.data.attributes.carbon_kg;
           this.setState({ userFlightCo2: userFlCo2Data });
-        });
+          // const newChartData = 1;
+          this.setState({ chartData: this.chartData() });
+          this.flightsChart(this.state.chartData);
+          this.getCo2();
+        })
+        .catch((err) =>
+          console.log(
+            'Something went wrong while fetching the electricity consumption data: ',
+            err
+          )
+        );
     }
   };
 
@@ -255,7 +382,7 @@ export default class FlightsInterface extends Component {
                   type="radio"
                   id="economy"
                   name="flightClass"
-                  value="economy"
+                  value="Economy"
                   onChange={this.handleClassChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="economy">
@@ -267,7 +394,7 @@ export default class FlightsInterface extends Component {
                   type="radio"
                   id="premiumEconomy"
                   name="flightClass"
-                  value="premiumEconomy"
+                  value="PremiumEconomy"
                   onChange={this.handleClassChange}
                 />
                 <label
@@ -298,7 +425,7 @@ export default class FlightsInterface extends Component {
                   type="radio"
                   id="first"
                   name="flightClass"
-                  value="first"
+                  value="First"
                   onChange={this.handleClassChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="first">
@@ -312,17 +439,50 @@ export default class FlightsInterface extends Component {
         {/* //! output section (right side) starts here */}
         <div className="el-output">
           {this.state.chartData ? (
-            <div className="fl-output__content"></div>
+            <div className="fl-output__content">
+              <div className="el-output__content-title">
+                Your flight in {this.state.userFlightClass} Class <br />
+                compared to other classes
+              </div>
+              <FlightsChart chartData={this.state.chartData} />
+              <div className="el-output__content-text">
+                Your flight released approx.{' '}
+                <span className="span--bold">
+                  {' '}
+                  {Number(this.state.totalFlightCo2).toFixed(0)} kilograms of
+                  CO2{' '}
+                </span>
+                into the atmosphere. <br />
+                Covering the same distance by train would have generated
+                <span className="span--bold">
+                  {' '}
+                  {Number((this.state.userFlightCo2 / 5).toFixed(0))} kilograms
+                  of CO2
+                </span>{' '}
+                instead.
+              </div>
+              <div className="el-output__content-button-box">
+                <div className="el-output__content-button">
+                  Save estimate in dashboard
+                  <span className="span"> {'>>'} </span>
+                </div>
+                <Link className="el-output__link" to="/estimate/flights">
+                  <div className="el-output__content-button el-output__content-button--next">
+                    Go to Next Step <span className="span"> {'>>'} </span>
+                  </div>
+                </Link>
+              </div>
+            </div>
           ) : (
             <div className="fl-output__intro">
-              <h3 className="el-output__intro-title">
+              <h3 className="fl-output__intro-title">
                 Flying often represents a
                 <br />
                 signifcant part of people's footprint. <br />
                 Use the map below to estimate yours.
               </h3>
               <img
-                className="el-output__intro-image"
+                className="fl-output__intro-image"
                 alt="home electricity consumption and network"
                 src={flightsMap}
               />
