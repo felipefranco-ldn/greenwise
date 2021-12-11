@@ -26,7 +26,6 @@ export default class ElectricityInterface extends Component {
     );
   };
 
-  // set state while the user types
   handleChange = (event) => {
     if (event.target.value === 'apartment') {
       this.setState(
@@ -66,7 +65,6 @@ export default class ElectricityInterface extends Component {
     if (this.state.userCountry && this.state.bedroomNumber) {
       // get electricity consumption info
 
-      // console.log('sent', this.state.userCountry, this.state.userElValue);
       axios
         .post(
           `${EXT_API_URL}`,
@@ -102,13 +100,12 @@ export default class ElectricityInterface extends Component {
   };
 
   render() {
-    console.log(this.state.isApartment);
     return (
       <div className="el-container">
         {/* //! input section (left side) starts here */}
 
         <div className="el-input">
-          <form className="el-input__form" onSubmit={this.handleSubmit}>
+          <form className="el-input__form">
             <div className="el-input__form-question">
               <label htmlFor="userCountry" className="el-input__form-label">
                 <span className="span">&gt;&gt; </span> First, please select
