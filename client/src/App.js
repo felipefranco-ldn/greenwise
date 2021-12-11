@@ -5,7 +5,7 @@ import Electricity from './pages/estimate/Electricity';
 import Flights from './pages/estimate/Flights';
 import Vehicles from './pages/estimate/Vehicles';
 import Home from './pages/home';
-import Offset from './pages/offset';
+import Compensate from './pages/compensate';
 import Profile from './pages/profile';
 import Reduce from './pages/reduce';
 import './styles/App.scss';
@@ -27,7 +27,7 @@ export default class App extends Component {
               <Route path="/estimate/flights" exact component={Flights} />
               <Route path="/estimate/vehicles" exact component={Vehicles} />
               <Route path="/reduce" component={Reduce} />
-              <Route path="/offset" component={Offset} />
+              <Route path="/compensate" component={Compensate} />
               <Route path="/my-account" component={Profile} />
             </Switch>
           </div>

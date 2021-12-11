@@ -21,7 +21,7 @@ export default function EstimateInterface() {
           </p>
           <img
             className="landing__image"
-            alt="electricity image"
+            alt="electricity"
             src={electricityImage}
           />
         </Link>
@@ -29,21 +29,13 @@ export default function EstimateInterface() {
           <p className="landing__subtitle">
             co2 emissions released into the atmosphere when you travel by plane
           </p>
-          <img
-            className="landing__image"
-            alt="electricity image"
-            src={flightsImage}
-          />
+          <img className="landing__image" alt="flights " src={flightsImage} />
         </Link>
         <Link className="landing__image-container" to="/estimate/vehicles">
           <p className="landing__subtitle">
             co2 emissions generated when you travel by car
           </p>
-          <img
-            className="landing__image"
-            alt="electricity image"
-            src={vehiclesImage}
-          />
+          <img className="landing__image" alt="vehicles " src={vehiclesImage} />
         </Link>
       </div>
       <Link className="landing__button" to="/estimate/electricity">

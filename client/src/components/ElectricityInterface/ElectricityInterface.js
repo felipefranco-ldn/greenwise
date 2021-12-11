@@ -5,7 +5,7 @@ import axios from 'axios';
 import ElectricityChart from '../ElectricityChart/ElectricityChart';
 import { cloneDeep } from 'lodash';
 import { chartData } from '../ElectricityChart/chartData';
-import electricityImage from '../../assets/images/images/electricity-image.png';
+import ligthBulb from '../../assets/images/images/light-bulb.jpg';
 
 export default class ElectricityInterface extends Component {
   state = {
@@ -277,13 +277,14 @@ export default class ElectricityInterface extends Component {
           ) : (
             <div className="el-output__intro">
               <h3 className="el-output__intro-title">
-                would you like to know your home's co2 footprint? <br />
+                knowing your home's <br />
+                environmental footprint is a great idea! <br />
                 let's find out!
               </h3>
               <img
                 className="el-output__intro-image"
                 alt="home electricity consumption and network"
-                src={electricityImage}
+                src={ligthBulb}
               />
             </div>
           )}

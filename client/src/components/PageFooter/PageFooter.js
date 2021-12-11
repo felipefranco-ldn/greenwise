@@ -10,27 +10,32 @@ export default function PageFooter() {
       <div className="footer__main-container">
         <Link className="footer__link" to="/">
           <p className="footer__text">
-            <span className="footer__span">green</span>wise | 2021{' '}
+            <span className="span--bold">GreenWise</span> | 2021
           </p>
         </Link>
         <div className="footer__right-box">
           <div className="footer__text-box">
             <a
               className="footer__anchor"
+              rel="noreferrer"
               href="mailto:felipefranco8610@gmail.com"
               target="_blank"
             >
-              <p className="footer__text">contact</p>
+              <p className="footer__text">Contact</p>
             </a>
           </div>
           <div className="footer__text-box">
-            <p className="footer__text">about</p>
+            <p className="footer__text">About</p>
           </div>
           <div className="footer__text-box">
-            <p className="footer__text">felipe franco</p>
+            <p className="footer__text">by Felipe Franco</p>
           </div>
           <div className="footer__text-box">
-            <a href="https://github.com/felipefranco-ldn" target="_blank">
+            <a
+              href="https://github.com/felipefranco-ldn"
+              rel="noreferrer"
+              target="_blank"
+            >
               <img
                 className="footer__icon"
                 alt="green-wise logo"
@@ -41,6 +46,7 @@ export default function PageFooter() {
           <div className="footer__text-box">
             <a
               href="https://www.linkedin.com/in/felipefranco-ldn/"
+              rel="noreferrer"
               target="_blank"
             >
               <img

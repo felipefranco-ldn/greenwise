@@ -31,7 +31,7 @@
     }
 
     &-question {
-      margin: 2rem 0;
+      margin: 0;
     }
 
     &-select {
@@ -198,6 +198,10 @@
 
   &__intro {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
     &-title {
       @include f.subheader('Titillium Web');
@@ -207,7 +211,7 @@
     }
 
     &-image {
-      width: 100%;
+      width: 75%;
     }
   }
 }
