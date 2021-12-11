@@ -92,7 +92,7 @@ export default class ElectricityInterface extends Component {
           <form className="el-input__form" onSubmit={this.handleSubmit}>
             <div className="el-input__form-question">
               <label htmlFor="userCountry" className="el-input__form-label">
-                <span className="span">&gt;&gt; </span> first, please select
+                <span className="span">&gt;&gt; </span> First, please select
                 your country of residence
               </label>
               <select
@@ -101,43 +101,43 @@ export default class ElectricityInterface extends Component {
                 onChange={this.handleChange}
                 value={this.userCountry}
               >
-                <option value="">where is your home?</option>
-                <option value="gb">🇬🇧 united kingdom</option>
-                <option value="us">🇺🇸 united states of america</option>
-                <option value="ca">🇨🇦 canada</option>
-                <option value="at">🇦🇹 austria</option>
-                <option value="be">🇧🇪 belgium</option>
-                <option value="bg">🇧🇬 bulgaria</option>
-                <option value="hr">🇭🇷 croatia</option>
-                <option value="cy">🇨🇾 cyprus</option>
-                <option value="cz">🇨🇿 czechia</option>
-                <option value="dk">🇩🇰 denmark</option>
-                <option value="ee">🇪🇪 estonia</option>
-                <option value="fi">🇫🇮 finland</option>
-                <option value="fr">🇫🇷 france</option>
-                <option value="de">🇩🇪 germany</option>
-                <option value="gr">🇬🇷 greece</option>
-                <option value="hu">🇭🇺 hungary</option>
-                <option value="ie">🇮🇪 ireland</option>
-                <option value="it">🇮🇹 italy</option>
-                <option value="lv">🇱🇻 latvia</option>
-                <option value="lt">🇱🇹 lithuania</option>
-                <option value="lu">🇱🇺 luxembourg</option>
-                <option value="mt">🇲🇹 malta</option>
-                <option value="nl">🇳🇱 netherlands</option>
-                <option value="pl">🇵🇱 poland</option>
-                <option value="po">🇵🇹 portugal</option>
-                <option value="ro">🇷🇴 romania</option>
-                <option value="sk">🇷🇸 slovakia</option>
-                <option value="si">🇸🇰 slovenia</option>
-                <option value="es">🇪🇸 spain</option>
-                <option value="se">🇸🇪 sweden</option>
+                <option value="">Where is your home?</option>
+                <option value="gb">🇬🇧 United Kingdom</option>
+                <option value="us">🇺🇸 United States of America</option>
+                <option value="ca">🇨🇦 Canada</option>
+                <option value="at">🇦🇹 Austria</option>
+                <option value="be">🇧🇪 Belgium</option>
+                <option value="bg">🇧🇬 Bulgaria</option>
+                <option value="hr">🇭🇷 Croatia</option>
+                <option value="cy">🇨🇾 Cyprus</option>
+                <option value="cz">🇨🇿 Czechia</option>
+                <option value="dk">🇩🇰 Denmark</option>
+                <option value="ee">🇪🇪 Estonia</option>
+                <option value="fi">🇫🇮 Finland</option>
+                <option value="fr">🇫🇷 France</option>
+                <option value="de">🇩🇪 Germany</option>
+                <option value="gr">🇬🇷 Greece</option>
+                <option value="hu">🇭🇺 Hungary</option>
+                <option value="ie">🇮🇪 Ireland</option>
+                <option value="it">🇮🇹 Italy</option>
+                <option value="lv">🇱🇻 Latvia</option>
+                <option value="lt">🇱🇹 Lithuania</option>
+                <option value="lu">🇱🇺 Luxembourg</option>
+                <option value="mt">🇲🇹 Malta</option>
+                <option value="nl">🇳🇱 Netherlands</option>
+                <option value="pl">🇵🇱 Poland</option>
+                <option value="po">🇵🇹 Portugal</option>
+                <option value="ro">🇷🇴 Romania</option>
+                <option value="sk">🇷🇸 Slovakia</option>
+                <option value="si">🇸🇰 Slovenia</option>
+                <option value="es">🇪🇸 Spain</option>
+                <option value="se">🇸🇪 Sweden</option>
               </select>
             </div>
 
             <div className="el-input__form-question">
               <label className="el-input__form-label">
-                <span className="span">&gt;&gt; </span> now select your type of
+                <span className="span">&gt;&gt; </span> Now select your type of
                 home
               </label>
 
@@ -151,7 +151,7 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="el-input__form-home-type" htmlFor="apartment">
-                  apartment
+                  Apartment
                 </label>
 
                 <input
@@ -163,14 +163,14 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="el-input__form-home-type" htmlFor="house">
-                  house
+                  House
                 </label>
               </div>
             </div>
 
             <div className="el-input__form-question">
               <label className="el-input__form-label">
-                <span className="span">&gt;&gt; </span> and finally, how many
+                <span className="span">&gt;&gt; </span>And finally, how many
                 bedrooms are there in your home?
               </label>
 
@@ -230,7 +230,7 @@ export default class ElectricityInterface extends Component {
 
             <div className="el-input__form-button-box">
               <button className="el-input__form-button">
-                show my estimate <span className="span">&gt;&gt; </span>
+                Show my estimate <span className="span">&gt;&gt; </span>
               </button>
             </div>
           </form>
@@ -241,26 +241,26 @@ export default class ElectricityInterface extends Component {
           {this.state.chartData ? (
             <div className="el-output__content">
               <div className="el-output__content-title">
-                average home in selected countries vs. your home:
+                Your Home vs. average home in selected countries:
                 <br />
-                kilograms of co2 emitted by annual electricity usage
+                Kilograms of co2 emitted by annual electricity usage
               </div>
               <ElectricityChart chartData={this.state.chartData} />
               <div className="el-output__content-text">
-                your homes consumes approx.{' '}
+                Your home consumes approx.{' '}
                 <span className="span--bold">
                   {' '}
                   {this.state.userElValue} kwh per year{' '}
                 </span>
                 ,
                 <br />
-                which releases into the atmosphere{' '}
+                which releases{' '}
                 <span className="span--bold">
                   {' '}
                   {this.state.userElCo2} kilograms of co2{' '}
                 </span>
-                . <br />
-                this is{' '}
+                into the atmosphere. <br />
+                This is{' '}
                 <span className="span--bold">
                   {' '}
                   {Number((this.state.userElCo2 / 569).toFixed(2))} times{' '}
@@ -269,7 +269,7 @@ export default class ElectricityInterface extends Component {
               </div>
               <div className="el-output__content-button-box">
                 <button className="el-output__content-button">
-                  save this estimate in my dashboard
+                  Save this estimate in my dashboard
                   <span className="span"> &gt;&gt; </span>
                 </button>
               </div>
@@ -277,9 +277,9 @@ export default class ElectricityInterface extends Component {
           ) : (
             <div className="el-output__intro">
               <h3 className="el-output__intro-title">
-                knowing your home's <br />
+                Knowing your home's <br />
                 environmental footprint is a great idea! <br />
-                let's find out!
+                Let's find out!
               </h3>
               <img
                 className="el-output__intro-image"
