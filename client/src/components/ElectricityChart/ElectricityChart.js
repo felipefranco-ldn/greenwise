@@ -37,7 +37,7 @@ export default function ElectricityChart({ chartData }) {
           family: 'Titillium Web',
           size: 16,
         },
-        text: 'kg of co2 emitted by electricity usage of average home, per year',
+        text: 'kg of CO2 emitted by electricity usage of average home, per year',
       },
     },
   };

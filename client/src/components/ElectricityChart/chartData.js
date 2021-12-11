@@ -25,7 +25,7 @@ export const chartData = {
   labels,
   datasets: [
     {
-      label: 'yearly co2 emissions',
+      label: 'yearly CO2 emissions',
       data: [
         569, 0, 93, 147, 221, 296, 300, 303, 348, 589, 719, 732, 784, 851, 971,
         1056, 1544, 2176, 2918,

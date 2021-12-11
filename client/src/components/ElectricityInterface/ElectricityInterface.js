@@ -6,80 +6,99 @@ import ElectricityChart from '../ElectricityChart/ElectricityChart';
 import { cloneDeep } from 'lodash';
 import { chartData } from '../ElectricityChart/chartData';
 import ligthBulb from '../../assets/images/images/light-bulb.jpg';
+import { apartment, house } from './elValues';
+import { Link } from 'react-router-dom';
 
 export default class ElectricityInterface extends Component {
   state = {
     userCountry: '',
     userElValue: 0,
-    isApartment: false,
     userElCo2: 0,
+    bedroomNumber: 0,
+  };
+
+  handleCountryChange = (event) => {
+    this.setState(
+      {
+        [event.target.name]: event.target.value,
+      },
+      this.getData
+    );
   };
 
   // set state while the user types
   handleChange = (event) => {
     if (event.target.value === 'apartment') {
-      console.log('apartment', event.target.value);
-      this.setState({
-        isApartment: true,
-      });
+      this.setState(
+        {
+          isApartment: true,
+        },
+        this.getData
+      );
     } else if (event.target.value === 'house') {
-      console.log('house', event.target.value);
-      this.setState({
-        isApartment: false,
-      });
+      this.setState(
+        {
+          isApartment: false,
+        },
+        this.getData
+      );
     }
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
   };
 
   handleBedroomsChange = (event) => {
-    this.setState({
-      userElValue: event.target.value,
-    });
+    this.setState(
+      {
+        bedroomNumber: event.target.value,
+      },
+      this.getData
+    );
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  getUserElValue = () => {
+    let userElValue = this.state.isApartment
+      ? apartment[this.state.bedroomNumber - 1]
+      : house[this.state.bedroomNumber - 1];
+    this.setState({ userElValue: userElValue });
+    return userElValue;
+  };
 
-    // get electricity consumption info
+  getData = () => {
+    if (this.state.userCountry && this.state.bedroomNumber) {
+      // get electricity consumption info
 
-    console.log('sent', this.state.userCountry, this.state.userElValue);
-    axios
-      .post(
-        `${EXT_API_URL}`,
-        {
-          type: 'electricity',
-          country: this.state.userCountry,
-          electricity_unit: 'kwh',
-          electricity_value: this.state.userElValue,
-        },
-        {
-          headers: { Authorization: `Bearer ${EXT_API_KEY}` },
-        }
-      )
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        const userElCo2Data = data.data.attributes.carbon_kg;
-        this.setState({ userElCo2: userElCo2Data });
-        const newChartData = cloneDeep(chartData);
-        newChartData.datasets[0].data.unshift(userElCo2Data);
-        console.log('newChartData"', newChartData);
-        this.setState({
-          chartData: newChartData,
-          // userCountry: '',
-          // userElValue: 0,
-          // isApartment: false,
-          // userElCo2: 0,
-        });
-      })
-      .catch((err) =>
-        console.log(
-          'Something went wrong while fetching the electricity consumption data: ',
-          err
+      // console.log('sent', this.state.userCountry, this.state.userElValue);
+      axios
+        .post(
+          `${EXT_API_URL}`,
+          {
+            type: 'electricity',
+            country: this.state.userCountry,
+            electricity_unit: 'kwh',
+            electricity_value: this.getUserElValue(),
+          },
+          {
+            headers: { Authorization: `Bearer ${EXT_API_KEY}` },
+          }
         )
-      );
+        .then((response) => {
+          const data = response.data;
+          console.log(data);
+          const userElCo2Data = data.data.attributes.carbon_kg;
+          this.setState({ userElCo2: userElCo2Data });
+          const newChartData = cloneDeep(chartData);
+          newChartData.datasets[0].data.unshift(userElCo2Data);
+          console.log('newChartData"', newChartData);
+          this.setState({
+            chartData: newChartData,
+          });
+        })
+        .catch((err) =>
+          console.log(
+            'Something went wrong while fetching the electricity consumption data: ',
+            err
+          )
+        );
+    }
   };
 
   render() {
@@ -98,7 +117,7 @@ export default class ElectricityInterface extends Component {
               <select
                 name="userCountry"
                 className="el-input__form-select"
-                onChange={this.handleChange}
+                onChange={this.handleCountryChange}
                 value={this.userCountry}
               >
                 <option value="">Where is your home?</option>
@@ -180,8 +199,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="1bedroom"
                   name="userElValue"
-                  // value={Math.random() * 1000}
-                  value={this.state.isApartment ? 3100 : 3900}
+                  value="1"
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="1bedroom">
@@ -193,7 +211,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="2bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 4650 : 5800}
+                  value="2"
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="2bedrooms">
@@ -207,7 +225,7 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="3bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 7450 : 9300}
+                  value="3"
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="3bedrooms">
@@ -219,19 +237,13 @@ export default class ElectricityInterface extends Component {
                   type="radio"
                   id="4bedrooms"
                   name="userElValue"
-                  value={this.state.isApartment ? 9100 : 11300}
+                  value="4"
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="4bedrooms">
                   4 bedrooms +
                 </label>
               </div>
-            </div>
-
-            <div className="el-input__form-button-box">
-              <button className="el-input__form-button">
-                Show my estimate <span className="span">&gt;&gt; </span>
-              </button>
             </div>
           </form>
         </div>
@@ -243,7 +255,7 @@ export default class ElectricityInterface extends Component {
               <div className="el-output__content-title">
                 Your Home vs. average home in selected countries:
                 <br />
-                Kilograms of co2 emitted by annual electricity usage
+                Kilograms of CO2 emitted by annual electricity usage
               </div>
               <ElectricityChart chartData={this.state.chartData} />
               <div className="el-output__content-text">
@@ -257,7 +269,7 @@ export default class ElectricityInterface extends Component {
                 which releases{' '}
                 <span className="span--bold">
                   {' '}
-                  {this.state.userElCo2} kilograms of co2{' '}
+                  {this.state.userElCo2} kilograms of CO2{' '}
                 </span>
                 into the atmosphere. <br />
                 This is{' '}
@@ -268,10 +280,15 @@ export default class ElectricityInterface extends Component {
                 the consumption of an average home in the planet.
               </div>
               <div className="el-output__content-button-box">
-                <button className="el-output__content-button">
-                  Save this estimate in my dashboard
-                  <span className="span"> &gt;&gt; </span>
-                </button>
+                <div className="el-output__content-button">
+                  Save estimate in dashboard
+                  <span className="span"> {'>>'} </span>
+                </div>
+                <Link className="el-output__link" to="/estimate/flights">
+                  <div className="el-output__content-button el-output__content-button--next">
+                    Go to Next Step <span className="span"> {'>>'} </span>
+                  </div>
+                </Link>
               </div>
             </div>
           ) : (
