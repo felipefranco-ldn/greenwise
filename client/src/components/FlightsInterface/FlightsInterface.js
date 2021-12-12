@@ -4,7 +4,6 @@ import './FlightsInterface.scss';
 import axios from 'axios';
 import flightsMap from '../../assets/images/images/flights-map.png';
 import { Link } from 'react-router-dom';
-// import FlightsChart from '../FligthsChart/FligthsChart';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -269,7 +268,8 @@ export default class FlightsInterface extends Component {
                     Domestic / Regional
                   </h3>
                   <p className="fl-input__form-label-info">
-                    Up to 1:40h or 950km / 590mi
+                    Up to 1:40h or <br />
+                    950km / 590mi
                   </p>
                   <p className="fl-input__form-label-example">
                     e.g. London - Berlin
@@ -285,7 +285,11 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="short">
-                  <h3 className="fl-input__form-label-title">Short-haul</h3>
+                  <h3 className="fl-input__form-label-title">
+                    Short
+                    <br />
+                    Haul
+                  </h3>
                   <p className="fl-input__form-label-info">
                     Up to 3:20h or 2200km / 1370mi
                   </p>
@@ -305,7 +309,11 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="medium">
-                  <h3 className="fl-input__form-label-title">Medium-haul</h3>
+                  <h3 className="fl-input__form-label-title">
+                    Medium
+                    <br />
+                    Haul
+                  </h3>
                   <p className="fl-input__form-label-info">
                     Up to 6:40h or 5300km / 3300mi
                   </p>
@@ -323,7 +331,11 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="long">
-                  <h3 className="fl-input__form-label-title">Long-haul</h3>
+                  <h3 className="fl-input__form-label-title">
+                    Long
+                    <br />
+                    Haul
+                  </h3>
                   <p className="fl-input__form-label-info">
                     Up to 11:30h or 9600km / 5970mi
                   </p>
@@ -344,7 +356,7 @@ export default class FlightsInterface extends Component {
                 />
                 <label className="fl-input__form-duration" htmlFor="extraLong">
                   <h3 className="fl-input__form-label-title">
-                    Extra-long-haul
+                    Extra-long Haul
                   </h3>
                   <p className="fl-input__form-label-info">
                     Up to 16:40h or 14500km / 9000mi
@@ -363,7 +375,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="ultraLong">
-                  <h3 className="fl-input__form-label-title">Ulta-long-haul</h3>
+                  <h3 className="fl-input__form-label-title">Ulta-long Haul</h3>
                   <p className="fl-input__form-label-info">
                     Up to 24:00h or 18400km / 11370mi
                   </p>
@@ -373,6 +385,8 @@ export default class FlightsInterface extends Component {
                 </label>
               </div>
             </div>
+
+            <div className="fl-input__break"></div>
 
             <div className="fl-input__form-question">
               <label className="fl-input__form-label">
@@ -388,8 +402,11 @@ export default class FlightsInterface extends Component {
                   value="Economy"
                   onChange={this.handleClassChange}
                 />
-                <label className="fl-input__form-duration" htmlFor="economy">
-                  <h3 className="fl-input__form-label-title">Economy Class</h3>
+                <label className="fl-input__form-class" htmlFor="economy">
+                  <h3 className="fl-input__form-label-title">
+                    🌱 Economy
+                    <br /> Class
+                  </h3>
                 </label>
 
                 <input
@@ -401,11 +418,12 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleClassChange}
                 />
                 <label
-                  className="fl-input__form-duration"
+                  className="fl-input__form-class"
                   htmlFor="premiumEconomy"
                 >
                   <h3 className="fl-input__form-label-title">
-                    Premium Economy{' '}
+                    💸 Premium
+                    <br /> Economy{' '}
                   </h3>
                 </label>
               </div>
@@ -419,8 +437,11 @@ export default class FlightsInterface extends Component {
                   value="Business"
                   onChange={this.handleClassChange}
                 />
-                <label className="fl-input__form-duration" htmlFor="Business">
-                  <h3 className="fl-input__form-label-title">Business Class</h3>
+                <label className="fl-input__form-class" htmlFor="Business">
+                  <h3 className="fl-input__form-label-title">
+                    💰 Business
+                    <br /> Class
+                  </h3>
                 </label>
 
                 <input
@@ -431,8 +452,11 @@ export default class FlightsInterface extends Component {
                   value="First"
                   onChange={this.handleClassChange}
                 />
-                <label className="fl-input__form-duration" htmlFor="first">
-                  <h3 className="fl-input__form-label-title">First Class</h3>
+                <label className="fl-input__form-class" htmlFor="first">
+                  <h3 className="fl-input__form-label-title">
+                    🧐 First <br />
+                    Class
+                  </h3>
                 </label>
               </div>
             </div>
@@ -440,28 +464,32 @@ export default class FlightsInterface extends Component {
         </div>
 
         {/* //! output section (right side) starts here */}
-        <div className="el-output">
+        <div className="fl-output">
           {this.state.chartData ? (
             <div className="fl-output__content">
               <div className="el-output__content-title">
-                Your flight in {this.state.userFlightClass} Class <br />
-                compared to other classes
+                Kilograms of CO2 released by <br /> your flight in{' '}
+                {this.state.userFlightClass} Class. <br />
+                Comparison with other classes and <br /> to an equivalent
+                distance covered by train
               </div>
               {this.flightsChart()}
-              {/* <FlightsChart chartData={this.state.chartData} /> */}
               <div className="el-output__content-text">
+                <div className="el-output__info-icon">i</div>
                 Your flight released approx.{' '}
                 <span className="span--bold">
                   {' '}
                   {Number(this.state.totalFlightCo2).toFixed(0)} kilograms of
                   CO2{' '}
                 </span>
-                into the atmosphere. <br />
-                Covering the same distance by train would have generated
+                into the atmosphere. Covering the same distance by train would
+                have generated
                 <span className="span--bold">
                   {' '}
-                  {Number((this.state.userFlightCo2 / 5).toFixed(0))} kilograms
-                  of CO2
+                  {Number(
+                    (this.state.userFlightDistance * 0.041).toFixed(0)
+                  )}{' '}
+                  kilograms of CO2
                 </span>{' '}
                 instead.
               </div>
@@ -470,7 +498,7 @@ export default class FlightsInterface extends Component {
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
                 </div>
-                <Link className="el-output__link" to="/estimate/flights">
+                <Link className="el-output__link" to="/estimate/vehicles">
                   <div className="el-output__content-button el-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>
@@ -483,7 +511,7 @@ export default class FlightsInterface extends Component {
                 Flying often represents a
                 <br />
                 signifcant part of people's footprint. <br />
-                Use the map below to estimate yours.
+                Use the map below as a guideto estimate yours.
               </h3>
               <img
                 className="fl-output__intro-image"

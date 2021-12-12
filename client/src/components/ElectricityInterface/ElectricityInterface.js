@@ -256,6 +256,7 @@ export default class ElectricityInterface extends Component {
               </div>
               <ElectricityChart chartData={this.state.chartData} />
               <div className="el-output__content-text">
+                <div className="el-output__info-icon">i</div>
                 Your home consumes approx.{' '}
                 <span className="span--bold">
                   {' '}

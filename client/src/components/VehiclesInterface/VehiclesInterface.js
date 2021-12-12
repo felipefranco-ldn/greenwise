@@ -506,8 +506,8 @@ export default class VehiclesInterface extends Component {
                 compared to other classes
               </div>
               {this.vehiclesChart()}
-              {/* <VehiclesChart chartData={this.state.chartData} /> */}
               <div className="el-output__content-text">
+                <div className="el-output__info-icon">i</div>
                 Your flight released approx.{' '}
                 <span className="span--bold">
                   {' '}
