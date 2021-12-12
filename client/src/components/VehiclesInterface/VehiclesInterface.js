@@ -154,6 +154,7 @@ export default class VehiclesInterface extends Component {
         this.state.userVehiclePower === 'electric'
           ? 'Your ride on an electric vehicle'
           : 'Electric vehicle',
+        'Equivalent trip on train',
       ],
 
       datasets: [
@@ -163,6 +164,9 @@ export default class VehiclesInterface extends Component {
             this.state.userVehicleCo2,
             this.state.userVehicleCo2 * 0.6,
             this.state.userVehicleCo2 * 0.35,
+            this.state.userDistanceUnits === 'km'
+              ? this.state.userDistance * 0.041
+              : this.state.userDistance * 0.066,
           ],
           backgroundColor: [
             this.state.userVehiclePower === 'petrol'
@@ -174,6 +178,7 @@ export default class VehiclesInterface extends Component {
             this.state.userVehiclePower === 'electric'
               ? 'rgba(0, 100, 255, 0.6)'
               : 'rgba(0, 255, 255, 0.2)',
+            'rgba(0, 255, 0, 0.6)',
           ],
           borderColor: ['rgba(0,0,0,.5)'],
           borderWidth: 0.8,

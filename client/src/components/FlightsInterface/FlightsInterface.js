@@ -155,6 +155,7 @@ export default class FlightsInterface extends Component {
         this.state.userFlightClass === 'First'
           ? 'Your flight in First class'
           : 'First Class',
+        'Equivalent trip on train',
       ],
 
       datasets: [
