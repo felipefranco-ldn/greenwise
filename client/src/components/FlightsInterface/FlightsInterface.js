@@ -453,15 +453,15 @@ export default class FlightsInterface extends Component {
         <div className="fl-output">
           {this.state.chartData ? (
             <div className="fl-output__content">
-              <div className="el-output__content-title">
+              <div className="fl-output__content-title">
                 Kilograms of CO2 released by <br /> your flight in{' '}
                 {this.state.userFlightClass} Class. <br />
                 Comparison with other classes and <br /> to an equivalent
-                distance covered by train
+                distance covered by train.
               </div>
               {this.flightsChart()}
-              <div className="el-output__content-text">
-                <div className="el-output__info-icon">i</div>
+              <div className="fl-output__content-text">
+                <div className="fl-output__info-icon">i</div>
                 Your flight released approx.{' '}
                 <span className="span--bold">
                   {' '}
@@ -479,13 +479,13 @@ export default class FlightsInterface extends Component {
                 </span>{' '}
                 instead.
               </div>
-              <div className="el-output__content-button-box">
-                <div className="el-output__content-button">
+              <div className="fl-output__content-button-box">
+                <div className="fl-output__content-button">
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
                 </div>
-                <Link className="el-output__link" to="/estimate/vehicles">
-                  <div className="el-output__content-button el-output__content-button--next">
+                <Link className="fl-output__link" to="/estimate/vehicles">
+                  <div className="fl-output__content-button fl-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>
                 </Link>
@@ -497,7 +497,9 @@ export default class FlightsInterface extends Component {
                 Flying often represents a
                 <br />
                 signifcant part of people's footprint. <br />
-                Use the map below as a guideto estimate yours.
+                You can use the map below as a guide
+                <br />
+                to estimate yours.
               </h3>
               <img
                 className="fl-output__intro-image"

@@ -252,7 +252,7 @@ export default class ElectricityInterface extends Component {
               <div className="el-output__content-title">
                 Your Home vs. average home in selected countries:
                 <br />
-                Kilograms of CO2 emitted by annual electricity usage
+                Kilograms of CO2 emitted by annual electricity usage.
               </div>
               <ElectricityChart chartData={this.state.chartData} />
               <div className="el-output__content-text">

@@ -11,6 +11,10 @@ import cuvIcon from '../../assets/images/icons/cuv.png';
 import suvIcon from '../../assets/images/icons/suv.png';
 import pickupIcon from '../../assets/images/icons/pickup.png';
 import otherIcon from '../../assets/images/icons/other.png';
+import fuelIcon from '../../assets/images/icons/fuel.png';
+import hybridIcon from '../../assets/images/icons/hybrid.png';
+import electricIcon from '../../assets/images/icons/electric.png';
+import fuelIconsLanding from '../../assets/images/icons/fuel-icons-landing.png';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -261,7 +265,7 @@ export default class VehiclesInterface extends Component {
           <form className="ve-input__form">
             <div className="ve-input__form-question">
               <label className="ve-input__form-label">
-                <span className="span">{'>>'} </span> How long was your ride?
+                <span className="span">{'>>'} </span> How long have you driven?
               </label>
 
               <div className="ve-input__form-distance-box">
@@ -324,8 +328,8 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="compact">
                   <h3 className="ve-input__form-label-title">
-                    Compact saloon <br />
-                    or coupé
+                    Compact coupé <br />
+                    or saloon
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -490,14 +494,12 @@ export default class VehiclesInterface extends Component {
                     value="petrol"
                     onChange={this.handleChange}
                   />
-                  <label className="ve-input__form-size" htmlFor="petrol">
-                    <h3 className="ve-input__form-label-title">
-                      Petrol or Diesel
-                    </h3>
+                  <label className="ve-input__form-power" htmlFor="petrol">
+                    <h3 className="ve-input__form-label-title">Fuel</h3>
                     <img
-                      className="ve-input__car-image"
+                      className="ve-input__form-power-icon"
                       alt="petrol car icon"
-                      // src={flightsMap}
+                      src={fuelIcon}
                     />
                   </label>
 
@@ -509,12 +511,12 @@ export default class VehiclesInterface extends Component {
                     value="hybrid"
                     onChange={this.handleChange}
                   />
-                  <label className="ve-input__form-size" htmlFor="hybrid">
+                  <label className="ve-input__form-power" htmlFor="hybrid">
                     <h3 className="ve-input__form-label-title">Hybrid</h3>
                     <img
-                      className="ve-input__car-image"
+                      className="ve-input__form-power-icon"
                       alt="hybrid car icon"
-                      // src={flightsMap}
+                      src={hybridIcon}
                     />
                   </label>
 
@@ -526,12 +528,12 @@ export default class VehiclesInterface extends Component {
                     value="electric"
                     onChange={this.handleChange}
                   />
-                  <label className="ve-input__form-size" htmlFor="electric">
+                  <label className="ve-input__form-power" htmlFor="electric">
                     <h3 className="ve-input__form-label-title">Electric</h3>
                     <img
-                      className="ve-input__car-image"
+                      className="ve-input__form-power-icon"
                       alt="electric car icon"
-                      // src={flightsMap}
+                      src={electricIcon}
                     />
                   </label>
                 </div>
@@ -544,52 +546,61 @@ export default class VehiclesInterface extends Component {
         <div className="ve-output">
           {this.state.chartData ? (
             <div className="ve-output__content">
-              <div className="el-output__content-title">
-                Your flight in {this.state.userFlightClass} Class <br />
-                compared to other classes
+              <div className="ve-output__content-title">
+                Kilograms of CO2 emitted by your vehicle.
+                <br />
+                Comparison with other types of vehicle and power sources,
+                <br />
+                and to the same distance travelled on train.
               </div>
               {this.vehiclesChart()}
-              <div className="el-output__content-text">
-                <div className="el-output__info-icon">i</div>
-                Your flight released approx.{' '}
+              <div className="ve-output__content-text">
+                <div className="ve-output__info-icon">i</div>
+                Your vehicle released approx.{' '}
                 <span className="span--bold">
                   {' '}
-                  {Number(this.state.totalFlightCo2).toFixed(0)} kilograms of
+                  {Number(this.state.totalVehicleCo2).toFixed(0)} kilograms of
                   CO2{' '}
                 </span>
-                into the atmosphere. <br />
-                Covering the same distance by train would have generated
+                into the atmosphere. Covering the same distance by train would
+                have generated
                 <span className="span--bold">
                   {' '}
-                  {Number((this.state.userFlightCo2 / 5).toFixed(0))} kilograms
-                  of CO2
+                  {Number(
+                    (this.state.userDistanceUnits === 'km'
+                      ? this.state.userDistance * 0.041
+                      : this.state.userDistance * 0.066
+                    ).toFixed(0)
+                  )}{' '}
+                  kilograms of CO2
                 </span>{' '}
                 instead.
               </div>
-              <div className="el-output__content-button-box">
-                <div className="el-output__content-button">
+              <div className="ve-output__content-button-box">
+                <div className="ve-output__content-button">
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
                 </div>
-                <Link className="el-output__link" to="/estimate/flights">
-                  <div className="el-output__content-button el-output__content-button--next">
+                <Link className="ve-output__link" to="/estimate/flights">
+                  <div className="ve-output__content-button ve-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>
                 </Link>
               </div>
             </div>
           ) : (
-            <div className="fl-output__intro">
-              <h3 className="fl-output__intro-title">
-                Flying often represents a
+            <div className="ve-output__intro">
+              <h3 className="ve-output__intro-title">
+                We know Hybrid and Electric vehicles
                 <br />
-                signifcant part of people's footprint. <br />
-                Use the map below to estimate yours.
+                are better for the environment <br />
+                than those which run on fossil fuels... <br />
+                but by how much?
               </h3>
               <img
-                className="fl-output__intro-image"
+                className="ve-output__intro-image"
                 alt="home electricity consumption and network"
-                // src={flightsMap}
+                src={fuelIconsLanding}
               />
             </div>
           )}
