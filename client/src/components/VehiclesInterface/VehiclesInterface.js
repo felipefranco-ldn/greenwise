@@ -3,7 +3,14 @@ import './VehiclesInterface.scss';
 import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import VehiclesChart from '../FligthsChart/FligthsChart';
+import cityCarIcon from '../../assets/images/icons/city-car.png';
+import compactCarIcon from '../../assets/images/icons/compact.png';
+import fullSizeCarIcon from '../../assets/images/icons/full-size.png';
+import minivanIcon from '../../assets/images/icons/minivan.png';
+import cuvIcon from '../../assets/images/icons/cuv.png';
+import suvIcon from '../../assets/images/icons/suv.png';
+import pickupIcon from '../../assets/images/icons/pickup.png';
+import otherIcon from '../../assets/images/icons/other.png';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -262,26 +269,27 @@ export default class VehiclesInterface extends Component {
                   type="text"
                   name="userDistance"
                   className="ve-input__form-input"
-                  placeholder="Please enter travel distance"
+                  placeholder="Enter distance"
                   onChange={this.handleChange}
-                  // value={this.state.itemName}
+                  autoComplete="off"
                 />
                 <select
                   name="userDistanceUnits"
                   className="ve-input__form-select"
                   onChange={this.handleChange}
-                  // value={this.userCountry}
                 >
-                  <option value="">Please select units</option>
+                  <option value="">Units</option>
                   <option value="km">Kilometres</option>
                   <option value="mi">Miles</option>
                 </select>
               </div>
             </div>
+
+            <div className="ve-input__break"></div>
+
             <div className="ve-input__form-question">
               <label className="ve-input__form-label">
-                <span className="span">{'>>'} </span> On what type of car did
-                you ride?
+                <span className="span">{'>>'} </span> Select type of vehicle
               </label>
               <div className="ve-input__form-type-box">
                 <input
@@ -294,13 +302,16 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="micro">
                   <h3 className="ve-input__form-label-title">
-                    Micro car or City car
+                    Micro car <br />
+                    or City car
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="micro car example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="micro car example"
+                      src={cityCarIcon}
+                    />
+                  </div>
                 </label>
 
                 <input
@@ -313,13 +324,16 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="compact">
                   <h3 className="ve-input__form-label-title">
-                    Compact saloon or coupé
+                    Compact saloon <br />
+                    or coupé
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="compact car example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="compact car example"
+                      src={compactCarIcon}
+                    />
+                  </div>
                 </label>
               </div>
 
@@ -334,13 +348,16 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="fullsize">
                   <h3 className="ve-input__form-label-title">
-                    Full-size saloon or hatchback
+                    Full-size saloon <br />
+                    or hatchback
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="full-size car example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="full-size car example"
+                      src={fullSizeCarIcon}
+                    />
+                  </div>
                 </label>
 
                 <input
@@ -352,12 +369,16 @@ export default class VehiclesInterface extends Component {
                   onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="minivan">
-                  <h3 className="ve-input__form-label-title">Minivan</h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="minivan example"
-                    // src={flightsMap}
-                  />
+                  <h3 className="ve-input__form-label-title">
+                    Minivan or <br /> family vehicle
+                  </h3>
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="minivan example"
+                      src={minivanIcon}
+                    />
+                  </div>
                 </label>
               </div>
 
@@ -372,13 +393,16 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="cuv">
                   <h3 className="ve-input__form-label-title">
-                    Compact Utility Vehicle - CUV
+                    CUV - Compact <br />
+                    Utility Vehicle
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="CUV example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="CUV example"
+                      src={cuvIcon}
+                    />
+                  </div>
                 </label>
 
                 <input
@@ -391,13 +415,16 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="suv">
                   <h3 className="ve-input__form-label-title">
-                    Sport Utility Vehicle - SUV
+                    SUV - Sport <br />
+                    Utility Vehicle
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="SUV example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="SUV example"
+                      src={suvIcon}
+                    />
+                  </div>
                 </label>
               </div>
 
@@ -411,12 +438,17 @@ export default class VehiclesInterface extends Component {
                   onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="pickup">
-                  <h3 className="ve-input__form-label-title">Pick-up </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="pick-up example"
-                    // src={flightsMap}
-                  />
+                  <h3 className="ve-input__form-label-title">
+                    Pick-up or <br />
+                    utility vehicle
+                  </h3>
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="pick-up example"
+                      src={pickupIcon}
+                    />
+                  </div>
                 </label>
 
                 <input
@@ -429,69 +461,80 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="other">
                   <h3 className="ve-input__form-label-title">
-                    Other large vehicle{' '}
+                    Other large vehicle
                   </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="other car example"
-                    // src={flightsMap}
-                  />
+                  <div className="ve-input__form-image-box">
+                    <img
+                      className="ve-input__form-car-image"
+                      alt="other car example"
+                      src={otherIcon}
+                    />
+                  </div>
                 </label>
               </div>
 
-              <div className="ve-input__form-power-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="petrol"
-                  name="userVehiclePower"
-                  value="petrol"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-size" htmlFor="petrol">
-                  <h3 className="ve-input__form-label-title">
-                    Petrol or Diesel{' '}
-                  </h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="petrol car icon"
-                    // src={flightsMap}
-                  />
+              <div className="ve-input__break"></div>
+
+              <div className="ve-input__form-question">
+                <label className="ve-input__form-label">
+                  <span className="span">{'>>'} </span> Select fuel / power
+                  source
                 </label>
 
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="hybrid"
-                  name="userVehiclePower"
-                  value="hybrid"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-size" htmlFor="hybrid">
-                  <h3 className="ve-input__form-label-title">Hybrid</h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="hybrid car icon"
-                    // src={flightsMap}
+                <div className="ve-input__form-power-box">
+                  <input
+                    className="ve-input__form-radio"
+                    type="radio"
+                    id="petrol"
+                    name="userVehiclePower"
+                    value="petrol"
+                    onChange={this.handleChange}
                   />
-                </label>
+                  <label className="ve-input__form-size" htmlFor="petrol">
+                    <h3 className="ve-input__form-label-title">
+                      Petrol or Diesel
+                    </h3>
+                    <img
+                      className="ve-input__car-image"
+                      alt="petrol car icon"
+                      // src={flightsMap}
+                    />
+                  </label>
 
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="electric"
-                  name="userVehiclePower"
-                  value="electric"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-size" htmlFor="electric">
-                  <h3 className="ve-input__form-label-title">Electric</h3>
-                  <img
-                    className="ve-input__car-image"
-                    alt="electric car icon"
-                    // src={flightsMap}
+                  <input
+                    className="ve-input__form-radio"
+                    type="radio"
+                    id="hybrid"
+                    name="userVehiclePower"
+                    value="hybrid"
+                    onChange={this.handleChange}
                   />
-                </label>
+                  <label className="ve-input__form-size" htmlFor="hybrid">
+                    <h3 className="ve-input__form-label-title">Hybrid</h3>
+                    <img
+                      className="ve-input__car-image"
+                      alt="hybrid car icon"
+                      // src={flightsMap}
+                    />
+                  </label>
+
+                  <input
+                    className="ve-input__form-radio"
+                    type="radio"
+                    id="electric"
+                    name="userVehiclePower"
+                    value="electric"
+                    onChange={this.handleChange}
+                  />
+                  <label className="ve-input__form-size" htmlFor="electric">
+                    <h3 className="ve-input__form-label-title">Electric</h3>
+                    <img
+                      className="ve-input__car-image"
+                      alt="electric car icon"
+                      // src={flightsMap}
+                    />
+                  </label>
+                </div>
               </div>
             </div>
           </form>

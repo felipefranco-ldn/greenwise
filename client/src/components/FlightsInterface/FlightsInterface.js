@@ -264,9 +264,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="domestic">
-                  <h3 className="fl-input__form-label-title">
-                    Domestic / Regional
-                  </h3>
+                  <h3 className="fl-input__form-label-title">Regional</h3>
                   <p className="fl-input__form-label-info">
                     Up to 1:40h or <br />
                     950km / 590mi
@@ -285,11 +283,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="short">
-                  <h3 className="fl-input__form-label-title">
-                    Short
-                    <br />
-                    Haul
-                  </h3>
+                  <h3 className="fl-input__form-label-title">Short Haul</h3>
                   <p className="fl-input__form-label-info">
                     Up to 3:20h or 2200km / 1370mi
                   </p>
@@ -309,11 +303,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="medium">
-                  <h3 className="fl-input__form-label-title">
-                    Medium
-                    <br />
-                    Haul
-                  </h3>
+                  <h3 className="fl-input__form-label-title">Medium Haul</h3>
                   <p className="fl-input__form-label-info">
                     Up to 6:40h or 5300km / 3300mi
                   </p>
@@ -331,11 +321,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleChange}
                 />
                 <label className="fl-input__form-duration" htmlFor="long">
-                  <h3 className="fl-input__form-label-title">
-                    Long
-                    <br />
-                    Haul
-                  </h3>
+                  <h3 className="fl-input__form-label-title">Long Haul</h3>
                   <p className="fl-input__form-label-info">
                     Up to 11:30h or 9600km / 5970mi
                   </p>
@@ -403,7 +389,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleClassChange}
                 />
                 <label className="fl-input__form-class" htmlFor="economy">
-                  <h3 className="fl-input__form-label-title">
+                  <h3 className="fl-input__form-label-title-class">
                     🌱 Economy
                     <br /> Class
                   </h3>
@@ -421,7 +407,7 @@ export default class FlightsInterface extends Component {
                   className="fl-input__form-class"
                   htmlFor="premiumEconomy"
                 >
-                  <h3 className="fl-input__form-label-title">
+                  <h3 className="fl-input__form-label-title-class">
                     💸 Premium
                     <br /> Economy{' '}
                   </h3>
@@ -438,7 +424,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleClassChange}
                 />
                 <label className="fl-input__form-class" htmlFor="Business">
-                  <h3 className="fl-input__form-label-title">
+                  <h3 className="fl-input__form-label-title-class">
                     💰 Business
                     <br /> Class
                   </h3>
@@ -453,7 +439,7 @@ export default class FlightsInterface extends Component {
                   onChange={this.handleClassChange}
                 />
                 <label className="fl-input__form-class" htmlFor="first">
-                  <h3 className="fl-input__form-label-title">
+                  <h3 className="fl-input__form-label-title-class">
                     🧐 First <br />
                     Class
                   </h3>

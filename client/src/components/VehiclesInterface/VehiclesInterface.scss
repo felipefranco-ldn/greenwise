@@ -1,0 +1,158 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.ve-container {
+  display: flex;
+  padding: 2rem;
+  height: 100%;
+}
+
+.ve-input {
+  width: 35%;
+  border-right: 2px solid theme.$gw-light-grey;
+  padding: 0 2rem 0 0;
+  @include f.body-large('Titillium Web');
+
+  &__break {
+    height: 1rem;
+  }
+
+  &__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-label {
+      @include f.table-header('Titillium Web');
+
+      &-title {
+        @include f.body-large('Titillium Web');
+        color: theme.$gw-black;
+        margin: 0;
+      }
+    }
+
+    &-question {
+      margin: 0;
+    }
+
+    &-distance-box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-input {
+      height: 4rem;
+      width: 53%;
+      margin: 1.2rem 0;
+      @include f.body-large('Titillium Web');
+      color: theme.$gw-black;
+      padding: 0 1.4rem;
+      border-radius: 2rem 0 0 2rem;
+      border: 2px solid theme.$gw-light-grey;
+      border-right: 0 solid white;
+
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      &:focus {
+        border: 2px solid theme.$gw-green;
+        outline: 0;
+        border-right: 0 solid white;
+      }
+
+      &:active {
+        background-color: white;
+      }
+    }
+
+    &-select {
+      height: 4rem;
+      width: 47%;
+      margin: 1.2rem 0;
+      @include f.body-large('Titillium Web');
+      color: theme.$gw-black;
+      padding: 0 1.4rem;
+      border-radius: 0 2rem 2rem 0;
+      border: 2px solid theme.$gw-light-grey;
+      border-left: 0 solid white;
+      background-color: rgba(0, 0, 0, 0.03);
+      background: url(../../assets/images/icons/arrow_drop_down-24px.svg)
+        no-repeat right;
+      -webkit-appearance: none;
+      background-position: 98%;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      &:focus {
+        border: 2px solid theme.$gw-green;
+        outline: 0;
+        border-left: 0 solid white;
+      }
+    }
+
+    &-radio {
+      -webkit-appearance: none;
+      appearance: none;
+      display: none;
+
+      &:checked + label {
+        background-color: theme.$gw-cloud;
+        border-color: theme.$gw-cloud;
+        color: theme.$gw-white;
+        font-weight: 600;
+      }
+
+      &:checked + label .ve-input__form-label-title {
+        font-weight: 600;
+      }
+    }
+
+    &-type-box {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &-size {
+      width: 47%;
+      margin: 1rem 0;
+      text-align: center;
+      border-radius: 2rem;
+      border: 2px solid theme.$gw-light-grey;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &-image-box {
+      display: flex;
+      width: 100%;
+      background-color: theme.$gw-white;
+      border-radius: 1.5rem;
+      margin-top: 0.5rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    &-car-image {
+      width: 100%;
+    }
+  }
+}

@@ -54,6 +54,11 @@
       &:hover {
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
       }
+
+      &:focus {
+        border: 2px solid theme.$gw-green;
+        outline: 0;
+      }
     }
 
     &-radio {
