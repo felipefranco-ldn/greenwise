@@ -4,7 +4,7 @@ import './FlightsInterface.scss';
 import axios from 'axios';
 import flightsMap from '../../assets/images/images/flights-map.png';
 import { Link } from 'react-router-dom';
-import FlightsChart from '../FligthsChart/FligthsChart';
+// import FlightsChart from '../FligthsChart/FligthsChart';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -58,7 +58,7 @@ export default class FlightsInterface extends Component {
     );
   };
 
-  getFlight = () => {
+  getFlightCo2 = () => {
     switch (this.state.userFlightDuration) {
       case 'domestic':
         return {
@@ -213,13 +213,13 @@ export default class FlightsInterface extends Component {
       },
     };
 
-    return <Bar options={chartOptions} data={this.chartData} />;
+    return <Bar options={chartOptions} data={this.state.chartData} />;
   };
 
   getData = () => {
     if (this.state.userFlightDuration && this.state.userFlightClass) {
       axios
-        .post(`${EXT_API_URL}`, this.getFlight(), {
+        .post(`${EXT_API_URL}`, this.getFlightCo2(), {
           headers: { Authorization: `Bearer ${EXT_API_KEY}` },
         })
         .then((response) => {
@@ -227,14 +227,13 @@ export default class FlightsInterface extends Component {
           console.log('flights data:', data);
           const userFlCo2Data = data.data.attributes.carbon_kg;
           this.setState({ userFlightCo2: userFlCo2Data });
-          // const newChartData = 1;
           this.setState({ chartData: this.chartData() });
-          this.flightsChart(this.state.chartData);
+          // this.flightsChart(this.state.chartData);
           this.getCo2();
         })
         .catch((err) =>
           console.log(
-            'Something went wrong while fetching the electricity consumption data: ',
+            'Something went wrong while fetching the fligths CO2 emissions data: ',
             err
           )
         );
@@ -444,7 +443,8 @@ export default class FlightsInterface extends Component {
                 Your flight in {this.state.userFlightClass} Class <br />
                 compared to other classes
               </div>
-              <FlightsChart chartData={this.state.chartData} />
+              {this.flightsChart()}
+              {/* <FlightsChart chartData={this.state.chartData} /> */}
               <div className="el-output__content-text">
                 Your flight released approx.{' '}
                 <span className="span--bold">

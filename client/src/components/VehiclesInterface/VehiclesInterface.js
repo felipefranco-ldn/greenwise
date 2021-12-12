@@ -3,6 +3,7 @@ import './VehiclesInterface.scss';
 import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+// import VehiclesChart from '../FligthsChart/FligthsChart';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -28,9 +29,218 @@ export default class VehiclesInterface extends Component {
     userDistance: 0,
     userDistanceUnits: '',
     userVehicleSize: '',
+    userVehiclePower: '',
     userVehicleCo2: 0,
     totalVehicleCo2: 0,
   };
+
+  handleChange = (event) => {
+    this.setState(
+      {
+        [event.target.name]: event.target.value,
+      },
+      this.getData
+    );
+  };
+
+  handleSizeChange = (event) => {
+    if (event.target.value === 'micro') {
+      this.setState({ userVehicleSize: 'micro' }, this.getData);
+    } else if (event.target.value === 'compact') {
+      this.setState({ userVehicleSize: 'compact' }, this.getData);
+    } else if (event.target.value === 'fullsize') {
+      this.setState({ userVehicleSize: 'fullsize' }, this.getData);
+    } else if (event.target.value === 'minivan') {
+      this.setState({ userVehicleSize: 'minivan' }, this.getData);
+    } else if (event.target.value === 'cuv') {
+      this.setState({ userVehicleSize: 'cuv' }, this.getData);
+    } else if (event.target.value === 'suv') {
+      this.setState({ userVehicleSize: 'suv' }, this.getData);
+    } else if (event.target.value === 'pickup') {
+      this.setState({ userVehicleSize: 'pickup' }, this.getData);
+    } else if (event.target.value === 'other') {
+      this.setState({ userVehicleSize: 'other' }, this.getData);
+    }
+  };
+
+  getVehicleCo2 = () => {
+    switch (this.state.userVehicleSize) {
+      case 'micro':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: 'ef495746-c349-48e6-835b-80240b1e2dbd',
+        };
+      case 'compact':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '2ae1d26c-3fdf-4004-84e2-09eafd2b1e4f',
+        };
+      case 'fullsize':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '00c24c0c-ac9f-4f4f-a8ea-aa9e1be2fb72',
+        };
+      case 'minivan':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '46c7c58b-e68d-4ef2-bf19-6c4306b47259',
+        };
+      case 'cuv':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '1628cb32-6446-4ace-8714-a99012d851e5',
+        };
+      case 'suv':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '12971be3-2daa-42c2-a245-a78fe06a647e',
+        };
+      case 'pickup':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: 'b88810e0-b625-4949-b5de-8f838b396020',
+        };
+      case 'other':
+        return {
+          type: 'vehicle',
+          distance_unit: this.state.userDistanceUnits,
+          distance_value: this.state.userDistance,
+          vehicle_model_id: '25d80cfb-027f-4be4-8d64-2d2a3a488edc',
+        };
+      default:
+        console.log('No vehicles found');
+    }
+  };
+
+  getCo2 = () => {
+    switch (this.state.userVehiclePower) {
+      case 'petrol':
+        this.setState({ totalVehicleCo2: this.state.userVehicleCo2 });
+        break;
+      case 'hybrid':
+        this.setState({ totalVehicleCo2: this.state.userVehicleCo2 * 0.6 });
+        break;
+      case 'electric':
+        this.setState({ totalVehicleCo2: this.state.userVehicleCo2 * 0.35 });
+        break;
+      default:
+        console.log('No vehicles found');
+    }
+  };
+
+  chartData = () => {
+    const chartData = {
+      labels: [
+        this.state.userVehiclePower === 'petrol'
+          ? 'Your ride on a petrol vehicle'
+          : 'Petrol vehicle',
+        this.state.userVehiclePower === 'hybrid'
+          ? 'Your ride on a hybrid vehicle'
+          : 'Hybrid vehicle',
+        this.state.userVehiclePower === 'electric'
+          ? 'Your ride on an electric vehicle'
+          : 'Electric vehicle',
+      ],
+
+      datasets: [
+        {
+          label: 'Flight CO2 emissions',
+          data: [
+            this.state.userVehicleCo2,
+            this.state.userVehicleCo2 * 0.6,
+            this.state.userVehicleCo2 * 0.35,
+          ],
+          backgroundColor: [
+            this.state.userVehiclePower === 'petrol'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+            this.state.userVehiclePower === 'hybrid'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+            this.state.userVehiclePower === 'electric'
+              ? 'rgba(0, 100, 255, 0.6)'
+              : 'rgba(0, 255, 255, 0.2)',
+          ],
+          borderColor: ['rgba(0,0,0,.5)'],
+          borderWidth: 0.8,
+        },
+      ],
+    };
+
+    return chartData;
+  };
+
+  vehiclesChart = () => {
+    const chartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+          position: 'top',
+          labels: {
+            font: {
+              family: 'Titillium Web',
+            },
+          },
+        },
+        title: {
+          display: false,
+          font: {
+            family: 'Titillium Web',
+            size: 16,
+          },
+          text: 'kg of CO2 emitted by vehicles depending on their power source',
+        },
+      },
+    };
+
+    console.log('chart data here:', this.state.chartData);
+    return <Bar options={chartOptions} data={this.state.chartData} />;
+  };
+
+  getData = () => {
+    if (
+      this.state.userDistance &&
+      this.state.userDistanceUnits &&
+      this.state.userVehicleSize &&
+      this.state.userVehiclePower
+    ) {
+      axios
+        .post(`${EXT_API_URL}`, this.getVehicleCo2(), {
+          headers: { Authorization: `Bearer ${EXT_API_KEY}` },
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log('vehicles data:', data);
+          const userVeCo2Data = data.data.attributes.carbon_kg;
+          this.setState({ userVehicleCo2: userVeCo2Data });
+          this.setState({ chartData: this.chartData() });
+          this.vehiclesChart(this.state.chartData);
+          this.getCo2();
+        })
+        .catch((err) =>
+          console.log(
+            'Something went wrong while fetching the vehicles CO2 emissions data: ',
+            err
+          )
+        );
+    }
+  };
+
   render() {
     return (
       <div className="ve-container">
@@ -45,17 +255,17 @@ export default class VehiclesInterface extends Component {
               <div className="ve-input__form-distance-box">
                 <input
                   type="text"
-                  name="itemName"
+                  name="userDistance"
                   className="ve-input__form-input"
                   placeholder="Please enter travel distance"
-                  // onChange={handleChange}
-                  // value={itemName}
+                  onChange={this.handleChange}
+                  // value={this.state.itemName}
                 />
                 <select
-                  name="userCountry"
+                  name="userDistanceUnits"
                   className="ve-input__form-select"
-                  onChange={this.handleCountryChange}
-                  value={this.userCountry}
+                  onChange={this.handleChange}
+                  // value={this.userCountry}
                 >
                   <option value="">Please select units</option>
                   <option value="km">Kilometres</option>
@@ -75,7 +285,7 @@ export default class VehiclesInterface extends Component {
                   id="micro"
                   name="carSize"
                   value="micro"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="micro">
                   <h3 className="ve-input__form-label-title">
@@ -94,7 +304,7 @@ export default class VehiclesInterface extends Component {
                   id="compact"
                   name="carSize"
                   value="compact"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="compact">
                   <h3 className="ve-input__form-label-title">
@@ -112,12 +322,12 @@ export default class VehiclesInterface extends Component {
                 <input
                   className="ve-input__form-radio"
                   type="radio"
-                  id="fullSize"
+                  id="fullsize"
                   name="carSize"
-                  value="fullSize"
-                  onChange={this.handleChange}
+                  value="fullsize"
+                  onChange={this.handleSizeChange}
                 />
-                <label className="ve-input__form-size" htmlFor="fullSize">
+                <label className="ve-input__form-size" htmlFor="fullsize">
                   <h3 className="ve-input__form-label-title">
                     Full-size saloon or hatchback
                   </h3>
@@ -134,7 +344,7 @@ export default class VehiclesInterface extends Component {
                   id="minivan"
                   name="carSize"
                   value="minivan"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="minivan">
                   <h3 className="ve-input__form-label-title">Minivan</h3>
@@ -153,7 +363,7 @@ export default class VehiclesInterface extends Component {
                   id="cuv"
                   name="carSize"
                   value="cuv"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="cuv">
                   <h3 className="ve-input__form-label-title">
@@ -172,7 +382,7 @@ export default class VehiclesInterface extends Component {
                   id="suv"
                   name="carSize"
                   value="suv"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="suv">
                   <h3 className="ve-input__form-label-title">
@@ -193,7 +403,7 @@ export default class VehiclesInterface extends Component {
                   id="pickup"
                   name="carSize"
                   value="pickup"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="pickup">
                   <h3 className="ve-input__form-label-title">Pick-up </h3>
@@ -210,7 +420,7 @@ export default class VehiclesInterface extends Component {
                   id="other"
                   name="carSize"
                   value="other"
-                  onChange={this.handleChange}
+                  onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="other">
                   <h3 className="ve-input__form-label-title">
@@ -229,7 +439,7 @@ export default class VehiclesInterface extends Component {
                   className="ve-input__form-radio"
                   type="radio"
                   id="petrol"
-                  name="carPower"
+                  name="userVehiclePower"
                   value="petrol"
                   onChange={this.handleChange}
                 />
@@ -248,7 +458,7 @@ export default class VehiclesInterface extends Component {
                   className="ve-input__form-radio"
                   type="radio"
                   id="hybrid"
-                  name="carPower"
+                  name="userVehiclePower"
                   value="hybrid"
                   onChange={this.handleChange}
                 />
@@ -265,7 +475,7 @@ export default class VehiclesInterface extends Component {
                   className="ve-input__form-radio"
                   type="radio"
                   id="electric"
-                  name="carPower"
+                  name="userVehiclePower"
                   value="electric"
                   onChange={this.handleChange}
                 />
@@ -290,7 +500,8 @@ export default class VehiclesInterface extends Component {
                 Your flight in {this.state.userFlightClass} Class <br />
                 compared to other classes
               </div>
-              {/* <FlightsChart chartData={this.state.chartData} /> */}
+              {this.vehiclesChart()}
+              {/* <VehiclesChart chartData={this.state.chartData} /> */}
               <div className="el-output__content-text">
                 Your flight released approx.{' '}
                 <span className="span--bold">
