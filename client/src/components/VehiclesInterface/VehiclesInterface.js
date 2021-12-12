@@ -146,20 +146,20 @@ export default class VehiclesInterface extends Component {
     const chartData = {
       labels: [
         this.state.userVehiclePower === 'petrol'
-          ? 'Your ride on a petrol vehicle'
-          : 'Petrol vehicle',
+          ? '⛽ Your ride on a petrol vehicle'
+          : '⛽ Petrol or diesel vehicle',
         this.state.userVehiclePower === 'hybrid'
-          ? 'Your ride on a hybrid vehicle'
-          : 'Hybrid vehicle',
+          ? '⛽⚡ Your ride on a hybrid vehicle'
+          : '⛽⚡ Hybrid vehicle',
         this.state.userVehiclePower === 'electric'
-          ? 'Your ride on an electric vehicle'
-          : 'Electric vehicle',
-        'Equivalent trip on train',
+          ? '⚡ Your ride on an electric vehicle'
+          : '⚡ Electric vehicle',
+        '🚆 Equivalent trip on train',
       ],
 
       datasets: [
         {
-          label: 'Flight CO2 emissions',
+          label: 'Vehicle CO2 emissions (kg)',
           data: [
             this.state.userVehicleCo2,
             this.state.userVehicleCo2 * 0.6,

@@ -144,28 +144,29 @@ export default class FlightsInterface extends Component {
     const chartData = {
       labels: [
         this.state.userFlightClass === 'Economy'
-          ? 'Your flight in Economy class'
+          ? '✈️Your flight in Economy class'
           : 'Economy Class',
         this.state.userFlightClass === 'PremiumEconomy'
-          ? 'Your flight in Premium Economy'
+          ? '✈️ Your flight in Premium Economy'
           : 'Premium Economy',
         this.state.userFlightClass === 'Business'
-          ? 'Your flight in Business class'
+          ? '✈️ Your flight in Business class'
           : 'Business Class',
         this.state.userFlightClass === 'First'
-          ? 'Your flight in First class'
+          ? '✈️ Your flight in First class'
           : 'First Class',
-        'Equivalent trip on train',
+        '🚆 Equivalent trip on train',
       ],
 
       datasets: [
         {
-          label: 'Flight CO2 emissions',
+          label: 'Flight CO2 emissions (kg)',
           data: [
             this.state.userFlightCo2,
             this.state.userFlightCo2 * 1.66,
             this.state.userFlightCo2 * 3.48,
             this.state.userFlightCo2 * 5.45,
+            this.state.userFlightDistance * 0.041,
           ],
           backgroundColor: [
             this.state.userFlightClass === 'Economy'
@@ -180,6 +181,7 @@ export default class FlightsInterface extends Component {
             this.state.userFlightClass === 'First'
               ? 'rgba(0, 100, 255, 0.6)'
               : 'rgba(0, 255, 255, 0.2)',
+            'rgba(0, 255, 0, 0.6)',
           ],
           borderColor: ['rgba(0,0,0,.5)'],
           borderWidth: 0.8,
@@ -227,9 +229,10 @@ export default class FlightsInterface extends Component {
           const data = response.data;
           console.log('flights data:', data);
           const userFlCo2Data = data.data.attributes.carbon_kg;
+          const userFlDistanceData = data.data.attributes.distance_value;
           this.setState({ userFlightCo2: userFlCo2Data });
+          this.setState({ userFlightDistance: userFlDistanceData });
           this.setState({ chartData: this.chartData() });
-          // this.flightsChart(this.state.chartData);
           this.getCo2();
         })
         .catch((err) =>
