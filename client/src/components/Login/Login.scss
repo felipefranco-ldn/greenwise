@@ -1,0 +1,25 @@
+// @use '../../styles/partials/variables' as v;
+// @use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/mixins' as m;
+@use '../../styles/partials/breakpoints' as bp;
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  div {
+    margin-top: 7px;
+  }
+}
