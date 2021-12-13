@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useHistory } from 'react-router-dom';
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from "../../firebase";
-import "./Register.scss";
+} from '../../firebase';
+import './Register.scss';
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  // const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const history = useHistory();
   const register = () => {
-    if (!name) alert("Please enter name");
+    if (!name) alert('Please enter name');
     registerWithEmailAndPassword(name, email, password);
   };
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace("/dashboard");
-  }, [user, loading]);
+    if (user) history.replace('/dashboard');
+  }, [user, loading, history]);
   return (
     <div className="content">
       <h1 className="content__title">register</h1>

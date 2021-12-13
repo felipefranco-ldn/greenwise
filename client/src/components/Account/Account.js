@@ -5,7 +5,8 @@ import './Account.scss';
 import { auth, db, logout } from '../../firebase';
 
 function Account() {
-  const [user, loading, error] = useAuthState(auth);
+  // const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const history = useHistory();
 
@@ -27,7 +28,8 @@ function Account() {
     if (loading) return;
     if (!user) return history.replace('/account');
     fetchUserName();
-  }, [user, loading]);
+    // }, [user, loading, fetchUserName, history]);
+  }, [user, loading, history, fetchUserName]);
 
   return (
     <div className="content">
