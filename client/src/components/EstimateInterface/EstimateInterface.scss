@@ -9,6 +9,7 @@
   padding: 2rem;
   height: 100%;
   align-items: center;
+  justify-content: space-between;
 
   &__title {
     @include f.subheader('Titillium Web');

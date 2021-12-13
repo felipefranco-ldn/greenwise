@@ -308,8 +308,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="micro">
                   <h3 className="ve-input__form-label-title">
-                    Micro car <br />
-                    or City car
+                    City car <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -330,8 +329,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="compact">
                   <h3 className="ve-input__form-label-title">
-                    Compact coupé <br />
-                    or saloon
+                    Compact <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -354,8 +352,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="fullsize">
                   <h3 className="ve-input__form-label-title">
-                    Full-size saloon <br />
-                    or hatchback
+                    Full-size <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -376,7 +373,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="minivan">
                   <h3 className="ve-input__form-label-title">
-                    Minivan or <br /> family vehicle
+                    Minivan <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -399,8 +396,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="cuv">
                   <h3 className="ve-input__form-label-title">
-                    CUV - Compact <br />
-                    Utility Vehicle
+                    CUV <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -421,8 +417,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="suv">
                   <h3 className="ve-input__form-label-title">
-                    SUV - Sport <br />
-                    Utility Vehicle
+                    SUV <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -445,8 +440,7 @@ export default class VehiclesInterface extends Component {
                 />
                 <label className="ve-input__form-size" htmlFor="pickup">
                   <h3 className="ve-input__form-label-title">
-                    Pick-up or <br />
-                    utility vehicle
+                    Pick-up <br />
                   </h3>
                   <div className="ve-input__form-image-box">
                     <img
@@ -466,9 +460,7 @@ export default class VehiclesInterface extends Component {
                   onChange={this.handleSizeChange}
                 />
                 <label className="ve-input__form-size" htmlFor="other">
-                  <h3 className="ve-input__form-label-title">
-                    Other large vehicle
-                  </h3>
+                  <h3 className="ve-input__form-label-title">Other large</h3>
                   <div className="ve-input__form-image-box">
                     <img
                       className="ve-input__form-car-image"
@@ -478,67 +470,66 @@ export default class VehiclesInterface extends Component {
                   </div>
                 </label>
               </div>
+            </div>
 
-              <div className="ve-input__break"></div>
+            <div className="ve-input__break"></div>
 
-              <div className="ve-input__form-question">
-                <label className="ve-input__form-label">
-                  <span className="span">{'>>'} </span> Select fuel / power
-                  source
+            <div className="ve-input__form-question">
+              <label className="ve-input__form-label">
+                <span className="span">{'>>'} </span> Select fuel / power source
+              </label>
+
+              <div className="ve-input__form-power-box">
+                <input
+                  className="ve-input__form-radio"
+                  type="radio"
+                  id="petrol"
+                  name="userVehiclePower"
+                  value="petrol"
+                  onChange={this.handleChange}
+                />
+                <label className="ve-input__form-power" htmlFor="petrol">
+                  <h3 className="ve-input__form-label-title">Fuel</h3>
+                  <img
+                    className="ve-input__form-power-icon"
+                    alt="petrol car icon"
+                    src={fuelIcon}
+                  />
                 </label>
 
-                <div className="ve-input__form-power-box">
-                  <input
-                    className="ve-input__form-radio"
-                    type="radio"
-                    id="petrol"
-                    name="userVehiclePower"
-                    value="petrol"
-                    onChange={this.handleChange}
+                <input
+                  className="ve-input__form-radio"
+                  type="radio"
+                  id="hybrid"
+                  name="userVehiclePower"
+                  value="hybrid"
+                  onChange={this.handleChange}
+                />
+                <label className="ve-input__form-power" htmlFor="hybrid">
+                  <h3 className="ve-input__form-label-title">Hybrid</h3>
+                  <img
+                    className="ve-input__form-power-icon"
+                    alt="hybrid car icon"
+                    src={hybridIcon}
                   />
-                  <label className="ve-input__form-power" htmlFor="petrol">
-                    <h3 className="ve-input__form-label-title">Fuel</h3>
-                    <img
-                      className="ve-input__form-power-icon"
-                      alt="petrol car icon"
-                      src={fuelIcon}
-                    />
-                  </label>
+                </label>
 
-                  <input
-                    className="ve-input__form-radio"
-                    type="radio"
-                    id="hybrid"
-                    name="userVehiclePower"
-                    value="hybrid"
-                    onChange={this.handleChange}
+                <input
+                  className="ve-input__form-radio"
+                  type="radio"
+                  id="electric"
+                  name="userVehiclePower"
+                  value="electric"
+                  onChange={this.handleChange}
+                />
+                <label className="ve-input__form-power" htmlFor="electric">
+                  <h3 className="ve-input__form-label-title">Electric</h3>
+                  <img
+                    className="ve-input__form-power-icon"
+                    alt="electric car icon"
+                    src={electricIcon}
                   />
-                  <label className="ve-input__form-power" htmlFor="hybrid">
-                    <h3 className="ve-input__form-label-title">Hybrid</h3>
-                    <img
-                      className="ve-input__form-power-icon"
-                      alt="hybrid car icon"
-                      src={hybridIcon}
-                    />
-                  </label>
-
-                  <input
-                    className="ve-input__form-radio"
-                    type="radio"
-                    id="electric"
-                    name="userVehiclePower"
-                    value="electric"
-                    onChange={this.handleChange}
-                  />
-                  <label className="ve-input__form-power" htmlFor="electric">
-                    <h3 className="ve-input__form-label-title">Electric</h3>
-                    <img
-                      className="ve-input__form-power-icon"
-                      alt="electric car icon"
-                      src={electricIcon}
-                    />
-                  </label>
-                </div>
+                </label>
               </div>
             </div>
           </form>

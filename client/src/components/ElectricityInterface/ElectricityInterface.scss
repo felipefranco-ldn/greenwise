@@ -12,6 +12,15 @@
 .span {
   font-weight: 600;
   color: theme.$gw-green;
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--number {
+    font-weight: 600;
+    font-size: 2rem;
+  }
 }
 
 .el-input {
@@ -81,7 +90,7 @@
 
     &-home-type {
       width: 47%;
-      height: 4rem;
+      // height: 4rem;
       margin: 1.2rem 0;
       text-align: center;
       border-radius: 2rem;
@@ -95,6 +104,22 @@
       }
     }
 
+    &-image-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      background-color: theme.$gw-white;
+      border-radius: 1rem 1rem 1.5rem 1.5rem;
+      //   margin-top: 0.5rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    &-home-image {
+      width: 60%;
+      margin: 1rem;
+      filter: contrast(2);
+    }
+
     &-bedrooms-box {
       display: flex;
       justify-content: space-between;
@@ -103,7 +128,7 @@
 
     &-bedrooms {
       width: 47%;
-      height: 4rem;
+      // height: 4rem;
       margin: 2rem 0 0 0;
       text-align: center;
       border-radius: 2rem;
@@ -141,11 +166,6 @@
       }
     }
   }
-}
-
-.span--bold {
-  font-weight: 600;
-  // color: theme.$gw-green;
 }
 
 .el-output {
@@ -240,6 +260,7 @@
 
   &__intro {
     margin: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -256,7 +277,7 @@
     &-image {
       width: 75%;
       filter: grayscale(30%);
-      margin: 1rem 0 6rem 0;
+      margin: 1rem 0 10rem 0;
     }
 
     &-logo {

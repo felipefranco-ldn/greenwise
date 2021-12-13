@@ -167,7 +167,7 @@ export default class FlightsInterface extends Component {
             this.state.userFlightCo2 * 1.66,
             this.state.userFlightCo2 * 3.48,
             this.state.userFlightCo2 * 5.45,
-            this.state.userFlightDistance * 0.041,
+            this.state.userFlightDistance * 0.021,
           ],
           backgroundColor: [
             this.state.userFlightClass === 'Economy'
@@ -475,7 +475,7 @@ export default class FlightsInterface extends Component {
                 <span className="span--bold">
                   {' '}
                   {Number(
-                    (this.state.userFlightDistance * 0.041).toFixed(0)
+                    (this.state.userFlightDistance * 0.021).toFixed(0)
                   )}{' '}
                   kilograms of CO2
                 </span>{' '}

@@ -9,6 +9,8 @@ import ligthBulb from '../../assets/images/images/light-bulb.jpg';
 import { apartment, house } from './elValues';
 import { Link } from 'react-router-dom';
 import co2Logo from '../../assets/images/images/co2-logo.svg';
+import apartmentIcon from '../../assets/images/icons/building-icon.png';
+import houseIcon from '../../assets/images/icons/house-icon.png';
 
 export default class ElectricityInterface extends Component {
   state = {
@@ -169,6 +171,13 @@ export default class ElectricityInterface extends Component {
                 />
                 <label className="el-input__form-home-type" htmlFor="apartment">
                   Apartment
+                  <div className="el-input__form-image-box">
+                    <img
+                      className="el-input__form-home-image"
+                      alt="SUV example"
+                      src={apartmentIcon}
+                    />
+                  </div>
                 </label>
 
                 <input
@@ -181,6 +190,13 @@ export default class ElectricityInterface extends Component {
                 />
                 <label className="el-input__form-home-type" htmlFor="house">
                   House
+                  <div className="el-input__form-image-box">
+                    <img
+                      className="el-input__form-home-image"
+                      alt="SUV example"
+                      src={houseIcon}
+                    />
+                  </div>
                 </label>
               </div>
             </div>
@@ -201,7 +217,9 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="1bedroom">
-                  1 bedroom
+                  <span className="span--number"> 1 </span>
+                  <br />
+                  bedroom
                 </label>
 
                 <input
@@ -213,7 +231,9 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="2bedrooms">
-                  2 bedrooms
+                  <span className="span--number"> 2 </span>
+                  <br />
+                  bedrooms
                 </label>
               </div>
 
@@ -227,7 +247,8 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="3bedrooms">
-                  3 bedrooms
+                  <span className="span--number"> 3 </span> <br />
+                  bedrooms
                 </label>
 
                 <input
@@ -239,7 +260,9 @@ export default class ElectricityInterface extends Component {
                   onChange={this.handleBedroomsChange}
                 />
                 <label className="el-input__form-bedrooms" htmlFor="4bedrooms">
-                  4 bedrooms +
+                  <span className="span--number"> 4 </span>
+                  <br />
+                  bedrooms +
                 </label>
               </div>
             </div>
