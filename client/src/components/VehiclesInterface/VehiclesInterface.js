@@ -15,6 +15,8 @@ import fuelIcon from '../../assets/images/icons/fuel.png';
 import hybridIcon from '../../assets/images/icons/hybrid.png';
 import electricIcon from '../../assets/images/icons/electric.png';
 import fuelIconsLanding from '../../assets/images/icons/fuel-icons-landing.png';
+import co2Logo from '../../assets/images/images/co2-logo.svg';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -581,7 +583,7 @@ export default class VehiclesInterface extends Component {
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
                 </div>
-                <Link className="ve-output__link" to="/estimate/flights">
+                <Link className="ve-output__link" to="/reduce">
                   <div className="ve-output__content-button ve-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>
@@ -601,6 +603,11 @@ export default class VehiclesInterface extends Component {
                 className="ve-output__intro-image"
                 alt="home electricity consumption and network"
                 src={fuelIconsLanding}
+              />
+              <img
+                className="ve-output__intro-logo"
+                alt="co2 logo"
+                src={co2Logo}
               />
             </div>
           )}

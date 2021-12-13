@@ -225,6 +225,7 @@
   &__intro {
     margin: auto;
     display: flex;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -234,12 +235,17 @@
       text-align: center;
       margin: 0 0 2rem 0;
       color: theme.$gw-slate;
+      overflow: hidden;
     }
 
     &-image {
       width: 100%;
-      //   filter: grayscale(30%);
-      margin: 4rem 0 0 0;
+    }
+
+    &-logo {
+      width: 20%;
+      align-self: flex-end;
+      bottom: 0;
     }
   }
 }

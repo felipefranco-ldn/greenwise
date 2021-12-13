@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 211.66666 211.66667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="co2-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.43218385"
+     inkscape:cx="467.39368"
+     inkscape:cy="536.80858"
+     inkscape:window-width="1680"
+     inkscape:window-height="926"
+     inkscape:window-x="1432"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="97.263779"
+       y="192.93307"
+       width="178.58269"
+       height="175.39371"
+       id="rect275-06-0-0" />
+    <rect
+       x="97.263779"
+       y="192.93307"
+       width="178.58269"
+       height="175.39371"
+       id="rect275-06-0-0-5" />
+    <rect
+       x="97.263779"
+       y="192.93307"
+       width="178.58269"
+       height="175.39371"
+       id="rect275-06-0-0-1" />
+    <rect
+       x="97.263779"
+       y="192.93307"
+       width="178.58269"
+       height="175.39371"
+       id="rect275-06-0-0-5-5" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3963"
+       transform="matrix(2.4299013,0.65109008,-0.65109008,2.4299013,-76.717744,-223.53307)">
+      <ellipse
+         style="fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1.09537"
+         id="path3249-1"
+         cx="102.1292"
+         cy="109.53754"
+         rx="39.290905"
+         ry="38.609928" />
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.095;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path3249"
+         cx="105.83334"
+         cy="105.83334"
+         rx="39.290905"
+         ry="38.609928" />
+      <g
+         id="g3337"
+         transform="translate(2.0900509e-8,8.6119086)">
+        <text
+           xml:space="preserve"
+           transform="matrix(0.77233638,0,0,0.77233638,6.6060291,-88.479861)"
+           id="text273-3-8-7"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect275-06-0-0);fill:#00ff00;fill-opacity:1;stroke:#000100;stroke-width:1.29477;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
+             x="97.263672"
+             y="232.33359"
+             id="tspan1120"><tspan
+               style="font-family:'Bungee Shade';-inkscape-font-specification:'Bungee Shade'"
+               id="tspan1118">Co</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.77233638,0,0,0.77233638,7.6930926,-56.61736)"
+           id="text273-3-8-7-9"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect275-06-0-0-5);fill:#00ff00;fill-opacity:1;stroke:#000100;stroke-width:1.29477;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
+             x="97.263672"
+             y="232.33359"
+             id="tspan1124"><tspan
+               style="font-family:'Bungee Shade';-inkscape-font-specification:'Bungee Shade'"
+               id="tspan1122">2?</tspan></tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -4,6 +4,8 @@ import './FlightsInterface.scss';
 import axios from 'axios';
 import flightsMap from '../../assets/images/images/flights-map.png';
 import { Link } from 'react-router-dom';
+import co2Logo from '../../assets/images/images/co2-logo.svg';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -505,6 +507,11 @@ export default class FlightsInterface extends Component {
                 className="fl-output__intro-image"
                 alt="home electricity consumption and network"
                 src={flightsMap}
+              />
+              <img
+                className="fl-output__intro-logo"
+                alt="co2 logo"
+                src={co2Logo}
               />
             </div>
           )}

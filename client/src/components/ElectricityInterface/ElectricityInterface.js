@@ -8,6 +8,7 @@ import { chartData } from '../ElectricityChart/chartData';
 import ligthBulb from '../../assets/images/images/light-bulb.jpg';
 import { apartment, house } from './elValues';
 import { Link } from 'react-router-dom';
+import co2Logo from '../../assets/images/images/co2-logo.svg';
 
 export default class ElectricityInterface extends Component {
   state = {
@@ -298,8 +299,13 @@ export default class ElectricityInterface extends Component {
               </h3>
               <img
                 className="el-output__intro-image"
-                alt="home electricity consumption and network"
+                alt="green bulb"
                 src={ligthBulb}
+              />
+              <img
+                className="el-output__intro-logo"
+                alt="co2 logo"
+                src={co2Logo}
               />
             </div>
           )}
