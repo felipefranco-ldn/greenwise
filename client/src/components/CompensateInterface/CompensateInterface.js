@@ -13,7 +13,9 @@ export default function CompensateInterface() {
     <>
       <div className="comp__container">
         <section className="comp__gallery">
-          <h1 className="comp__title">A selection of Carbon Offset Projects</h1>
+          <h1 className="comp__title">
+            A selection of Carbon Offseting Projects
+          </h1>
           <p className="comp__text">
             As you have seen so far, our everyday actions consume energy and
             produce a huge amount of carbon emissions. A Carbon offset is a way
@@ -338,48 +340,48 @@ export default function CompensateInterface() {
       <div className="re-content__button-box re-content__button-box--bottom re-content__button-box--compensate ">
         <a
           className="re-content__link re-content__link--half-width"
-          href="https://footprint.wwf.org.uk/#/"
+          href="https://sustainabletravel.org/our-work/carbon-offsets/calculate-footprint/"
           target="_blank"
           rel="noreferrer"
         >
           <div className="re-content__button re-content__button--half-length">
-            WWF - Environmental footprint
+            Sustainable Travel International - Offset your flights
             <span className="span"> {'>>'} </span>
           </div>
         </a>
 
         <a
           className="re-content__link re-content__link--half-width"
-          href="https://www.futurelearn.com/info/blog/how-to-reduce-your-carbon-footprint-tips"
+          href="https://eco-act.com/carbon-offsetting-projects/"
           target="_blank"
           rel="noreferrer"
         >
           <div className="re-content__button ">
-            Future Learn - 20 tips to reduce your CO2{' '}
+            EcoAct - Carbon Offsetting Projects{' '}
             <span className="span"> {'>>'} </span>
           </div>
         </a>
 
         <a
           className="re-content__link re-content__link--half-width"
-          href="https://www.bbc.co.uk/news/science-environment-46459714"
+          href="https://www.wren.co/projects"
           target="_blank"
           rel="noreferrer"
         >
           <div className="re-content__button re-content__button--half-length">
-            BBC - Climate change food calculator
+            Wren - Planet-saving, life-changing projects
             <span className="span"> {'>>'} </span>
           </div>
         </a>
 
         <a
           className="re-content__link re-content__link--half-width"
-          href="https://ourworldindata.org/grapher/food-emissions-supply-chain?country=Beef+%28beef+herd%29~Cheese~Poultry+Meat~Milk~Eggs~Rice~Pig+Meat~Peas~Bananas~Wheat+%26+Rye~Fish+%28farmed%29~Lamb+%26+Mutton~Beef+%28dairy+herd%29~Shrimps+%28farmed%29~Tofu~Maize"
+          href="https://ecologi.com/projects"
           target="_blank"
           rel="noreferrer"
         >
           <div className="re-content__button ">
-            Our World in Data - Food gas emissions{' '}
+            Ecologi - Carbon offsetting monthly subscription
             <span className="span"> {'>>'} </span>
           </div>
         </a>
