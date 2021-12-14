@@ -12,7 +12,6 @@
   &__title {
     @include f.subheader('Titillium Web');
     margin: 0;
-    // text-align: center;
     margin: 3rem 0 0 4rem;
   }
 
@@ -20,15 +19,11 @@
     @include f.body-large('Titillium Web');
     padding: 4rem 4rem 2rem 4rem;
     margin: 0;
-    // max-width: 40%;
   }
 
   &__gallery {
-    // width: 50%;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
   }
 
   &__break {

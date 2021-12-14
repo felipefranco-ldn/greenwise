@@ -13,7 +13,7 @@
   &__link {
     text-decoration: none;
     height: 100%;
-    background-color: theme.$gw-smoke;
+    background-color: theme.$gw-light-grey;
     transition: all 0.25s ease-in-out;
 
     &:hover .aside__card-title {
@@ -32,7 +32,7 @@
     }
 
     &.active {
-      background-color: theme.$gw-light-grey;
+      background-color: theme.$gw-smoke;
       transition: all 0.25s ease-in-out;
       color: theme.$gw-black;
 
@@ -67,7 +67,7 @@
     border: 1px solid theme.$gw-white;
     border-right: -3px;
     border-left: 0;
-    border-left: 11px solid theme.$gw-smoke;
+    border-left: 11px solid theme.$gw-light-grey;
 
     // box-sizing: content-box;
 
