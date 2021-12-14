@@ -12,8 +12,8 @@
   &__title {
     @include f.subheader('Titillium Web');
     margin: 0;
-    text-align: center;
-    margin: 3rem 0 0 0;
+    // text-align: center;
+    margin: 3rem 0 0 4rem;
   }
 
   &__text {

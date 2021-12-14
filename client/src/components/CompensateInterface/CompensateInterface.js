@@ -332,7 +332,7 @@ export default function CompensateInterface() {
         </section>
       </div>
 
-      <h1 className="re-title">
+      <h1 className="re-title re-title--bottom">
         For more information on Carbon Offsetting Projects <br />
         and how you can support them, please visit the links below:{' '}
       </h1>

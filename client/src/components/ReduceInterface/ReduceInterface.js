@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './ReduceInterface.scss';
+import pointerIcon from '../../assets/images/icons/pointer-icon.png';
+import worldIcon from '../../assets/images/icons/world-icon.svg';
 
 export default class ReduceInterface extends Component {
   state = {
@@ -54,55 +56,75 @@ export default class ReduceInterface extends Component {
   render() {
     return (
       <div className="re-container">
-        <h1 className="re-title">
-          Useful tips to start reducing your carbon footprint
-        </h1>
-        <p className="re-text">
-          You can start helping the environment from home. <br />
-          And remember: every action counts, big or small!
-          <br />
-          <br />
-          Have a look at the suggestions below. Select those you would like to
-          follow and <br />
-          check how much your CO2 emissions would go down (and how much money
-          you could save too!):
-        </p>
+        <div className="re-top-box">
+          <div className="re-top-box__left">
+            <h1 className="re-title">
+              Useful tips to start reducing <br />
+              your carbon footprint
+            </h1>
+            <p className="re-text">
+              You can start helping the environment from home. <br />
+              And remember: every action counts, big or small!
+              <br />
+              <br />
+              Have a look at the suggestions below. Select those you would like
+              to follow and check how much your CO2 emissions would go down (and
+              how much money you could save too!):
+            </p>
+          </div>
 
-        {this.state.tv ||
-        this.state.dishwasher ||
-        this.state.kettle ||
-        this.state.dryer ||
-        this.state.heating ||
-        this.state.bulbs ||
-        this.state.meat ? (
-          <>
-            <div className="re-summary__text">
-              <div className="re-summary__info-icon">i</div>
-              The steps you have chosen follow allow you to reduce
-              <br /> your emissions by{' '}
-              <span className="span--bold">
-                {this.addCo2Saving()} kilograms of CO2
-              </span>{' '}
-              every year. <br />
-              Besides helping the evironment, you would also save{' '}
-              <span className="span--bold">£{this.addMoneySaving()}</span>.
-              Sweet!
-            </div>
-            <div className="re-content__button-box">
-              <div className="re-content__button">
-                Save estimate in dashboard
-                <span className="span"> {'>>'} </span>
-              </div>
-              <Link className="re-content__link" to="/compensate">
-                <div className="re-content__button re-content__button--next">
-                  Go to Next Step <span className="span"> {'>>'} </span>
+          <div className="re-top-box__right">
+            {this.state.tv ||
+            this.state.dishwasher ||
+            this.state.kettle ||
+            this.state.dryer ||
+            this.state.heating ||
+            this.state.bulbs ||
+            this.state.meat ? (
+              <>
+                <div className="re-summary__text">
+                  <div className="re-summary__info-icon">i</div>
+                  The selected suggestions allow you to reduce your emissions by{' '}
+                  <span className="span--bold">
+                    {this.addCo2Saving()} kilograms of CO2
+                  </span>{' '}
+                  every year. <br />
+                  Besides helping the evironment, you would also save{' '}
+                  <span className="span--bold">£{this.addMoneySaving()}</span>.
+                  Sweet!
                 </div>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <div className="re-summary__break"> </div>
-        )}
+                <div className="re-content__button-box re-content__button-box--top">
+                  <div className="re-content__button">
+                    Save estimate in dashboard
+                    <span className="span"> {'>>'} </span>
+                  </div>
+                  <Link className="re-content__link" to="/compensate">
+                    <div className="re-content__button re-content__button--next">
+                      Go to Next Step <span className="span"> {'>>'} </span>
+                    </div>
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <div className="re-summary__intro">
+                <p className="re-summary__intro-text">
+                  Select from the <br />
+                  suggestions below
+                </p>
+                <img
+                  className="re-summary__intro-icon"
+                  alt="world icon"
+                  src={pointerIcon}
+                />
+                <img
+                  className="re-summary__intro-image"
+                  alt="world icon"
+                  src={worldIcon}
+                />
+              </div>
+            )}
+          </div>
+        </div>
 
         <article className="re-article">
           <input
@@ -329,7 +351,7 @@ export default class ReduceInterface extends Component {
           </label>
         </article>
 
-        <h1 className="re-title">
+        <h1 className="re-title re-title--bottom">
           For more information and tips on how you can reduce <br />
           your carbon footrpint, please visit the links below:{' '}
         </h1>
