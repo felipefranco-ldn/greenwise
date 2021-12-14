@@ -70,6 +70,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/vcs_india_solar_acme.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>
@@ -114,6 +115,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/dominican_republic_wind_1644.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>
@@ -164,6 +166,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/cambodia_water_filter.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>
@@ -213,6 +216,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>
@@ -263,6 +267,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/brazil_para_redd.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>
@@ -309,6 +314,7 @@ export default function CompensateInterface() {
               className="article__info article__info--cta"
               href="https://www.carbonfootprint.com/vcs_china_solar_cooker.html"
               target="_blank"
+              rel="noreferrer"
             >
               Support this project <span className="span"> {' >>'} </span>
             </a>

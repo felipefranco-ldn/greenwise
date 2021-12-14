@@ -2,3 +2,20 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.re-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.re-title {
+  @include f.subheader('Titillium Web');
+  margin: 4rem;
+  text-align: center;
+}
+
+.re-text {
+  @include f.body-large('Titillium Web');
+  margin: 0rem;
+  text-align: center;
+}
