@@ -33,8 +33,6 @@
     &:checked + label {
       background-color: theme.$gw-green50;
       border: 2px solid theme.$gw-green;
-
-      // color: theme.$gw-white;
       font-weight: 600;
     }
   }
@@ -53,9 +51,6 @@
     &:hover {
       cursor: pointer;
       border: 2px solid theme.$gw-green;
-
-      //   background-color: theme.$gw-cloud;
-      //   border-color: theme.$gw-cloud;
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     }
   }
@@ -68,7 +63,8 @@
 
   &__number {
     @include f.subheader('Titillium Web');
-    background-color: theme.$gw-white;
+    background-color: theme.$gw-smoke;
+    border: 1px solid theme.$gw-cloud;
     width: 4rem;
     height: 4rem;
     text-align: center;
@@ -97,7 +93,7 @@
   &__savings {
     @include f.body-large('Titillium Web');
     background-color: theme.$gw-smoke;
-    // height: 4rem;
+    border: 1px solid theme.$gw-cloud;
     width: 12rem;
     padding: 0.5rem;
     border-radius: 2rem;
@@ -108,7 +104,7 @@
   &__reduction {
     @include f.body-large('Titillium Web');
     background-color: theme.$gw-smoke;
-    // height: 4rem;
+    border: 1px solid theme.$gw-cloud;
     width: 18rem;
     padding: 0.5rem;
     border-radius: 2rem;

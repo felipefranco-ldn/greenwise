@@ -3,72 +3,52 @@ import './ReduceInterface.scss';
 
 export default class ReduceInterface extends Component {
   state = {
-    tv: [0, 0],
-    dishwasher: [0, 0],
-    kettle: [0, 0],
-    dryer: [0, 0],
-    heating: [0, 0],
-    bulbs: [0, 0],
-    meat: [0, 0],
-    totalMoneySavings: 0,
-    totalCo2Savings: 0,
+    tv: false,
+    dishwasher: false,
+    kettle: false,
+    dryer: false,
+    heating: false,
+    bulbs: false,
+    meat: false,
   };
 
   handleChange = (event) => {
     if (event.target.checked) {
       this.setState({
-        [event.target.name]: event.target.value,
+        [event.target.name]: true,
       });
     } else {
       this.setState({
-        [event.target.name]: [0, 0],
+        [event.target.name]: false,
       });
     }
-    this.addMoneySaving();
-    this.addCo2Saving();
   };
 
   addMoneySaving = () => {
-    let sum =
-      this.state.tv[0] +
-      this.state.dishwasher[0] +
-      this.state.kettle[0] +
-      this.state.dryer[0] +
-      this.state.heating[0] +
-      this.state.bulbs[0] +
-      this.state.meat[0];
-    this.setState({ totalMoneySavings: sum });
+    const state = this.state;
+    let sum = 0;
+    sum += state.tv ? 2 : 0;
+    sum += state.dishwasher ? 9 : 0;
+    sum += state.kettle ? 23 : 0;
+    sum += state.dryer ? 42 : 0;
+    sum += state.heating ? 52 : 0;
+    sum += state.bulbs ? 60 : 0;
+    sum += state.meat ? 75 : 0;
+    return sum;
   };
 
   addCo2Saving = () => {
-    let sum =
-      this.state.tv[1] +
-      this.state.dishwasher[1] +
-      this.state.kettle[1] +
-      this.state.dryer[1] +
-      this.state.heating[1] +
-      this.state.bulbs[1] +
-      this.state.meat[1];
-    this.setState({ totalCo2Savings: sum });
+    const state = this.state;
+    let sum = 0;
+    sum += state.tv ? 5 : 0;
+    sum += state.dishwasher ? 25 : 0;
+    sum += state.kettle ? 72 : 0;
+    sum += state.dryer ? 153 : 0;
+    sum += state.heating ? 184 : 0;
+    sum += state.bulbs ? 260 : 0;
+    sum += state.meat ? 331 : 0;
+    return sum;
   };
-
-  // totalMoneySavings =
-  //   this.state.tv[0] +
-  //   this.state.dishwasher[0] +
-  //   this.state.kettle[0] +
-  //   this.state.dryer[0] +
-  //   this.state.heating[0] +
-  //   this.state.bulbs[0] +
-  //   this.state.meat[0];
-
-  // totalCo2Savings =
-  //   this.state.tv[1] +
-  //   this.state.dishwasher[1] +
-  //   this.state.kettle[1] +
-  //   this.state.dryer[1] +
-  //   this.state.heating[1] +
-  //   this.state.bulbs[1] +
-  //   this.state.meat[1];
 
   render() {
     return (
@@ -77,8 +57,8 @@ export default class ReduceInterface extends Component {
           Interesting tips to reduce your carbon footprint
         </h1>
         <p className="re-text">
-          You can start helping the environment from home: <br />
-          every action counts, big or small!
+          You can start helping the environment from home. <br />
+          And remember: every action counts, big or small!
           <br />
           <br />
           Have a look at the suggestions below. Select those you would like to
@@ -87,23 +67,9 @@ export default class ReduceInterface extends Component {
           you could save too!):
         </p>
         <p className="re-text">
-          Money savings:
-          {+this.state.tv[0] +
-            +this.state.dishwasher[0] +
-            +this.state.kettle[0] +
-            +this.state.dryer[0] +
-            +this.state.heating[0] +
-            +this.state.bulbs[0] +
-            +this.state.meat[0]}
+          Money savings: {this.addMoneySaving()}
           <br />
-          CO2 savings:
-          {+this.state.tv[1] +
-            +this.state.dishwasher[1] +
-            +this.state.kettle[1] +
-            +this.state.dryer[1] +
-            +this.state.heating[1] +
-            +this.state.bulbs[1] +
-            +this.state.meat[1]}
+          CO2 savings: {this.addCo2Saving()}
         </p>
         <article className="re-article">
           <input
@@ -111,7 +77,7 @@ export default class ReduceInterface extends Component {
             type="checkbox"
             id="tv"
             name="tv"
-            value={2}
+            value="true"
             onChange={this.handleChange}
           />
           <label className="re-article__container" htmlFor="tv">
@@ -142,7 +108,7 @@ export default class ReduceInterface extends Component {
             type="checkbox"
             id="dishwasher"
             name="dishwasher"
-            value="[9, 25]"
+            value="true"
             onChange={this.handleChange}
           />
           <label className="re-article__container" htmlFor="dishwasher">
@@ -221,7 +187,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold">£52 saved </span>
+                  <span className="span--bold">£42 saved </span>
                   <br />
                   per year
                 </div>
@@ -254,7 +220,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold"> £42 saved</span> <br />
+                  <span className="span--bold"> £52 saved</span> <br />
                   per year
                 </div>
                 <div className="re-article__reduction">
