@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './ReduceInterface.scss';
 
 export default class ReduceInterface extends Component {
@@ -54,7 +55,7 @@ export default class ReduceInterface extends Component {
     return (
       <div className="re-container">
         <h1 className="re-title">
-          Interesting tips to reduce your carbon footprint
+          Useful tips to start reducing your carbon footprint
         </h1>
         <p className="re-text">
           You can start helping the environment from home. <br />
@@ -66,11 +67,43 @@ export default class ReduceInterface extends Component {
           check how much your CO2 emissions would go down (and how much money
           you could save too!):
         </p>
-        <p className="re-text">
-          Money savings: {this.addMoneySaving()}
-          <br />
-          CO2 savings: {this.addCo2Saving()}
-        </p>
+
+        {this.state.tv ||
+        this.state.dishwasher ||
+        this.state.kettle ||
+        this.state.dryer ||
+        this.state.heating ||
+        this.state.bulbs ||
+        this.state.meat ? (
+          <>
+            <div className="re-summary__text">
+              <div className="re-summary__info-icon">i</div>
+              The steps you have chosen follow allow you to reduce
+              <br /> your emissions by{' '}
+              <span className="span--bold">
+                {this.addCo2Saving()} kilograms of CO2
+              </span>{' '}
+              every year. <br />
+              Besides helping the evironment, you would also save{' '}
+              <span className="span--bold">£{this.addMoneySaving()}</span>.
+              Sweet!
+            </div>
+            <div className="re-content__button-box">
+              <div className="re-content__button">
+                Save estimate in dashboard
+                <span className="span"> {'>>'} </span>
+              </div>
+              <Link className="re-content__link" to="/compensate">
+                <div className="re-content__button re-content__button--next">
+                  Go to Next Step <span className="span"> {'>>'} </span>
+                </div>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <div className="re-summary__break"> </div>
+        )}
+
         <article className="re-article">
           <input
             className="re-article__check"
@@ -295,6 +328,61 @@ export default class ReduceInterface extends Component {
             </div>
           </label>
         </article>
+
+        <h1 className="re-title">
+          For more information and tips on how you can reduce <br />
+          your carbon footrpint, please visit the links below:{' '}
+        </h1>
+
+        <div className="re-content__button-box re-content__button-box--bottom">
+          <a
+            className="re-content__link re-content__link--half-width"
+            href="https://footprint.wwf.org.uk/#/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="re-content__button re-content__button--half-length">
+              WWF - Environmental footprint
+              <span className="span"> {'>>'} </span>
+            </div>
+          </a>
+
+          <a
+            className="re-content__link re-content__link--half-width"
+            href="https://www.futurelearn.com/info/blog/how-to-reduce-your-carbon-footprint-tips"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="re-content__button ">
+              Future Learn - 20 tips to reduce your CO2{' '}
+              <span className="span"> {'>>'} </span>
+            </div>
+          </a>
+
+          <a
+            className="re-content__link re-content__link--half-width"
+            href="https://www.bbc.co.uk/news/science-environment-46459714"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="re-content__button re-content__button--half-length">
+              BBC - Climate change food calculator
+              <span className="span"> {'>>'} </span>
+            </div>
+          </a>
+
+          <a
+            className="re-content__link re-content__link--half-width"
+            href="https://ourworldindata.org/grapher/food-emissions-supply-chain?country=Beef+%28beef+herd%29~Cheese~Poultry+Meat~Milk~Eggs~Rice~Pig+Meat~Peas~Bananas~Wheat+%26+Rye~Fish+%28farmed%29~Lamb+%26+Mutton~Beef+%28dairy+herd%29~Shrimps+%28farmed%29~Tofu~Maize"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="re-content__button ">
+              Our World in Data - Food gas emissions{' '}
+              <span className="span"> {'>>'} </span>
+            </div>
+          </a>
+        </div>
       </div>
     );
   }

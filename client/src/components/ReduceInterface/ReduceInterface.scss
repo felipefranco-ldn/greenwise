@@ -7,18 +7,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .re-title {
   @include f.subheader('Titillium Web');
-  margin: 4rem;
+  margin: 4rem 0 1rem;
   text-align: center;
 }
 
 .re-text {
   @include f.body-large('Titillium Web');
-  margin: 0rem;
+  margin: 3rem 0 0 0;
   text-align: center;
+}
+
+.re-summary {
+  &__text {
+    width: 100%;
+    border: 2px solid theme.$gw-yellow;
+    background-color: theme.$gw-yellow50;
+    @include f.body-large('Titillium Web');
+    margin: 5rem 0 3rem 0;
+    padding: 1rem 6rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__break {
+    height: 4rem;
+  }
+
+  &__info-icon {
+    font-family: courier;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: theme.$gw-yellow;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.2rem 0 0 0.1rem;
+  }
 }
 
 .re-article {
@@ -38,7 +73,7 @@
   }
 
   &__container {
-    width: 75%;
+    width: 100%;
     height: 100%;
     display: flex;
     padding: 2rem;
@@ -75,7 +110,6 @@
 
   &__main-box {
     display: flex;
-    // flex-direction: column;
     margin-left: 3rem;
     width: 100%;
   }
@@ -110,5 +144,65 @@
     border-radius: 2rem;
     margin: 0;
     text-align: center;
+  }
+}
+
+.re-content {
+  &__button-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 3rem 0 4rem 0;
+
+    &--bottom {
+      flex-wrap: wrap;
+      height: 16rem;
+      margin-bottom: 1rem;
+    }
+
+    &--compensate {
+      padding: 0 6rem;
+    }
+  }
+
+  &__button {
+    height: 4rem;
+    @include f.body-large('Titillium Web');
+    font-weight: 600;
+    color: theme.$gw-white;
+    padding: 0.3rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid theme.$gw-slate;
+    background-color: theme.$gw-slate;
+    transition: all 0.25s ease-in-out;
+    text-align: center;
+
+    &:active {
+      border-color: theme.$gw-black;
+      background-color: theme.$gw-black;
+      color: theme.$gw-white;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    &--next {
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
+
+      &:hover {
+        color: theme.$gw-green;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--half-width {
+      width: 47%;
+    }
   }
 }
