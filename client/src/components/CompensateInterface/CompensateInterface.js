@@ -36,7 +36,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="solar farm in india"
               src={solarImage}
             />
           </div>
@@ -68,7 +68,7 @@ export default function CompensateInterface() {
             </p>
             <a
               className="article__info article__info--cta"
-              href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
+              href="https://www.carbonfootprint.com/vcs_india_solar_acme.html"
               target="_blank"
             >
               Support this project <span className="span"> {' >>'} </span>
@@ -80,7 +80,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="air shot of wind farm in dominican republic"
               src={windImage}
             />
           </div>
@@ -112,7 +112,7 @@ export default function CompensateInterface() {
             </p>
             <a
               className="article__info article__info--cta"
-              href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
+              href="https://www.carbonfootprint.com/dominican_republic_wind_1644.html"
               target="_blank"
             >
               Support this project <span className="span"> {' >>'} </span>
@@ -124,7 +124,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="family with ceramic water purifier"
               src={purifiersImage}
             />
           </div>
@@ -162,7 +162,7 @@ export default function CompensateInterface() {
             </p>
             <a
               className="article__info article__info--cta"
-              href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
+              href="https://www.carbonfootprint.com/cambodia_water_filter.html"
               target="_blank"
             >
               Support this project <span className="span"> {' >>'} </span>
@@ -179,7 +179,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="geothermal plant in indonesia"
               src={geothermalImage}
             />
           </div>
@@ -223,7 +223,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="reforestation in brazil's rainforest"
               src={reforestationlImage}
             />
           </div>
@@ -261,7 +261,7 @@ export default function CompensateInterface() {
             </p>
             <a
               className="article__info article__info--cta"
-              href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
+              href="https://www.carbonfootprint.com/brazil_para_redd.html"
               target="_blank"
             >
               Support this project <span className="span"> {' >>'} </span>
@@ -273,7 +273,7 @@ export default function CompensateInterface() {
           <div className="article__image-container">
             <img
               className="article__image"
-              alt="geothermal plant"
+              alt="heqing solar cooker"
               src={solarCookerImage}
             />
           </div>
@@ -307,7 +307,7 @@ export default function CompensateInterface() {
             </p>
             <a
               className="article__info article__info--cta"
-              href="https://www.carbonfootprint.com/vcs_indonesia_geothermal.html"
+              href="https://www.carbonfootprint.com/vcs_china_solar_cooker.html"
               target="_blank"
             >
               Support this project <span className="span"> {' >>'} </span>
