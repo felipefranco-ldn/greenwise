@@ -148,8 +148,8 @@
 
 @mixin labels-links-buttons(
   $fontFamily,
-  $fontSize: 1.4rem,
-  $lineHeight: 2.2rem,
+  $fontSize: 1.8rem,
+  $lineHeight: 2.6rem,
   $fontWeight: 600,
   $fontStyle: normal
 ) {
@@ -162,8 +162,22 @@
 
 @mixin table-header(
   $fontFamily,
-  $fontSize: 1.2rem,
-  $lineHeight: 1.8rem,
+  $fontSize: 2rem,
+  $lineHeight: 3.2rem,
+  $fontWeight: 600,
+  $fontStyle: normal
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin body-xlarge(
+  $fontFamily,
+  $fontSize: 1.8rem,
+  $lineHeight: 3rem,
   $fontWeight: 400,
   $fontStyle: normal
 ) {

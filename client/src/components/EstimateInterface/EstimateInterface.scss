@@ -1,0 +1,93 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    @include f.subheader('Titillium Web');
+    text-align: center;
+    margin: 0 0 2rem 0;
+    color: theme.$gw-slate;
+  }
+
+  &__middle-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31%;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      .landing__subtitle {
+        color: theme.$gw-black;
+      }
+      .landing__image {
+        filter: saturate(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__subtitle {
+    @include f.table-header('Titillium Web');
+    text-align: center;
+    margin: 0;
+    color: theme.$gw-slate;
+    text-decoration: none;
+    padding: 2rem;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__image {
+    width: 100%;
+    margin-top: auto;
+    filter: saturate(0.4);
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__button {
+    height: 5rem;
+    margin-top: 4rem;
+    @include f.subheader('Titillium Web');
+    font-weight: 600;
+    color: theme.$gw-white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.6rem 4rem;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    border: 2px solid theme.$gw-slate;
+    background-color: theme.$gw-slate;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      border: 2px solid theme.$gw-black;
+      background-color: theme.$gw-black;
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+      border-color: theme.$gw-black;
+      background-color: theme.$gw-black;
+      color: theme.$gw-white;
+    }
+  }
+}
+
+.span--dark {
+  color: theme.$gw-black;
+}

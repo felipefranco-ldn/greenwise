@@ -7,9 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <PageHeader />
-      <section className="layout">
-        <div className="layout__box">{children}</div>
-      </section>
+      <main className="main">{children}</main>
       <PageFooter />
     </>
   );

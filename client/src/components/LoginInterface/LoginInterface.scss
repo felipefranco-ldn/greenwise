@@ -1,0 +1,109 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+
+  &__title {
+    @include f.subheader('Titillium Web');
+    margin: 0 0 6rem 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30rem;
+    align-items: center;
+  }
+
+  &__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__text-box {
+    text-align: center;
+    height: 4rem;
+    width: 100%;
+    margin: 1.2rem 0;
+    @include f.body-large('Titillium Web');
+    color: theme.$gw-black;
+    padding: 0 1.4rem;
+    border-radius: 2rem;
+    border: 2px solid theme.$gw-light-grey;
+
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      border: 2px solid theme.$gw-green;
+      outline: 0;
+    }
+
+    &:active {
+      background-color: white;
+    }
+  }
+
+  &__text {
+    @include f.body-large('Titillium Web');
+    margin: 3rem 0 1rem 0;
+
+    &--bottom {
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  &__button {
+    height: 4rem;
+    width: 100%;
+    @include f.body-large('Titillium Web');
+    font-weight: 600;
+    color: theme.$gw-white;
+    padding: 0.3rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid theme.$gw-slate;
+    background-color: theme.$gw-slate;
+    margin: 1rem 0;
+    transition: all 0.25s ease-in-out;
+
+    &:active {
+      border-color: theme.$gw-black;
+      background-color: theme.$gw-black;
+      color: theme.$gw-white;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+      color: theme.$gw-green;
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+    color: theme.$gw-black;
+    background-color: theme.$gw-white;
+    padding: 0 0.5rem;
+    // border-radius: 1.5rem;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: theme.$gw-green50;
+    }
+  }
+}

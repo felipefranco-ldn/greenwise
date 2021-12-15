@@ -2,3 +2,19 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  flex: auto;
+}
+
+@include bp.tablet {
+  .main {
+    &__layout-box {
+      width: 100%;
+    }
+  }
+}
