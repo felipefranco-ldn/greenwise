@@ -19,45 +19,61 @@ function Register() {
     if (!name) alert('Please enter name');
     registerWithEmailAndPassword(name, email, password);
   };
+
   useEffect(() => {
     if (loading) return;
     if (user) history.replace('/my-account');
   }, [user, loading, history]);
+
   return (
-    <div className="content">
-      <h1 className="content__title">Register to create a GreenWise account</h1>
-      <div className="register">
-        <div className="register__container">
-          <input
-            type="text"
-            className="register__textBox"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Full Name"
-          />
-          <input
-            type="text"
-            className="register__textBox"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-mail Address"
-          />
-          <input
-            type="password"
-            className="register__textBox"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-          />
-          <button className="button" onClick={register}>
-            register
-          </button>
-          <button className="button button__google" onClick={signInWithGoogle}>
-            register with Google
-          </button>
-          <div>
-            Already have an account? <Link to="/login">Login</Link> now.
-          </div>
+    <div className="account">
+      <h1 className="account__title">
+        {' '}
+        <span className="span">{'>>'}</span> Register to create a GreenWise
+        account
+      </h1>
+      <div className="account__container">
+        <input
+          type="text"
+          className="account__text-box"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your name"
+        />
+        <input
+          type="text"
+          className="account__text-box"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email address"
+        />
+        <input
+          type="password"
+          className="account__text-box"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button className="account__button" onClick={register}>
+          Register! <span className="span">{'>>'}</span>
+        </button>
+
+        <div className="account__text">
+          <span className="span">{'>>'}</span> Alternatively, you can also:
+        </div>
+
+        <button
+          className="account__button account__button__google"
+          onClick={signInWithGoogle}
+        >
+          Register with Google <span className="span">{'>>'}</span>
+        </button>
+        <div className="account__text">
+          <span className="span">{'>>'}</span> Already have an account?{' '}
+          <Link className="account__link" to="/login">
+            Login
+          </Link>{' '}
+          now
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-// @use '../../styles/partials/variables' as v;
-// @use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/mixins' as m;
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
 
 .reset {
   display: flex;

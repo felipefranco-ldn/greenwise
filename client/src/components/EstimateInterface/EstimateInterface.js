@@ -9,7 +9,9 @@ export default function EstimateInterface() {
   return (
     <div className="landing">
       <div className="landing__title">
-        <span className="span--dark">First things first:</span>
+        <span className="span--dark">
+          <span className="span">{'>>'}</span> First things first:
+        </span>
         <br /> in order to start your journey, <br />
         you need to know how big your environmental footprint is! <br />
         greenwise will help you estimate it in three fronts:

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory } from 'react-router';
-import './ProfileInterface.scss';
 import { auth, db, logout } from '../../firebase';
+import './ProfileInterface.scss';
 
 function ProfileInterface() {
   // const [user, loading, error] = useAuthState(auth);
@@ -32,13 +32,22 @@ function ProfileInterface() {
   }, [user, loading, history, fetchUserName]);
 
   return (
-    <div className="content">
-      <h1 className="content__title">account</h1>
-      <p className="content__copy">Welcome {name}</p>
-      <p className="content__copy">User email: {user?.email}</p>
-      <button className="button" onClick={logout}>
-        logout
-      </button>
+    <div className="account">
+      <div className="account__container">
+        <h1 className="account__title">
+          <span className="span">{'>>'}</span> My Green Wise Account
+        </h1>
+        <p className="account__text">
+          Hello {name}! <br />
+          Welcome to your Dashboard
+        </p>
+        <p className="account__text">
+          You are logged in with this email: {user?.email}
+        </p>
+        <button className="account__button" onClick={logout}>
+          Log out <span className="span">{'>>'}</span>
+        </button>
+      </div>
     </div>
   );
 }

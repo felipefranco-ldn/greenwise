@@ -111,8 +111,8 @@ export default class ElectricityInterface extends Component {
           <form className="el-input__form">
             <div className="el-input__form-question">
               <label htmlFor="userCountry" className="el-input__form-label">
-                <span className="span">&gt;&gt; </span> First, please select
-                your country of residence
+                <span className="span">{'>>'}</span> First, please select your
+                country of residence
               </label>
               <select
                 name="userCountry"

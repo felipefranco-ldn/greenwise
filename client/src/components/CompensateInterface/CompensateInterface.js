@@ -14,7 +14,9 @@ export default function CompensateInterface() {
       <div className="comp__container">
         <section className="comp__gallery">
           <h1 className="comp__title">
-            A selection of Carbon Offseting Projects
+            <span className="span">{'>>'}</span> A selection of outstanding
+            <br />
+            Carbon Offseting Projects
           </h1>
           <p className="comp__text">
             As you have seen so far, our everyday actions consume energy and
@@ -44,7 +46,9 @@ export default function CompensateInterface() {
               />
             </div>
             <div className="article__info-box">
-              <h3 className="article__title">Solar Farm by ACME Group</h3>
+              <h3 className="article__title">
+                <span className="span">{'>>'}</span> Solar Farm by ACME Group
+              </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Technology /
                 Clean Energy production
@@ -89,7 +93,9 @@ export default function CompensateInterface() {
               />
             </div>
             <div className="article__info-box">
-              <h3 className="article__title">Larimar Wind Farm</h3>
+              <h3 className="article__title">
+                <span className="span">{'>>'}</span> Larimar Wind Farm
+              </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Technology /
                 Clean Energy production
@@ -136,7 +142,8 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                Distributing Ceramic Water Purifiers{' '}
+                <span className="span">{'>>'}</span> Access to Ceramic Water
+                Purifiers{' '}
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Tech / Clean
@@ -195,7 +202,10 @@ export default function CompensateInterface() {
               />
             </div>
             <div className="article__info-box">
-              <h3 className="article__title">Wayang Windu Geothermal Power</h3>
+              <h3 className="article__title">
+                <span className="span">{'>>'}</span> Wayang Windu Geothermal
+                Power
+              </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Technology /
                 Clean Energy production
@@ -242,7 +252,8 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                Portel-Pará Reforestation Project
+                <span className="span">{'>>'}</span> Portel-Pará Reforestation
+                Project
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Social
@@ -292,7 +303,9 @@ export default function CompensateInterface() {
               />
             </div>
             <div className="article__info-box">
-              <h3 className="article__title">Heqing Solar Cooker Project </h3>
+              <h3 className="article__title">
+                <span className="span">{'>>'}</span> Heqing Solar Cooker Project{' '}
+              </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Household solar
                 power / Local communities
@@ -333,7 +346,8 @@ export default function CompensateInterface() {
       </div>
 
       <h1 className="re-title re-title--bottom">
-        For more information on Carbon Offsetting Projects <br />
+        <span className="span">{'>>'}</span> For more information on Carbon
+        Offsetting Projects <br />
         and how you can support them, please visit the links below:{' '}
       </h1>
 

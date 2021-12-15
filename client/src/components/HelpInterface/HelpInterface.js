@@ -15,27 +15,32 @@ function Help() {
     if (loading) return;
     if (user) history.replace('/my-account');
   }, [user, loading, history]);
+
   return (
-    <div className="content">
-      <h1 className="content__title">reset password</h1>
-      <div className="reset">
-        <div className="reset__container">
-          <input
-            type="text"
-            className="reset__textBox"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-mail Address"
-          />
-          <button
-            className="button"
-            onClick={() => sendPasswordResetEmail(email)}
-          >
-            send password reset email
-          </button>
-          <div>
-            Don't have an account? <Link to="/register">Register</Link> now.
-          </div>
+    <div className="account">
+      <h1 className="account__title">
+        <span className="span">{'>>'}</span> Help resetting your password
+      </h1>
+      <div className="account__container">
+        <input
+          type="text"
+          className="account__text-box"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email address"
+        />
+        <button
+          className="account__button"
+          onClick={() => sendPasswordResetEmail(email)}
+        >
+          Send password reset email <span className="span">{'>>'}</span>
+        </button>
+        <div className="account__text">
+          <span className="span">{'>>'}</span> Don't have an account?{' '}
+          <Link className="account__link" to="/register">
+            Register
+          </Link>{' '}
+          now
         </div>
       </div>
     </div>

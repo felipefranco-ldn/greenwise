@@ -59,7 +59,8 @@ export default class ReduceInterface extends Component {
         <div className="re-top-box">
           <div className="re-top-box__left">
             <h1 className="re-title">
-              Useful tips to start reducing <br />
+              <span className="span">{'>>'}</span> Useful tips to start reducing{' '}
+              <br />
               your carbon footprint
             </h1>
             <p className="re-text">
@@ -84,14 +85,19 @@ export default class ReduceInterface extends Component {
               <>
                 <div className="re-summary__text">
                   <div className="re-summary__info-icon">i</div>
-                  The selected suggestions allow you to reduce your emissions by{' '}
-                  <span className="span--bold">
+                  The selected suggestions allow <br />
+                  you to reduce your emissions
+                  <br />
+                  by{' '}
+                  <span className="span--bold span--green-bkgrd">
                     {this.addCo2Saving()} kilograms of CO2
                   </span>{' '}
                   every year. <br />
                   Besides helping the evironment, you would also save{' '}
-                  <span className="span--bold">£{this.addMoneySaving()}</span>.
-                  Sweet!
+                  <span className="span--bold span--green-bkgrd">
+                    £{this.addMoneySaving()}
+                  </span>
+                  . Sweet!
                 </div>
                 <div className="re-content__button-box re-content__button-box--top">
                   <div className="re-content__button">
@@ -352,7 +358,8 @@ export default class ReduceInterface extends Component {
         </article>
 
         <h1 className="re-title re-title--bottom">
-          For more information and tips on how you can reduce <br />
+          <span className="span">{'>>'}</span> For more information and tips on
+          how you can reduce <br />
           your carbon footrpint, please visit the links below:{' '}
         </h1>
 

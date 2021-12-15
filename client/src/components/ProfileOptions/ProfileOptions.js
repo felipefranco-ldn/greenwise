@@ -1,16 +1,16 @@
 import React from 'react';
-import './ProfileOptions.scss';
 import { NavLink } from 'react-router-dom';
 import loginIcon from '../../assets/images/icons/user-login-icon.svg';
 import registerIcon from '../../assets/images/icons/user-register-icon.svg';
 import helpIcon from '../../assets/images/icons/user-help-icon.svg';
+import './ProfileOptions.scss';
 
 export default function ProfileOptions() {
   return (
     <aside className="aside">
       <NavLink className="aside__link" to="/login">
         <article className="aside__card">
-          <h3 className="aside__card-title">Login</h3>
+          <h3 className="aside__card-title">Log in</h3>
           <img
             className="aside__card-icon"
             alt="home electricity icon"
