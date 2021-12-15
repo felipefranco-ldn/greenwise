@@ -102,6 +102,10 @@ export default class ElectricityInterface extends Component {
     }
   };
 
+  saveElCo2 = () => {
+    localStorage.setItem('userElCo2', this.state.userElCo2);
+  };
+
   render() {
     return (
       <div className="el-container">
@@ -302,11 +306,15 @@ export default class ElectricityInterface extends Component {
                 the consumption of an average home in the planet.
               </div>
               <div className="el-output__content-button-box">
-                <div className="el-output__content-button">
+                {/* <div className="el-output__content-button">
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
-                </div>
-                <Link className="el-output__link" to="/estimate/flights">
+                </div> */}
+                <Link
+                  onClick={this.saveElCo2}
+                  className="el-output__link"
+                  to="/estimate/flights"
+                >
                   <div className="el-output__content-button el-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>

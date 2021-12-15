@@ -154,7 +154,7 @@
 
     &-car-image {
       width: 80%;
-      opacity: 70%;
+      opacity: 0.7;
     }
 
     &-power-box {
@@ -280,6 +280,7 @@
 
   &__link {
     text-decoration: none;
+    margin-left: auto;
   }
 
   &__intro {

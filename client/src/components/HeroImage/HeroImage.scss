@@ -22,7 +22,6 @@
     left: 0px;
     filter: saturate(1.2);
     z-index: -2;
-    // opacity: 90%;
   }
 
   &__content {
@@ -119,7 +118,6 @@
 
   &__icon {
     width: 100%;
-    // opacity: 70%;
     filter: invert(30%);
     transition: all 0.25s ease-in-out;
 

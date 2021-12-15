@@ -20,13 +20,13 @@ import 'firebase/compat/firestore';
 // };
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAooZCX9vFtIgsLbxluZGTYxGdZbbyWLcY',
-  authDomain: 'green-wise.firebaseapp.com',
-  projectId: 'green-wise',
-  storageBucket: 'green-wise.appspot.com',
-  messagingSenderId: '2989420817',
-  appId: '1:2989420817:web:ff1ebb278d7f17a0f4dcb0',
-  measurementId: 'G-3SL6JWMFS7',
+  apiKey: 'AIzaSyAwoLZW4Y_eExvxkxr3keGXmXxtTbulNM8',
+  authDomain: 'ff-green-wise.firebaseapp.com',
+  projectId: 'ff-green-wise',
+  storageBucket: 'ff-green-wise.appspot.com',
+  messagingSenderId: '222346819801',
+  appId: '1:222346819801:web:8df26fc94123497197e6c8',
+  measurementId: 'G-ME3R21D2HC',
 };
 
 const app = firebase.initializeApp(firebaseConfig);

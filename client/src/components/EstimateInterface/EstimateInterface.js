@@ -40,9 +40,14 @@ export default function EstimateInterface() {
           <img className="landing__image" alt="vehicles " src={vehiclesImage} />
         </Link>
       </div>
-      <Link className="landing__button" to="/estimate/electricity">
-        Let's get started <span className="span"> &gt;&gt; </span>{' '}
-      </Link>
+      <div className="landing__bottom-box">
+        <Link className="landing__button landing__button--light" to="/login">
+          😃 Log in to save estimates 📊
+        </Link>
+        <Link className="landing__button" to="/estimate/electricity">
+          Let's get started <span className="span"> {'>>'}</span>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: 6rem;
+  // height: 100%;
 
   &__title {
     @include f.subheader('Titillium Web');
@@ -63,6 +64,17 @@
     &--bottom {
       margin: 0 0 1rem 0;
     }
+
+    &--large {
+      @include f.table-header('Titillium Web');
+      margin-bottom: 5rem;
+    }
+
+    &--small {
+      @include f.body-small('Titillium Web');
+      color: theme.$gw-slate;
+      margin-top: 10rem;
+    }
   }
 
   &__button {
@@ -78,6 +90,14 @@
     background-color: theme.$gw-slate;
     margin: 1rem 0;
     transition: all 0.25s ease-in-out;
+    text-decoration: none;
+
+    &--light {
+      border: 2px solid theme.$gw-light-grey;
+      background-color: theme.$gw-light-grey;
+      color: theme.$gw-black;
+      font-weight: 400;
+    }
 
     &:active {
       border-color: theme.$gw-black;

@@ -259,6 +259,10 @@ export default class VehiclesInterface extends Component {
     }
   };
 
+  saveVeCo2 = () => {
+    localStorage.setItem('userVeCo2', this.state.userVehicleCo2);
+  };
+
   render() {
     return (
       <div className="ve-container">
@@ -570,11 +574,15 @@ export default class VehiclesInterface extends Component {
                 instead.
               </div>
               <div className="ve-output__content-button-box">
-                <div className="ve-output__content-button">
+                {/* <div className="ve-output__content-button">
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
-                </div>
-                <Link className="ve-output__link" to="/reduce">
+                </div> */}
+                <Link
+                  onClick={this.saveVeCo2}
+                  className="ve-output__link"
+                  to="/reduce"
+                >
                   <div className="ve-output__content-button ve-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>

@@ -59,24 +59,37 @@
     transition: all 0.25s ease-in-out;
   }
 
+  &__bottom-box {
+    // margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__button {
-    height: 5rem;
+    height: 4rem;
     margin-top: 4rem;
-    @include f.subheader('Titillium Web');
+    width: 26rem;
+    @include f.body-large('Titillium Web');
     font-weight: 600;
     color: theme.$gw-white;
     text-decoration: none;
     text-align: center;
-    padding: 0.6rem 4rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 2.5rem;
     cursor: pointer;
     border: 2px solid theme.$gw-slate;
     background-color: theme.$gw-slate;
     transition: all 0.25s ease-in-out;
 
+    &--light {
+      border: 2px solid theme.$gw-cloud;
+      background-color: theme.$gw-cloud;
+    }
+
     &:hover {
-      border: 2px solid theme.$gw-black;
-      background-color: theme.$gw-black;
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
       box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
     }
 

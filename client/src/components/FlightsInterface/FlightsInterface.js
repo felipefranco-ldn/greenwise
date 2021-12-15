@@ -245,6 +245,10 @@ export default class FlightsInterface extends Component {
     }
   };
 
+  saveFlCo2 = () => {
+    localStorage.setItem('userFlCo2', this.state.userFlightCo2);
+  };
+
   render() {
     return (
       <div className="fl-container">
@@ -482,11 +486,15 @@ export default class FlightsInterface extends Component {
                 instead.
               </div>
               <div className="fl-output__content-button-box">
-                <div className="fl-output__content-button">
+                {/* <div className="fl-output__content-button">
                   Save estimate in dashboard
                   <span className="span"> {'>>'} </span>
-                </div>
-                <Link className="fl-output__link" to="/estimate/vehicles">
+                </div> */}
+                <Link
+                  onClick={this.saveFlCo2}
+                  className="fl-output__link"
+                  to="/estimate/vehicles"
+                >
                   <div className="fl-output__content-button fl-output__content-button--next">
                     Go to Next Step <span className="span"> {'>>'} </span>
                   </div>
