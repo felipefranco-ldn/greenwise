@@ -346,9 +346,8 @@ export default function CompensateInterface() {
       </div>
 
       <h1 className="re-title re-title--bottom">
-        <span className="span">{'>>'}</span> For more information on Carbon
-        Offsetting Projects <br />
-        and how you can support them, please visit the links below:{' '}
+        <span className="span">{'>>'}</span> More Carbon Offsetting Projects and
+        how you can support them:
       </h1>
 
       <div className="re-content__button-box re-content__button-box--bottom re-content__button-box--compensate ">

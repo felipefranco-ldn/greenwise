@@ -358,9 +358,8 @@ export default class ReduceInterface extends Component {
         </article>
 
         <h1 className="re-title re-title--bottom">
-          <span className="span">{'>>'}</span> For more information and tips on
-          how you can reduce <br />
-          your carbon footrpint, please visit the links below:{' '}
+          <span className="span">{'>>'}</span> For more tips visit the links
+          below:{' '}
         </h1>
 
         <div className="re-content__button-box re-content__button-box--bottom">

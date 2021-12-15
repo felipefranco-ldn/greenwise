@@ -2,3 +2,74 @@
 @use '../../styles/partials/fonts' as f;
 @use '../../styles/partials/breakpoints' as bp;
 @use '../../styles/partials/mixins' as *;
+
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem;
+
+  &__profile-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60rem;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &__estimates {
+    @include f.body-large('Titillium Web');
+    margin: 1rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    border: 2px solid theme.$gw-yellow;
+    background-color: theme.$gw-yellow50;
+    padding: 1rem 4rem;
+
+    &-box {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    &--large {
+      @include f.table-header('Titillium Web');
+      margin: 0 0 2rem 0;
+    }
+
+    &--small {
+      @include f.body-small('Titillium Web');
+      color: theme.$gw-slate;
+      margin-top: 4rem;
+    }
+  }
+}
+
+.profile__button {
+  height: 4rem;
+  width: 50%;
+  @include f.body-large('Titillium Web');
+  font-weight: 600;
+  color: theme.$gw-white;
+  padding: 0.3rem 2.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: 2px solid theme.$gw-slate;
+  background-color: theme.$gw-slate;
+  margin: 1rem 0;
+  transition: all 0.25s ease-in-out;
+  text-decoration: none;
+
+  &--light {
+    border: 2px solid theme.$gw-light-grey;
+    background-color: theme.$gw-light-grey;
+    color: theme.$gw-black;
+    font-weight: 400;
+  }
+}

@@ -34,16 +34,60 @@ function ProfileInterface() {
 
   return (
     <div className="account">
-      <div className="account__container">
+      <div className="account__profile-container">
         <h1 className="account__title">
           <span className="span">{'>>'}</span> My Green Wise Account
         </h1>
-        <p className="account__text account__text--large">
-          Hello {name}, <br />
-          Welcome to your Dashboard!
+        <p className="account__text--large">
+          Hello {name}. Welcome to your Dashboard!
         </p>
 
-        <Link className="account__button" to="/estimate">
+        {localStorage.getItem('userElCo2') ||
+        localStorage.getItem('userElCo2') ||
+        localStorage.getItem('userFlCo2') ? (
+          <div className="account__estimates">
+            <div>
+              <span className="span--bold">Your latest estimates are:</span>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-key">
+                Home electricity consumption:
+              </p>
+              <p className="account__estimates-value">
+                {parseInt(localStorage.getItem('userElCo2'))} kg of CO2 released
+              </p>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-key">Travelling by plane:</p>
+              <p className="account__estimates-value">
+                {parseInt(localStorage.getItem('userFlCo2'))} kg of CO2 released
+              </p>
+            </div>
+
+            <div className="account__estimates-box">
+              <p className="account__estimates-key"> Travelling by car:</p>
+              <p className="account__estimates-value">
+                {parseInt(localStorage.getItem('userVeCo2'))}
+                kg of CO2 released
+              </p>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-value">Total emissions:</p>
+              <p className="account__estimates-value">
+                {parseInt(localStorage.getItem('userElCo2')) +
+                  parseInt(localStorage.getItem('userFlCo2')) +
+                  parseInt(localStorage.getItem('userVeCo2'))}{' '}
+                kg of CO2 released
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="account__estimates">
+            Come back later to see a summary of your estimates
+          </div>
+        )}
+
+        <Link className="profile__button" to="/estimate">
           <span className="span">{'<<'}</span> Go back to Estimate
         </Link>
 
@@ -52,7 +96,7 @@ function ProfileInterface() {
           {user?.email}
         </p>
         <button
-          className="account__button account__button--light"
+          className="profile__button--light profile__button"
           onClick={logout}
         >
           Log out <span className="span">{'>>'}</span>
