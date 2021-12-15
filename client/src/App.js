@@ -9,10 +9,9 @@ import Compensate from './pages/compensate';
 import Profile from './pages/profile';
 import Reduce from './pages/reduce';
 import './styles/App.scss';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import Reset from './components/Reset/Reset';
-import Account from './components/Account/Account';
+import Login from './pages/profile/Login';
+import Register from './pages/profile/Register';
+import Help from './pages/profile/Help';
 
 export default class App extends Component {
   render() {
@@ -35,8 +34,8 @@ export default class App extends Component {
               <Route path="/my-account" component={Profile} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
-              <Route exact path="/reset" component={Reset} />
-              <Route exact path="/account" component={Account} />
+              <Route exact path="/help" component={Help} />
+              {/* <Route exact path="/account" component={Account} /> */}
             </Switch>
           </div>
         </BrowserRouter>

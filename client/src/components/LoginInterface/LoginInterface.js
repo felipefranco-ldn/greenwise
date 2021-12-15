@@ -6,8 +6,9 @@ import {
   signInWithGoogle,
 } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import './Login.scss';
-function Login() {
+import './LoginInterface.scss';
+
+function LoginInterface() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // const [user, loading, error] = useAuthState(auth);
@@ -18,11 +19,11 @@ function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) history.replace('/account');
+    if (user) history.replace('/my-account');
   }, [user, loading, history]);
   return (
     <div className="content">
-      <h1 className="content__title">login</h1>
+      <h1 className="content__title">Log in to your GreenWise account</h1>
       <div className="login">
         <div className="login__container">
           <input
@@ -49,7 +50,7 @@ function Login() {
             login with Google
           </button>
           <div>
-            <Link to="/reset">Forgot Password</Link>
+            <Link to="/help">Forgot Password</Link>
           </div>
           <div>
             Don't have an account? <Link to="/register">Register</Link> now.
@@ -59,4 +60,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default LoginInterface;

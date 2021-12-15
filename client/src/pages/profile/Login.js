@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout/Layout';
-import ProfileInterface from '../../components/ProfileInterface/ProfileInterface';
+import LoginInterface from '../../components/LoginInterface/LoginInterface';
 import ProfileOptions from '../../components/ProfileOptions/ProfileOptions';
-import './index.scss';
 
-export default class Profile extends Component {
+export default class Login extends Component {
   render() {
     return (
       <Layout>
@@ -12,7 +11,7 @@ export default class Profile extends Component {
           <ProfileOptions />
           <section className="estimate__content-box">
             <div className="estimate__content">
-              <ProfileInterface />
+              <LoginInterface />
             </div>
           </section>
         </section>

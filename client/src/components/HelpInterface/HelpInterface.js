@@ -3,8 +3,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { auth, sendPasswordResetEmail } from '../../firebase';
-import './Reset.scss';
-function Reset() {
+import './HelpInterface.scss';
+
+function Help() {
   const [email, setEmail] = useState('');
   // const [user, loading, error] = useAuthState(auth);
   const [user, loading] = useAuthState(auth);
@@ -12,7 +13,7 @@ function Reset() {
   const history = useHistory();
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace('/account');
+    if (user) history.replace('/my-account');
   }, [user, loading, history]);
   return (
     <div className="content">
@@ -40,4 +41,4 @@ function Reset() {
     </div>
   );
 }
-export default Reset;
+export default Help;

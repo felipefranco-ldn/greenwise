@@ -6,7 +6,7 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from '../../firebase';
-import './Register.scss';
+import './RegisterInterface.scss';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -21,11 +21,11 @@ function Register() {
   };
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace('/dashboard');
+    if (user) history.replace('/my-account');
   }, [user, loading, history]);
   return (
     <div className="content">
-      <h1 className="content__title">register</h1>
+      <h1 className="content__title">Register to create a GreenWise account</h1>
       <div className="register">
         <div className="register__container">
           <input
