@@ -21,7 +21,7 @@ export default function PageFooter() {
               href="mailto:felipefranco8610@gmail.com"
               target="_blank"
             >
-              <p className="footer__text">Contact</p>
+              <p className="footer__text">Get in Touch</p>
             </a>
           </div>
           <Link className="footer__link" to="/about">

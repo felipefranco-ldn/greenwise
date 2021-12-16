@@ -19,7 +19,7 @@ export default function IntroInterface() {
 
       <img className="about__image" alt="felipe franco" src={profilePicture} />
 
-      <p className="about__text">
+      <p className="about__text about__text--bold">
         Product Designer, Architect
         <br />
         and Web Developer!
@@ -54,13 +54,13 @@ export default function IntroInterface() {
 
       <div className="about__bottom-box">
         <Link className="about__link" to="/">
-          <p className="about__text">
+          <p className="about__text about__text--bold">
             <span className="span"> {'<<'} </span> Home
           </p>
         </Link>
 
         <Link className="about__link" to="/about">
-          <p className="about__text">
+          <p className="about__text about__text--bold">
             About GreenWise <span className="span"> {'>>'} </span>
           </p>
         </Link>

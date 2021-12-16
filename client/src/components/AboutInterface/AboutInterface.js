@@ -18,7 +18,7 @@ export default function AboutInterface() {
       <h1 className="about__title">Tech Stack</h1>
       <a
         href="https://green-wise.herokuapp.com"
-        className="about__text"
+        className="about__text about__text--bold"
         target="_blank"
         rel="noreferrer"
       >
@@ -29,13 +29,13 @@ export default function AboutInterface() {
 
       <div className="about__bottom-box">
         <Link className="about__link" to="/">
-          <p className="about__text">
+          <p className="about__text about__text--bold">
             <span className="span"> {'<<'} </span> Home
           </p>
         </Link>
 
         <Link className="about__link" to="/intro">
-          <p className="about__text">
+          <p className="about__text about__text--bold">
             About Felipe <span className="span"> {'>>'} </span>
           </p>
         </Link>
