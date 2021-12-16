@@ -189,7 +189,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
-                  <br /> <span className="span--bold">25kg of CO2 </span>a year
+                  <br /> <span className="span--bold">25kg of CO2 </span> a year
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
-                  <br /> <span className="span--bold">72kg of CO2 </span>a year
+                  <br /> <span className="span--bold">72kg of CO2 </span> a year
                 </div>
               </div>
             </div>
@@ -350,7 +350,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />
-                  <span className="span--bold">331kg of CO2 </span>a year
+                  <span className="span--bold">331kg of CO2 </span> a year
                 </div>
               </div>
             </div>

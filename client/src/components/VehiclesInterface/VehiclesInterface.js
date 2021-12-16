@@ -560,7 +560,7 @@ export default class VehiclesInterface extends Component {
                   CO2{' '}
                 </span>{' '}
                 into the atmosphere. Covering the same distance by train would
-                have generated
+                have generated{' '}
                 <span className="span--bold">
                   {' '}
                   {Number(

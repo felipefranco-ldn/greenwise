@@ -149,7 +149,7 @@ export default class ElectricityInterface extends Component {
                 <option value="mt">🇲🇹 Malta</option>
                 <option value="nl">🇳🇱 Netherlands</option>
                 <option value="pl">🇵🇱 Poland</option>
-                <option value="po">🇵🇹 Portugal</option>
+                <option value="pt">🇵🇹 Portugal</option>
                 <option value="ro">🇷🇴 Romania</option>
                 <option value="sk">🇷🇸 Slovakia</option>
                 <option value="si">🇸🇰 Slovenia</option>
@@ -296,14 +296,15 @@ export default class ElectricityInterface extends Component {
                 <span className="span--bold">
                   {' '}
                   {this.state.userElCo2} kilograms of CO2{' '}
-                </span>
+                </span>{' '}
                 into the atmosphere. <br />
                 This is{' '}
                 <span className="span--bold">
                   {' '}
                   {Number((this.state.userElCo2 / 569).toFixed(2))} times{' '}
                 </span>{' '}
-                the consumption of an average home in the planet.
+                the consumption of an average home
+                <br /> in the planet.
               </div>
               <div className="el-output__content-button-box">
                 {/* <div className="el-output__content-button">

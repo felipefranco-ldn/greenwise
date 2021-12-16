@@ -26,7 +26,7 @@ export default function CompensateInterface() {
             <br /> <br />
             Many carbon offsetting projects also provide additional benefits
             such as biodiversity increase, education, jobs, food security, clean
-            drinking water and well-being to local communities.
+            drinking water and wellbeing to local communities.
             <br /> <br />
             You can choose to support any of the projects below, and many more,
             in order to balance out your carbon footrpint. These comply with
