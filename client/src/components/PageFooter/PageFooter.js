@@ -30,9 +30,12 @@ export default function PageFooter() {
             </div>{' '}
           </Link>
 
-          <div className="footer__text-box">
-            <p className="footer__text">by Felipe Franco</p>
-          </div>
+          <Link className="footer__link" to="/intro">
+            <div className="footer__text-box">
+              <p className="footer__text">by Felipe Franco</p>
+            </div>{' '}
+          </Link>
+
           <div className="footer__text-box">
             <a
               href="https://github.com/felipefranco-ldn"

@@ -13,6 +13,7 @@ import Login from './pages/profile/Login';
 import Register from './pages/profile/Register';
 import Help from './pages/profile/Help';
 import AboutInterface from './components/AboutInterface/AboutInterface';
+import IntroInterface from './components/IntroInterface/IntroInterface';
 
 export default class App extends Component {
   render() {
@@ -37,7 +38,7 @@ export default class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/help" component={Help} />
               <Route exact path="/about" component={AboutInterface} />
-              {/* <Route exact path="/account" component={Account} /> */}
+              <Route exact path="/intro" component={IntroInterface} />
             </Switch>
           </div>
         </BrowserRouter>
