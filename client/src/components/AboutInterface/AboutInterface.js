@@ -17,7 +17,7 @@ export default function AboutInterface() {
 
       <h1 className="about__title">Tech Stack</h1>
       <a
-        href="https://green-wise2.herokuapp.com/intro"
+        href="https://green-wise.herokuapp.com"
         className="about__text"
         target="_blank"
         rel="noreferrer"
