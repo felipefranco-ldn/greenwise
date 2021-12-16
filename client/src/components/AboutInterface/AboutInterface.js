@@ -16,6 +16,14 @@ export default function AboutInterface() {
       </Link>
 
       <h1 className="about__title">Tech Stack</h1>
+      <a
+        href="https://green-wise2.herokuapp.com/intro"
+        className="about__text"
+        target="_blank"
+        rel="noreferrer"
+      >
+        green-wise2.herokuapp.com/intro
+      </a>
 
       <img className="about__tech-stack" alt="felipe franco" src={techStack} />
 
