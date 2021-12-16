@@ -24,9 +24,12 @@ export default function PageFooter() {
               <p className="footer__text">Contact</p>
             </a>
           </div>
-          <div className="footer__text-box">
-            <p className="footer__text">About</p>
-          </div>
+          <Link className="footer__link" to="/about">
+            <div className="footer__text-box">
+              <p className="footer__text">About</p>
+            </div>{' '}
+          </Link>
+
           <div className="footer__text-box">
             <p className="footer__text">by Felipe Franco</p>
           </div>

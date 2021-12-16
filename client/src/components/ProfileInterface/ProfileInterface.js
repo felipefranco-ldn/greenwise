@@ -39,7 +39,7 @@ function ProfileInterface() {
           <span className="span">{'>>'}</span> My Green Wise Account
         </h1>
         <p className="account__text--large">
-          Hello {name}. Welcome to your Dashboard!
+          Hello {name} 👋. Welcome to your Dashboard!
         </p>
 
         {sessionStorage.getItem('userElCo2') ||
