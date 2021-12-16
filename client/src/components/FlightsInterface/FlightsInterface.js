@@ -246,7 +246,7 @@ export default class FlightsInterface extends Component {
   };
 
   saveFlCo2 = () => {
-    localStorage.setItem('userFlCo2', this.state.userFlightCo2);
+    sessionStorage.setItem('userFlCo2', this.state.userFlightCo2);
   };
 
   render() {
@@ -473,7 +473,7 @@ export default class FlightsInterface extends Component {
                   {' '}
                   {Number(this.state.totalFlightCo2).toFixed(0)} kilograms of
                   CO2{' '}
-                </span>
+                </span>{' '}
                 into the atmosphere. Covering the same distance by train would
                 have generated
                 <span className="span--bold">

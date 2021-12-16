@@ -42,47 +42,53 @@ function ProfileInterface() {
           Hello {name}. Welcome to your Dashboard!
         </p>
 
-        {localStorage.getItem('userElCo2') ||
-        localStorage.getItem('userElCo2') ||
-        localStorage.getItem('userFlCo2') ? (
+        {sessionStorage.getItem('userElCo2') ||
+        sessionStorage.getItem('userElCo2') ||
+        sessionStorage.getItem('userFlCo2') ? (
           <div className="account__estimates">
             <div>
-              <span className="span--bold">Your latest estimates are:</span>
+              <div className="fl-output__info-icon">i</div>
+              <p className="account__estimates-value--large">
+                Summary of your latest estimates:
+              </p>
             </div>
             <div className="account__estimates-box">
-              <p className="account__estimates-key">
-                Home electricity consumption:
-              </p>
+              <p className="account__estimates-key">Home electricity:</p>
               <p className="account__estimates-value">
-                {parseInt(localStorage.getItem('userElCo2'))} kg of CO2 released
+                {parseInt(sessionStorage.getItem('userElCo2'))} kg of CO2
+                released
               </p>
             </div>
             <div className="account__estimates-box">
               <p className="account__estimates-key">Travelling by plane:</p>
               <p className="account__estimates-value">
-                {parseInt(localStorage.getItem('userFlCo2'))} kg of CO2 released
+                {parseInt(sessionStorage.getItem('userFlCo2'))} kg of CO2
+                released
               </p>
             </div>
 
             <div className="account__estimates-box">
               <p className="account__estimates-key"> Travelling by car:</p>
               <p className="account__estimates-value">
-                {parseInt(localStorage.getItem('userVeCo2'))}
-                kg of CO2 released
+                {parseInt(sessionStorage.getItem('userVeCo2'))} kg of CO2
+                released
               </p>
             </div>
             <div className="account__estimates-box">
-              <p className="account__estimates-value">Total emissions:</p>
-              <p className="account__estimates-value">
-                {parseInt(localStorage.getItem('userElCo2')) +
-                  parseInt(localStorage.getItem('userFlCo2')) +
-                  parseInt(localStorage.getItem('userVeCo2'))}{' '}
+              <p className="account__estimates-value--large">
+                Total estimated emissions:
+              </p>
+              <p className="account__estimates-value--large">
+                {parseInt(sessionStorage.getItem('userElCo2')) +
+                  parseInt(sessionStorage.getItem('userFlCo2')) +
+                  parseInt(sessionStorage.getItem('userVeCo2'))}{' '}
                 kg of CO2 released
               </p>
             </div>
           </div>
         ) : (
           <div className="account__estimates">
+            <div className="fl-output__info-icon">i</div>
             Come back later to see a summary of your estimates
           </div>
         )}

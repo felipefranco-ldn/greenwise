@@ -103,7 +103,7 @@ export default class ElectricityInterface extends Component {
   };
 
   saveElCo2 = () => {
-    localStorage.setItem('userElCo2', this.state.userElCo2);
+    sessionStorage.setItem('userElCo2', this.state.userElCo2);
   };
 
   render() {

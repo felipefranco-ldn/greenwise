@@ -26,14 +26,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
     border: 2px solid theme.$gw-yellow;
     background-color: theme.$gw-yellow50;
-    padding: 1rem 4rem;
+    padding: 1.2rem 2rem;
+    position: relative;
 
     &-box {
       display: flex;
       justify-content: space-between;
+      margin: 0;
+      width: 100%;
+    }
+
+    &-key {
+      margin: 0.5rem;
+    }
+
+    &-value {
+      font-weight: 600;
+      margin: 0.5rem;
+
+      &--large {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0.5rem;
+      }
     }
   }
 
