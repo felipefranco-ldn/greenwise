@@ -22,7 +22,7 @@ export default function AboutInterface() {
         target="_blank"
         rel="noreferrer"
       >
-        green-wise2.herokuapp.com/intro
+        green-wise.herokuapp.com
       </a>
 
       <img className="about__tech-stack" alt="felipe franco" src={techStack} />
