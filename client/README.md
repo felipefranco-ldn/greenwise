@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# GreenWise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GreenWise is a web App that allows users to estimate their environmental footprint and, after visualising their results, users will be encouraged to take action to reduce and compensate their impact.
 
-## Available Scripts
+## Author
 
-In the project directory, you can run:
+- Felipe Franco
+  [https://www.linkedin.com/in/felipefranco-ldn/]
+  [https://github.com/felipefranco-ldn]
 
-### `yarn start`
+## 🚀 About Me
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Hello! I'm a Product Designer, Architect and Full Stack Web Developer...
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I am from Bogota, Colombia, and am currently based in London but have also lived in Italy, Germany and Sweden.
 
-### `yarn test`
+After several years in the architecture industry, I decided to start a career in tech to be part of London's exciting and growing tech scene!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I am passionate about design, science, technology and nature and love travelling, visiting new places, discovering new food and learning languages...
 
-### `yarn build`
+Look forward to starting a new chapter in my professional life after learning a whole new set of tech skills at BrainStation!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About GreenWise
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+TPlanet Earth is in crisis! And taking care of the environment is arguably the most urgent challenge that humanity faces nowadays. This issue needs to be tackled by the society as a whole but also from an individual perspective, as small changes in a person’s behaviour and daily choices can have a huge compound impact.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As a starting point, we all need to be aware of the environmental impact of our daily activities. Then we can compare that information with some targets that could help drive a positive change; that way we will know what needs to be improved and by how much.
 
-### `yarn eject`
+GreenWise will provide an easy-to-use tool to visualise a user’s carbon footprint and will help them make informed decisions on how to contribute to the transformation of our planet for the better.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This is accomplished in three simple steps:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+a. Estimate
+b. Reduce
+c. Compensate
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting started with GreenWise
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+In your console:
 
-## Learn More
+1. cd into the root directory and then cd into the client folder.
+2. To install all necessary dependencies, run the command:
+   `npm i`
+3. Once all dependencies have been installed, start the localhost by running the command:
+   `npm start`
+4. GreenWise should start running in your browser locally in port 3000.
+   [http://localhost:3000] (open in your browser if it doesn't open automatically)
+   The page will reload if you make edits.
+   You will also see any lint errors in the console.
+5. Have fun!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Client:**
+GreenWise was created using Create React App.
 
-### Code Splitting
+- It incorporates HTML5, CCS and JavaScript.
+- Styling was applied using Sass.
+- It uses ReactRouter to enable the navigation between the different pages.
+- The project lives in a Git repository in GitHub.
+- The estimates’ data is fetched from an API called CarbonInterface.
+- Chartjs library was used to generate the charts.
+- User authentication was implemented using Firebase.
+- And the website was deployed using Heroku.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Server:**
+To be implemented
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+GreenWise has been deployed using Heroku and can be accessed at the following link:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[https://green-wise.herokuapp.com/]
