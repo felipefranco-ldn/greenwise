@@ -1,16 +1,16 @@
 # GreenWise
 
-GreenWise is a web App that allows users to estimate their environmental footprint and, after visualising their results, users will be encouraged to take action to reduce and compensate their impact.
+GreenWise is a web application that allows users to estimate their environmental footprint and, after visualising their results, users will be encouraged to take action to reduce and compensate their impact.
 
 ## Author
 
-- Felipe Franco
-  [https://www.linkedin.com/in/felipefranco-ldn/]
-  [https://github.com/felipefranco-ldn]
+Felipe Franco
+[https://www.linkedin.com/in/felipefranco-ldn/]
+[https://github.com/felipefranco-ldn]
 
 ## 🚀 About Me
 
-Hello! I'm a Product Designer, Architect and Full Stack Web Developer...
+Hello! I'm a Product Designer, Architect and Full Stack Web Developer!
 
 I am from Bogota, Colombia, and am currently based in London but have also lived in Italy, Germany and Sweden.
 
@@ -18,21 +18,41 @@ After several years in the architecture industry, I decided to start a career in
 
 I am passionate about design, science, technology and nature and love travelling, visiting new places, discovering new food and learning languages...
 
-Look forward to starting a new chapter in my professional life after learning a whole new set of tech skills at BrainStation!
+Look forward to starting a new chapter in my professional life as a Web Developer, after learning a whole new set of tech skills at BrainStation!
 
 ## About GreenWise
 
-TPlanet Earth is in crisis! And taking care of the environment is arguably the most urgent challenge that humanity faces nowadays. This issue needs to be tackled by the society as a whole but also from an individual perspective, as small changes in a person’s behaviour and daily choices can have a huge compound impact.
+Planet Earth is in crisis! And taking care of the environment is arguably the most urgent challenge that humanity faces nowadays. This issue needs to be tackled by the society as a whole but also from an individual perspective, as small changes in a person’s behaviour and daily choices can have a huge compound impact.
 
 As a starting point, we all need to be aware of the environmental impact of our daily activities. Then we can compare that information with some targets that could help drive a positive change; that way we will know what needs to be improved and by how much.
 
 GreenWise will provide an easy-to-use tool to visualise a user’s carbon footprint and will help them make informed decisions on how to contribute to the transformation of our planet for the better.
 
-This is accomplished in three simple steps:
+This is achieved by going through GreenWise's three sections:
 
-a. Estimate
-b. Reduce
-c. Compensate
+1. Estimate:
+   Users will be able be to visualise information about their carbon footprint in three different fronts:
+   a. Home electricity consumption
+   b. Flights
+   c. Vehicles
+   In each section, after providing some input information, the estimated results will be dynamically displayed in a chart. There are comparisons with relevant benchmarks and a summary with compelling insights about the results.
+
+2. Reduce:
+   This section has a list of suggestions to take action, starting at home. Each suggestion provides CO2 and money savings per year. Users can choose the suggestions they would like to follow and a chart at the top of the page will summarise the savings. Additional useful links are provided at the bottom of the page.
+
+3. Compensate:
+   A list of carbon offsetting projects is presented. Each project displays relevant details and a link for more information. Links to additional projects and complementary information are provided at the bottom of the page.
+
+> > Additionally:
+> > The "My Account" section provides OAuth for users who want to keep track of their estimates (which will be shown in the "Dashboard"). However, users are not required to register or log in to use the website's features. OAuth can be done by providing email and password or by using Google account.
+
+## User profile
+
+GreenWise users are people concerned about environmental issues and their own impact on nature, who know that change starts at home and who have the initiative and goodwill to make changes in their lifestyles for the greater good. They are likely to be young and middle-aged adults who want to make sure our planet is a good place for future generations to live, and they are aware that urgent action needs to be taken now.
+
+GreenWise will help its users to find objective information to measure the impact of their lifestyles and will provide a point of reference to compare with. This is to encourage users to define improvement goals that are compatible with their routines and, finally, contribute to a project that is aligned with their personal interests.
+
+GreenWise will provide a very easy navigation with information displayed in a concise, clear and easy-to-read way; data will be visualised in a compelling and attractive manner, with colourful images, animated content, etc. The aim is to deliver and interactive journey so that users feel engaged with the content and encouraged to move forward in the site’s narrative.
 
 ## Getting started with GreenWise
 
