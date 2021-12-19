@@ -6,8 +6,9 @@
 .about {
   &__container {
     width: 80vw;
-    height: 80vh;
-    margin: auto;
+    height: 85vh;
+    min-height: 70rem;
+    margin: 8rem auto;
     padding: 4rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -15,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 4rem;
+    flex: auto;
   }
 
   &__link {

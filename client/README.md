@@ -26,7 +26,7 @@ Planet Earth is in crisis! And taking care of the environment is arguably the mo
 
 As a starting point, we all need to be aware of the environmental impact of our daily activities. Then we can compare that information with some targets that could help drive a positive change; that way we will know what needs to be improved and by how much.
 
-GreenWise will provide an easy-to-use tool to visualise a user’s carbon footprint and will help them make informed decisions on how to contribute to the transformation of our planet for the better.
+GreenWise provides an easy-to-use tool to visualise a user’s carbon footprint and will help them make informed decisions on how to contribute to the transformation of our planet for the better. Navigation flow is simple and data is visualised in a concise, compelling and attractive manner, with colourful images, animated content, etc. The aim is to deliver and interactive journey so that users feel engaged with the content and encouraged to move forward in the site’s narrative.
 
 This is achieved by going through GreenWise's three sections:
 
@@ -48,11 +48,9 @@ This is achieved by going through GreenWise's three sections:
 
 ## User profile
 
-GreenWise users are people concerned about environmental issues and their own impact on nature, who know that change starts at home and who have the initiative and goodwill to make changes in their lifestyles for the greater good. They are likely to be young and middle-aged adults who want to make sure our planet is a good place for future generations to live, and they are aware that urgent action needs to be taken now.
+GreenWise is targeted at people concerned about environmental issues and their own impact on nature, who know that change starts at home and who have the initiative and goodwill to make changes in their lifestyle for the greater good. They are likely to be young and middle-aged adults who want to make sure our planet is a good place for future generations to live, and they are aware that urgent action needs to be taken now.
 
-GreenWise will help its users to find objective information to measure the impact of their lifestyles and will provide a point of reference to compare with. This is to encourage users to define improvement goals that are compatible with their routines and, finally, contribute to a project that is aligned with their personal interests.
-
-GreenWise will provide a very easy navigation with information displayed in a concise, clear and easy-to-read way; data will be visualised in a compelling and attractive manner, with colourful images, animated content, etc. The aim is to deliver and interactive journey so that users feel engaged with the content and encouraged to move forward in the site’s narrative.
+GreenWise helps its users to find objective information to measure their impact and provides benchmarks to compare with. This is to encourage users to define improvement goals that are compatible with their routines and, finally, contribute to a project that is aligned with their personal interests.
 
 ## Getting started with GreenWise
 
@@ -85,6 +83,14 @@ GreenWise was created using Create React App.
 
 **Server:**
 To be implemented
+
+## Future steps
+
+The immediate next step is to refactor portions of the code to use React components as much as possible, in order to exploit React's potential to make the code more concise and efficient, keeping it DRY and making it more easy to read and work with.
+
+Next step is to implement responsiveness, so that GreenWise can be used on mobile devices as well.
+
+In the future I would like to incorporate more functionalities, like saving a history of estimates, as well as estimating your carbon footprint based on your diet and provide the environmental impact of everyday goods, like clothing, appliances, hygiene products, etc.
 
 ## Deployment
 

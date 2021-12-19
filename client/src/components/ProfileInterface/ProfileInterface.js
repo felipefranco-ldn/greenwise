@@ -36,10 +36,10 @@ function ProfileInterface() {
     <div className="account">
       <div className="account__profile-container">
         <h1 className="account__title">
-          <span className="span">{'>>'}</span> My Green Wise Account
+          <span className="span">{'>>'}</span> My GreenWise Account
         </h1>
         <p className="account__text--large">
-          Hello {name} 👋. Welcome to your Dashboard!
+          👋 Hello {name}. Welcome to your Dashboard!
         </p>
 
         {sessionStorage.getItem('userElCo2') ||
