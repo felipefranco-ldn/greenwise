@@ -16,6 +16,7 @@ import hybridIcon from '../../assets/images/icons/hybrid.png';
 import electricIcon from '../../assets/images/icons/electric.png';
 import fuelIconsLanding from '../../assets/images/icons/fuel-icons-landing.png';
 import co2Logo from '../../assets/images/images/co2-logo.svg';
+import RadioInput from '../RadioInput/RadioInput';
 
 import {
   Chart as ChartJS,
@@ -302,177 +303,123 @@ export default class VehiclesInterface extends Component {
                 <span className="span">{'>>'} </span> Select type of vehicle
               </label>
               <div className="ve-input__form-type-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="micro"
-                  name="carSize"
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="micro"
-                  onChange={this.handleSizeChange}
-                />
-                <label className="ve-input__form-size" htmlFor="micro">
-                  <h3 className="ve-input__form-label-title">
-                    City car <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="micro car example"
-                      src={cityCarIcon}
-                    />
-                  </div>
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="compact"
                   name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="City car"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="micro car example"
+                  imgSrc={cityCarIcon}
+                />
+
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="compact"
-                  onChange={this.handleSizeChange}
+                  name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="Compact"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="compact car example"
+                  imgSrc={compactCarIcon}
                 />
-                <label className="ve-input__form-size" htmlFor="compact">
-                  <h3 className="ve-input__form-label-title">
-                    Compact <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="compact car example"
-                      src={compactCarIcon}
-                    />
-                  </div>
-                </label>
               </div>
 
               <div className="ve-input__form-type-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="fullsize"
-                  name="carSize"
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="fullsize"
-                  onChange={this.handleSizeChange}
-                />
-                <label className="ve-input__form-size" htmlFor="fullsize">
-                  <h3 className="ve-input__form-label-title">
-                    Full-size <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="full-size car example"
-                      src={fullSizeCarIcon}
-                    />
-                  </div>
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="minivan"
                   name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="Full-size"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="full-size car example"
+                  imgSrc={fullSizeCarIcon}
+                />
+
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="minivan"
-                  onChange={this.handleSizeChange}
+                  name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="Minivan"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="minivan example"
+                  imgSrc={minivanIcon}
                 />
-                <label className="ve-input__form-size" htmlFor="minivan">
-                  <h3 className="ve-input__form-label-title">
-                    Minivan <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="minivan example"
-                      src={minivanIcon}
-                    />
-                  </div>
-                </label>
               </div>
 
               <div className="ve-input__form-type-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="cuv"
-                  name="carSize"
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="cuv"
-                  onChange={this.handleSizeChange}
-                />
-                <label className="ve-input__form-size" htmlFor="cuv">
-                  <h3 className="ve-input__form-label-title">
-                    CUV <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="CUV example"
-                      src={cuvIcon}
-                    />
-                  </div>
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="suv"
                   name="carSize"
-                  value="suv"
-                  onChange={this.handleSizeChange}
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="CUV"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="cuv example"
+                  imgSrc={cuvIcon}
                 />
-                <label className="ve-input__form-size" htmlFor="suv">
-                  <h3 className="ve-input__form-label-title">
-                    SUV <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="SUV example"
-                      src={suvIcon}
-                    />
-                  </div>
-                </label>
+
+                <RadioInput
+                  inputClass="ve-input__form-radio"
+                  value="suv"
+                  name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="SUV"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="suv example"
+                  imgSrc={suvIcon}
+                />
               </div>
 
               <div className="ve-input__form-type-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="pickup"
-                  name="carSize"
+                <RadioInput
+                  inputClass="ve-input__form-radio"
                   value="pickup"
-                  onChange={this.handleSizeChange}
-                />
-                <label className="ve-input__form-size" htmlFor="pickup">
-                  <h3 className="ve-input__form-label-title">
-                    Pick-up <br />
-                  </h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="pick-up example"
-                      src={pickupIcon}
-                    />
-                  </div>
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="other"
                   name="carSize"
-                  value="other"
-                  onChange={this.handleSizeChange}
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="Pick-up"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="pick-up example"
+                  imgSrc={pickupIcon}
                 />
-                <label className="ve-input__form-size" htmlFor="other">
-                  <h3 className="ve-input__form-label-title">Other large</h3>
-                  <div className="ve-input__form-image-box">
-                    <img
-                      className="ve-input__form-car-image"
-                      alt="other car example"
-                      src={otherIcon}
-                    />
-                  </div>
-                </label>
+
+                <RadioInput
+                  inputClass="ve-input__form-radio"
+                  value="other"
+                  name="carSize"
+                  handleChange={this.handleSizeChange}
+                  labelClass="ve-input__form-size"
+                  labelTitleClass="ve-input__form-label-title"
+                  labelTitle="Other large"
+                  imgBoxClass="ve-input__form-image-box"
+                  imgClass="ve-input__form-car-image"
+                  imgAlt="other large vehicle example"
+                  imgSrc={otherIcon}
+                />
               </div>
             </div>
 

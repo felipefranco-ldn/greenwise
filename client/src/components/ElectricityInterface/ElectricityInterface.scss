@@ -38,6 +38,12 @@
 
     &-label {
       @include f.table-header('Titillium Web');
+
+      &-title {
+        @include f.body-large('Titillium Web');
+        color: theme.$gw-black;
+        margin: 0;
+      }
     }
 
     &-question {

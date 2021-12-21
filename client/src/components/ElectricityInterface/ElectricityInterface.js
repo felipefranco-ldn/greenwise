@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import co2Logo from '../../assets/images/images/co2-logo.svg';
 import apartmentIcon from '../../assets/images/icons/building-icon.png';
 import houseIcon from '../../assets/images/icons/house-icon.png';
+import RadioInput from '../RadioInput/RadioInput';
 
 export default class ElectricityInterface extends Component {
   state = {
@@ -165,43 +166,33 @@ export default class ElectricityInterface extends Component {
               </label>
 
               <div className="el-input__form-home-box">
-                <input
-                  className="el-input__form-radio"
-                  type="radio"
-                  id="apartment"
-                  name="userHomeType"
+                <RadioInput
+                  inputClass="el-input__form-radio"
                   value="apartment"
-                  onChange={this.handleChange}
-                />
-                <label className="el-input__form-home-type" htmlFor="apartment">
-                  Apartment
-                  <div className="el-input__form-image-box">
-                    <img
-                      className="el-input__form-home-image"
-                      alt="SUV example"
-                      src={apartmentIcon}
-                    />
-                  </div>
-                </label>
-
-                <input
-                  className="el-input__form-radio"
-                  type="radio"
-                  id="house"
                   name="userHomeType"
-                  value="house"
-                  onChange={this.handleChange}
+                  handleChange={this.handleChange}
+                  labelClass="el-input__form-home-type"
+                  labelTitleClass="el-input__form-label-title"
+                  labelTitle="Apartment"
+                  imgBoxClass="el-input__form-image-box"
+                  imgClass="el-input__form-home-image"
+                  imgAlt="apartment example"
+                  imgSrc={apartmentIcon}
                 />
-                <label className="el-input__form-home-type" htmlFor="house">
-                  House
-                  <div className="el-input__form-image-box">
-                    <img
-                      className="el-input__form-home-image"
-                      alt="SUV example"
-                      src={houseIcon}
-                    />
-                  </div>
-                </label>
+
+                <RadioInput
+                  inputClass="el-input__form-radio"
+                  value="house"
+                  name="userHomeType"
+                  handleChange={this.handleChange}
+                  labelClass="el-input__form-home-type"
+                  labelTitleClass="el-input__form-label-title"
+                  labelTitle="House"
+                  imgBoxClass="el-input__form-image-box"
+                  imgClass="el-input__form-home-image"
+                  imgAlt="house example"
+                  imgSrc={houseIcon}
+                />
               </div>
             </div>
 
