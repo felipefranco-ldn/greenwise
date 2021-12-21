@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -7,11 +7,12 @@ import './ProfileInterface.scss';
 import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function ProfileInterface() {
+  // const [user, loading, error] = useAuthState(auth);
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const history = useHistory();
 
-  const fetchUserName = async () => {
+  const fetchUserName = useCallback(async () => {
     try {
       const query = await db
         .collection('users')
@@ -23,7 +24,7 @@ function ProfileInterface() {
       console.error(err);
       alert('An error occured while fetching user data');
     }
-  };
+  }, [user?.uid]);
 
   useEffect(() => {
     if (loading) return;
