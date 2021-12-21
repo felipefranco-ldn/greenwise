@@ -1,43 +1,33 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import loginIcon from '../../assets/images/icons/user-login-icon.svg';
 import registerIcon from '../../assets/images/icons/user-register-icon.svg';
 import helpIcon from '../../assets/images/icons/user-help-icon.svg';
 import './ProfileOptions.scss';
+import OptionsTab from '../OptionsTab/OptionsTab';
 
 export default function ProfileOptions() {
   return (
     <aside className="aside">
-      <NavLink className="aside__link" to="/login">
-        <article className="aside__card">
-          <h3 className="aside__card-title">Log in</h3>
-          <img
-            className="aside__card-icon"
-            alt="home electricity icon"
-            src={loginIcon}
-          />
-        </article>
-      </NavLink>
-      <NavLink className="aside__link" to="/register">
-        <article className="aside__card">
-          <h3 className="aside__card-title">Register</h3>
-          <img
-            className="aside__card-icon"
-            alt="home electricity icon"
-            src={registerIcon}
-          />
-        </article>
-      </NavLink>
-      <NavLink className="aside__link" to="/help">
-        <article className="aside__card">
-          <h3 className="aside__card-title">Help</h3>{' '}
-          <img
-            className="aside__card-icon"
-            alt="home electricity icon"
-            src={helpIcon}
-          />
-        </article>
-      </NavLink>
+      <OptionsTab
+        linkTo="/login"
+        cardTitle="Log in"
+        imgAlt="login icon"
+        imgSrc={loginIcon}
+      />
+
+      <OptionsTab
+        linkTo="/register"
+        cardTitle="Register"
+        imgAlt="register icon"
+        imgSrc={registerIcon}
+      />
+
+      <OptionsTab
+        linkTo="/help"
+        cardTitle="Help"
+        imgAlt="help icon"
+        imgSrc={helpIcon}
+      />
     </aside>
   );
 }

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { auth, db, logout } from '../../firebase';
 import './ProfileInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function ProfileInterface() {
   // const [user, loading, error] = useAuthState(auth);
@@ -10,7 +12,7 @@ function ProfileInterface() {
   const [name, setName] = useState('');
   const history = useHistory();
 
-  const fetchUserName = async () => {
+  const fetchUserName = useCallback(async () => {
     try {
       const query = await db
         .collection('users')
@@ -22,32 +24,95 @@ function ProfileInterface() {
       console.error(err);
       alert('An error occured while fetching user data');
     }
-  };
+  }, [user?.uid]);
 
   useEffect(() => {
     if (loading) return;
     if (!user) return history.replace('/login');
     fetchUserName();
-    // }, [user, loading, fetchUserName, history]);
   }, [user, loading, history, fetchUserName]);
 
   return (
     <div className="account">
-      <div className="account__container">
+      <div className="account__profile-container">
         <h1 className="account__title">
-          <span className="span">{'>>'}</span> My Green Wise Account
+          <span className="span">{'>>'}</span> My GreenWise Account
         </h1>
-        <p className="account__text">
-          Hello {name}! <br />
-          Welcome to your Dashboard
+        <p className="account__text--large">
+          👋 Hello {name}. Welcome to your Dashboard!
         </p>
-        <p className="account__text">
-          You are logged in with this email: {user?.email}
+
+        {sessionStorage.getItem('userElCo2') ||
+        sessionStorage.getItem('userElCo2') ||
+        sessionStorage.getItem('userFlCo2') ? (
+          <div className="account__estimates">
+            <div>
+              <div className="fl-output__info-icon">i</div>
+              <p className="account__estimates-value--large">
+                Summary of your latest estimates:
+              </p>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-key">Home electricity:</p>
+              <p className="account__estimates-value">
+                {parseInt(sessionStorage.getItem('userElCo2'))} kg of CO2
+                released
+              </p>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-key">Travelling by plane:</p>
+              <p className="account__estimates-value">
+                {parseInt(sessionStorage.getItem('userFlCo2'))} kg of CO2
+                released
+              </p>
+            </div>
+
+            <div className="account__estimates-box">
+              <p className="account__estimates-key"> Travelling by car:</p>
+              <p className="account__estimates-value">
+                {parseInt(sessionStorage.getItem('userVeCo2'))} kg of CO2
+                released
+              </p>
+            </div>
+            <div className="account__estimates-box">
+              <p className="account__estimates-value--large">
+                Total estimated emissions:
+              </p>
+              <p className="account__estimates-value--large">
+                {parseInt(sessionStorage.getItem('userElCo2')) +
+                  parseInt(sessionStorage.getItem('userFlCo2')) +
+                  parseInt(sessionStorage.getItem('userVeCo2'))}{' '}
+                kg of CO2 released
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="account__estimates">
+            <div className="fl-output__info-icon">i</div>
+            Come back later to see a summary of your estimates
+          </div>
+        )}
+
+        <Link className="profile__button" to="/estimate">
+          <span className="span">{'<<'}</span> Go back to Estimate
+        </Link>
+
+        <p className="account__text--small">
+          You are logged in with this email: <br />
+          {user?.email}
         </p>
-        <button className="account__button" onClick={logout}>
+        <button
+          className="profile__button--light profile__button"
+          onClick={logout}
+        >
           Log out <span className="span">{'>>'}</span>
         </button>
-      </div>
+      </div>{' '}
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }

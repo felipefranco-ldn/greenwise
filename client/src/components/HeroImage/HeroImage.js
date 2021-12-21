@@ -75,7 +75,6 @@ export default function HeroImage() {
           </NavLink>
         </div>
       </div>
-      {/* <img className="hero-image" alt="inStock logo" src={heroImage} /> */}
     </div>
   );
 }

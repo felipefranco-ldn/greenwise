@@ -1,40 +1,20 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-// import firebase from "firebase";
-
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyB6Ui7Fu7sDLo0PhvPk5S53CPMhQkP4CKg',
-//   authDomain: 'library-of-pizza.firebaseapp.com',
-//   databaseURL:
-//     'https://library-of-pizza-default-rtdb.europe-west1.firebasedatabase.app',
-//   projectId: 'library-of-pizza',
-//   storageBucket: 'library-of-pizza.appspot.com',
-//   messagingSenderId: '574971762580',
-//   appId: '1:574971762580:web:82ffc3aa3c5d3fc99fa181',
-//   measurementId: '${config.measurementId}',
-// };
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAooZCX9vFtIgsLbxluZGTYxGdZbbyWLcY',
-  authDomain: 'green-wise.firebaseapp.com',
-  projectId: 'green-wise',
-  storageBucket: 'green-wise.appspot.com',
-  messagingSenderId: '2989420817',
-  appId: '1:2989420817:web:ff1ebb278d7f17a0f4dcb0',
-  measurementId: 'G-3SL6JWMFS7',
+  apiKey: 'AIzaSyAwoLZW4Y_eExvxkxr3keGXmXxtTbulNM8',
+  authDomain: 'ff-green-wise.firebaseapp.com',
+  projectId: 'ff-green-wise',
+  storageBucket: 'ff-green-wise.appspot.com',
+  messagingSenderId: '222346819801',
+  appId: '1:222346819801:web:8df26fc94123497197e6c8',
+  measurementId: 'G-ME3R21D2HC',
 };
 
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const db = app.firestore();
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 

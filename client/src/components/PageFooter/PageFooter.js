@@ -21,15 +21,21 @@ export default function PageFooter() {
               href="mailto:felipefranco8610@gmail.com"
               target="_blank"
             >
-              <p className="footer__text">Contact</p>
+              <p className="footer__text">Get in Touch</p>
             </a>
           </div>
-          <div className="footer__text-box">
-            <p className="footer__text">About</p>
-          </div>
-          <div className="footer__text-box">
-            <p className="footer__text">by Felipe Franco</p>
-          </div>
+          <Link className="footer__link" to="/about">
+            <div className="footer__text-box">
+              <p className="footer__text">About</p>
+            </div>{' '}
+          </Link>
+
+          <Link className="footer__link" to="/intro">
+            <div className="footer__text-box">
+              <p className="footer__text">by Felipe Franco</p>
+            </div>{' '}
+          </Link>
+
           <div className="footer__text-box">
             <a
               href="https://github.com/felipefranco-ldn"

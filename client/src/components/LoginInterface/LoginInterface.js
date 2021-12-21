@@ -7,16 +7,15 @@ import {
 } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './LoginInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function LoginInterface() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [user, loading, error] = useAuthState(auth);
   const [user, loading] = useAuthState(auth);
   const history = useHistory();
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
     if (user) history.replace('/my-account');
@@ -72,6 +71,11 @@ function LoginInterface() {
           now
         </div>
       </div>
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }

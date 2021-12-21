@@ -189,7 +189,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
-                  <br /> <span className="span--bold">25kg of CO2 </span>a year
+                  <br /> <span className="span--bold">25kg of CO2 </span> a year
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
-                  <br /> <span className="span--bold">72kg of CO2 </span>a year
+                  <br /> <span className="span--bold">72kg of CO2 </span> a year
                 </div>
               </div>
             </div>
@@ -350,7 +350,7 @@ export default class ReduceInterface extends Component {
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />
-                  <span className="span--bold">331kg of CO2 </span>a year
+                  <span className="span--bold">331kg of CO2 </span> a year
                 </div>
               </div>
             </div>
@@ -358,9 +358,8 @@ export default class ReduceInterface extends Component {
         </article>
 
         <h1 className="re-title re-title--bottom">
-          <span className="span">{'>>'}</span> For more information and tips on
-          how you can reduce <br />
-          your carbon footrpint, please visit the links below:{' '}
+          <span className="span">{'>>'}</span> For more tips visit the links
+          below:{' '}
         </h1>
 
         <div className="re-content__button-box re-content__button-box--bottom">

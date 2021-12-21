@@ -41,7 +41,6 @@
 .article {
   &__container {
     @include f.body-large('Titillium Web');
-    // width: 100%;
     transition: all 0.25s ease-in-out;
     margin: 4rem;
     min-width: 42.95rem;
@@ -78,13 +77,10 @@
   &__title {
     @include f.subheader('Titillium Web');
     margin: 1rem;
-    // position: absolute;
     color: theme.$gw-black;
     border-bottom: 3px solid theme.$gw-white;
     transition: all 0.25s ease-in-out;
     text-align: center;
-
-    // text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
   }
 
   &__info-box {

@@ -14,7 +14,7 @@ export default function EstimateInterface() {
         </span>
         <br /> in order to start your journey, <br />
         you need to know how big your environmental footprint is! <br />
-        greenwise will help you estimate it in three fronts:
+        GreenWise will help you estimate it in three fronts:
       </div>
       <div className="landing__middle-box">
         <Link className="landing__image-container" to="/estimate/electricity">
@@ -40,9 +40,14 @@ export default function EstimateInterface() {
           <img className="landing__image" alt="vehicles " src={vehiclesImage} />
         </Link>
       </div>
-      <Link className="landing__button" to="/estimate/electricity">
-        Let's get started <span className="span"> &gt;&gt; </span>{' '}
-      </Link>
+      <div className="landing__bottom-box">
+        <Link className="landing__button landing__button--light" to="/login">
+          😃 Log in to save estimates 📊
+        </Link>
+        <Link className="landing__button" to="/estimate/electricity">
+          Let's get started <span className="span"> {'>>'}</span>
+        </Link>
+      </div>
     </div>
   );
 }

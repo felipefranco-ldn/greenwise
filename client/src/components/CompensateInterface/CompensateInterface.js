@@ -26,7 +26,7 @@ export default function CompensateInterface() {
             <br /> <br />
             Many carbon offsetting projects also provide additional benefits
             such as biodiversity increase, education, jobs, food security, clean
-            drinking water and well-being to local communities.
+            drinking water and wellbeing to local communities.
             <br /> <br />
             You can choose to support any of the projects below, and many more,
             in order to balance out your carbon footrpint. These comply with
@@ -346,9 +346,8 @@ export default function CompensateInterface() {
       </div>
 
       <h1 className="re-title re-title--bottom">
-        <span className="span">{'>>'}</span> For more information on Carbon
-        Offsetting Projects <br />
-        and how you can support them, please visit the links below:{' '}
+        <span className="span">{'>>'}</span> More Carbon Offsetting Projects and
+        how you can support them:
       </h1>
 
       <div className="re-content__button-box re-content__button-box--bottom re-content__button-box--compensate ">

@@ -15,6 +15,7 @@
 
   &--bold {
     font-weight: 600;
+    display: inline-block;
   }
 
   &--number {
@@ -37,6 +38,12 @@
 
     &-label {
       @include f.table-header('Titillium Web');
+
+      &-title {
+        @include f.body-large('Titillium Web');
+        color: theme.$gw-black;
+        margin: 0;
+      }
     }
 
     &-question {
@@ -78,7 +85,6 @@
       &:checked + label {
         background-color: theme.$gw-cloud;
         border-color: theme.$gw-cloud;
-        // color: theme.$gw-white;
         font-weight: 600;
       }
     }
@@ -90,7 +96,6 @@
 
     &-home-type {
       width: 47%;
-      // height: 4rem;
       margin: 1.2rem 0;
       text-align: center;
       border-radius: 2rem;
@@ -110,7 +115,6 @@
       width: 100%;
       background-color: theme.$gw-white;
       border-radius: 1rem 1rem 1.5rem 1.5rem;
-      //   margin-top: 0.5rem;
       padding: 0.2rem 0.5rem;
     }
 
@@ -118,7 +122,7 @@
       width: 60%;
       margin: 1rem;
       filter: contrast(2);
-      opacity: 70%;
+      opacity: 0.7;
     }
 
     &-bedrooms-box {
@@ -129,7 +133,6 @@
 
     &-bedrooms {
       width: 47%;
-      // height: 4rem;
       margin: 2rem 0 0 0;
       text-align: center;
       border-radius: 2rem;
@@ -257,6 +260,7 @@
 
   &__link {
     text-decoration: none;
+    margin-left: auto;
   }
 
   &__intro {

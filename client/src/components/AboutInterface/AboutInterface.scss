@@ -1,0 +1,64 @@
+@use '../../styles/partials/colors' as theme;
+@use '../../styles/partials/fonts' as f;
+@use '../../styles/partials/breakpoints' as bp;
+@use '../../styles/partials/mixins' as *;
+
+.about {
+  &__container {
+    width: 80vw;
+    height: 85vh;
+    min-height: 70rem;
+    margin: 8rem auto;
+    padding: 4rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4rem;
+    flex: auto;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include f.body-large('Titillium Web');
+    color: black;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.4rem;
+  }
+
+  &__image {
+    width: 20rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  &__tech-stack {
+    width: 47rem;
+    margin-top: 2rem;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+
+    &--bold {
+      font-weight: 600;
+    }
+
+    &:hover {
+      text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__bottom-box {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+  }
+}

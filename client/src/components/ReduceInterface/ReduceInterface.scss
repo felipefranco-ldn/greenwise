@@ -57,7 +57,6 @@
     padding: 1rem 4rem;
     text-align: center;
     position: relative;
-    // transition: all 0.25s ease-in-out;
   }
 
   &__intro {
@@ -128,7 +127,6 @@
       flex-wrap: wrap;
       height: 14rem;
       margin-bottom: 4rem;
-      //   width: 100%;
       justify-content: space-between;
     }
 
@@ -159,6 +157,8 @@
 
     &:hover {
       box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
     }
 
     &--next {

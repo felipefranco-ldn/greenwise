@@ -116,7 +116,6 @@
 
     &-class {
       width: 47%;
-      //   height: 4rem;
       margin: 2rem 0 0 0;
       text-align: center;
       border-radius: 2rem;
@@ -220,6 +219,7 @@
 
   &__link {
     text-decoration: none;
+    margin-left: auto;
   }
 
   &__intro {
