@@ -7,6 +7,7 @@ import {
   signInWithGoogle,
 } from '../../firebase';
 import './RegisterInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -76,6 +77,11 @@ function Register() {
           now
         </div>
       </div>
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }

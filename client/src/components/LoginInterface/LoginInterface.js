@@ -7,6 +7,7 @@ import {
 } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './LoginInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function LoginInterface() {
   const [email, setEmail] = useState('');
@@ -72,6 +73,11 @@ function LoginInterface() {
           now
         </div>
       </div>
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }

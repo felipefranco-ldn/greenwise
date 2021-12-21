@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { auth, sendPasswordResetEmail } from '../../firebase';
 import './HelpInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function Help() {
   const [email, setEmail] = useState('');
@@ -43,6 +44,11 @@ function Help() {
           now
         </div>
       </div>
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }

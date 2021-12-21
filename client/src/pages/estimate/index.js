@@ -3,7 +3,6 @@ import EstimateInterface from '../../components/EstimateInterface/EstimateInterf
 import EstimateOptions from '../../components/EstimateOptions/EstimateOptions';
 import Layout from '../../components/Layout/Layout';
 import './index.scss';
-
 export default class Estimate extends Component {
   render() {
     return (

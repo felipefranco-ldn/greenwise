@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { auth, db, logout } from '../../firebase';
 import './ProfileInterface.scss';
+import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function ProfileInterface() {
   // const [user, loading, error] = useAuthState(auth);
@@ -107,7 +108,12 @@ function ProfileInterface() {
         >
           Log out <span className="span">{'>>'}</span>
         </button>
-      </div>
+      </div>{' '}
+      <img
+        className="account__planet-icon"
+        alt="planet earth icon"
+        src={planetIcon}
+      />
     </div>
   );
 }
