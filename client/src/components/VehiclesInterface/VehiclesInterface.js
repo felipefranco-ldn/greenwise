@@ -2,21 +2,8 @@ import React, { Component } from 'react';
 import './VehiclesInterface.scss';
 import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import cityCarIcon from '../../assets/images/icons/city-car.png';
-import compactCarIcon from '../../assets/images/icons/compact.png';
-import fullSizeCarIcon from '../../assets/images/icons/full-size.png';
-import minivanIcon from '../../assets/images/icons/minivan.png';
-import cuvIcon from '../../assets/images/icons/cuv.png';
-import suvIcon from '../../assets/images/icons/suv.png';
-import pickupIcon from '../../assets/images/icons/pickup.png';
-import otherIcon from '../../assets/images/icons/other.png';
-import fuelIcon from '../../assets/images/icons/fuel.png';
-import hybridIcon from '../../assets/images/icons/hybrid.png';
-import electricIcon from '../../assets/images/icons/electric.png';
-import fuelIconsLanding from '../../assets/images/icons/fuel-icons-landing.png';
-import co2Logo from '../../assets/images/images/co2-logo.svg';
-import RadioInput from '../RadioInput/RadioInput';
+import VehiclesInput from './VehiclesInput';
+import VehiclesOutput from './VehiclesOutput';
 
 import {
   Chart as ChartJS,
@@ -46,6 +33,7 @@ export default class VehiclesInterface extends Component {
     userVehiclePower: '',
     userVehicleCo2: 0,
     totalVehicleCo2: 0,
+    chartData: 0,
   };
 
   handleChange = (event) => {
@@ -156,7 +144,7 @@ export default class VehiclesInterface extends Component {
     }
   };
 
-  chartData = () => {
+  newChartData = () => {
     const chartData = {
       labels: [
         this.state.userVehiclePower === 'petrol'
@@ -247,7 +235,7 @@ export default class VehiclesInterface extends Component {
           console.log('vehicles data:', data);
           const userVeCo2Data = data.data.attributes.carbon_kg;
           this.setState({ userVehicleCo2: userVeCo2Data });
-          this.setState({ chartData: this.chartData() });
+          this.setState({ chartData: this.newChartData() });
           this.vehiclesChart(this.state.chartData);
           this.getCo2();
         })
@@ -268,296 +256,21 @@ export default class VehiclesInterface extends Component {
     return (
       <div className="ve-container">
         {/* //! input section (left side) starts here */}
-        <div className="ve-input">
-          <form className="ve-input__form">
-            <div className="ve-input__form-question">
-              <label className="ve-input__form-label">
-                <span className="span">{'>>'} </span> How long have you driven?
-              </label>
-
-              <div className="ve-input__form-distance-box">
-                <input
-                  type="text"
-                  name="userDistance"
-                  className="ve-input__form-input"
-                  placeholder="Enter distance"
-                  onChange={this.handleChange}
-                  autoComplete="off"
-                />
-                <select
-                  name="userDistanceUnits"
-                  className="ve-input__form-select"
-                  onChange={this.handleChange}
-                >
-                  <option value="">Units</option>
-                  <option value="km">Kilometres</option>
-                  <option value="mi">Miles</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="ve-input__break"></div>
-
-            <div className="ve-input__form-question">
-              <label className="ve-input__form-label">
-                <span className="span">{'>>'} </span> Select type of vehicle
-              </label>
-              <div className="ve-input__form-type-box">
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="micro"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="City car"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="micro car example"
-                  imgSrc={cityCarIcon}
-                />
-
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="compact"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="Compact"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="compact car example"
-                  imgSrc={compactCarIcon}
-                />
-              </div>
-
-              <div className="ve-input__form-type-box">
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="fullsize"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="Full-size"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="full-size car example"
-                  imgSrc={fullSizeCarIcon}
-                />
-
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="minivan"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="Minivan"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="minivan example"
-                  imgSrc={minivanIcon}
-                />
-              </div>
-
-              <div className="ve-input__form-type-box">
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="cuv"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="CUV"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="cuv example"
-                  imgSrc={cuvIcon}
-                />
-
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="suv"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="SUV"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="suv example"
-                  imgSrc={suvIcon}
-                />
-              </div>
-
-              <div className="ve-input__form-type-box">
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="pickup"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="Pick-up"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="pick-up example"
-                  imgSrc={pickupIcon}
-                />
-
-                <RadioInput
-                  inputClass="ve-input__form-radio"
-                  value="other"
-                  name="carSize"
-                  handleChange={this.handleSizeChange}
-                  labelClass="ve-input__form-size"
-                  labelTitleClass="ve-input__form-label-title"
-                  labelTitle="Other large"
-                  imgBoxClass="ve-input__form-image-box"
-                  imgClass="ve-input__form-car-image"
-                  imgAlt="other large vehicle example"
-                  imgSrc={otherIcon}
-                />
-              </div>
-            </div>
-
-            <div className="ve-input__break"></div>
-
-            <div className="ve-input__form-question">
-              <label className="ve-input__form-label">
-                <span className="span">{'>>'} </span> Select fuel / power source
-              </label>
-
-              <div className="ve-input__form-power-box">
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="petrol"
-                  name="userVehiclePower"
-                  value="petrol"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-power" htmlFor="petrol">
-                  <h3 className="ve-input__form-label-title">Fuel</h3>
-                  <img
-                    className="ve-input__form-power-icon"
-                    alt="petrol car icon"
-                    src={fuelIcon}
-                  />
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="hybrid"
-                  name="userVehiclePower"
-                  value="hybrid"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-power" htmlFor="hybrid">
-                  <h3 className="ve-input__form-label-title">Hybrid</h3>
-                  <img
-                    className="ve-input__form-power-icon"
-                    alt="hybrid car icon"
-                    src={hybridIcon}
-                  />
-                </label>
-
-                <input
-                  className="ve-input__form-radio"
-                  type="radio"
-                  id="electric"
-                  name="userVehiclePower"
-                  value="electric"
-                  onChange={this.handleChange}
-                />
-                <label className="ve-input__form-power" htmlFor="electric">
-                  <h3 className="ve-input__form-label-title">Electric</h3>
-                  <img
-                    className="ve-input__form-power-icon"
-                    alt="electric car icon"
-                    src={electricIcon}
-                  />
-                </label>
-              </div>
-            </div>
-          </form>
-        </div>
+        <VehiclesInput
+          handleChange={this.handleChange}
+          handleSizeChange={this.handleSizeChange}
+        />
 
         {/* //! output section (right side) starts here */}
-        <div className="ve-output">
-          {this.state.chartData ? (
-            <div className="ve-output__content">
-              <div className="ve-output__content-title">
-                Kilograms of CO2 emitted by your vehicle.
-                <br />
-                Comparison with other types of vehicle and power sources,
-                <br />
-                and to the same distance travelled on train.
-              </div>
-              {this.vehiclesChart()}
-              <div className="ve-output__content-text">
-                <div className="ve-output__info-icon">i</div>
-                Your vehicle released approx.{' '}
-                <span className="span--bold">
-                  {' '}
-                  {Number(this.state.totalVehicleCo2).toFixed(0)} kilograms of
-                  CO2{' '}
-                </span>{' '}
-                into the atmosphere. Covering the same distance by train would
-                have generated{' '}
-                <span className="span--bold">
-                  {' '}
-                  {Number(
-                    (this.state.userDistanceUnits === 'km'
-                      ? this.state.userDistance * 0.041
-                      : this.state.userDistance * 0.066
-                    ).toFixed(0)
-                  )}{' '}
-                  kilograms of CO2
-                </span>{' '}
-                instead.
-              </div>
-              <div className="ve-output__content-button-box">
-                {/* <div className="ve-output__content-button">
-                  Save estimate in dashboard
-                  <span className="span"> {'>>'} </span>
-                </div> */}
-                <Link
-                  onClick={this.saveVeCo2}
-                  className="ve-output__link"
-                  to="/reduce"
-                >
-                  <div className="ve-output__content-button ve-output__content-button--next">
-                    Go to Next Step <span className="span"> {'>>'} </span>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div className="ve-output__intro">
-              <h3 className="ve-output__intro-title">
-                We know Hybrid and Electric vehicles
-                <br />
-                are better for the environment <br />
-                than those which run on fossil fuels... <br />
-                but by how much?
-              </h3>
-              <img
-                className="ve-output__intro-image"
-                alt="home electricity consumption and network"
-                src={fuelIconsLanding}
-              />
-              <img
-                className="ve-output__intro-logo"
-                alt="co2 logo"
-                src={co2Logo}
-              />
-            </div>
-          )}
-        </div>
+
+        <VehiclesOutput
+          chartData={this.state.chartData}
+          vehiclesChart={this.vehiclesChart}
+          saveVeCo2={this.saveVeCo2}
+          totalVehicleCo2={this.state.totalVehicleCo2}
+          userDistance={this.state.userDistance}
+          userDistanceUnits={this.state.userDistanceUnits}
+        />
       </div>
     );
   }
