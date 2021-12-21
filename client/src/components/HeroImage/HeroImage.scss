@@ -51,17 +51,13 @@
     text-align: center;
     margin: 0 0 1rem 0;
     color: theme.$gw-black;
-    // color: theme.$gw-white;
-    // text-shadow: 0px 0px 10px theme.$gw-black;
   }
 
   &__subtitle {
     @include f.body-xlarge('Titillium Web');
     text-align: center;
     margin: 0;
-    // color: theme.$gw-slate;
     text-decoration: none;
-    // padding: 2rem;
     transition: all 0.25s ease-in-out;
   }
 
@@ -69,7 +65,6 @@
     display: flex;
     width: 75%;
     justify-content: space-between;
-    // margin: 4rem 0 0 0;
     margin: 7rem 0;
   }
 

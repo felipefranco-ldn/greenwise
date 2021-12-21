@@ -65,8 +65,6 @@ export default class ElectricityInterface extends Component {
 
   getData = () => {
     if (this.state.userCountry && this.state.bedroomNumber) {
-      // get electricity consumption info
-
       axios
         .post(
           `${EXT_API_URL}`,

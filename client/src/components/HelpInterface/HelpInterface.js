@@ -8,7 +8,6 @@ import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function Help() {
   const [email, setEmail] = useState('');
-  // const [user, loading, error] = useAuthState(auth);
   const [user, loading] = useAuthState(auth);
 
   const history = useHistory();

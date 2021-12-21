@@ -1,23 +1,6 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-// import firebase from "firebase";
-
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyB6Ui7Fu7sDLo0PhvPk5S53CPMhQkP4CKg',
-//   authDomain: 'library-of-pizza.firebaseapp.com',
-//   databaseURL:
-//     'https://library-of-pizza-default-rtdb.europe-west1.firebasedatabase.app',
-//   projectId: 'library-of-pizza',
-//   storageBucket: 'library-of-pizza.appspot.com',
-//   messagingSenderId: '574971762580',
-//   appId: '1:574971762580:web:82ffc3aa3c5d3fc99fa181',
-//   measurementId: '${config.measurementId}',
-// };
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAwoLZW4Y_eExvxkxr3keGXmXxtTbulNM8',
@@ -32,9 +15,6 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const db = app.firestore();
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 

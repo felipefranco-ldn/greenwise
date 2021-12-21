@@ -215,7 +215,6 @@ export default class VehiclesInterface extends Component {
       },
     };
 
-    console.log('chart data here:', this.state.chartData);
     return <Bar options={chartOptions} data={this.state.chartData} />;
   };
 
@@ -232,7 +231,6 @@ export default class VehiclesInterface extends Component {
         })
         .then((response) => {
           const data = response.data;
-          console.log('vehicles data:', data);
           const userVeCo2Data = data.data.attributes.carbon_kg;
           this.setState({ userVehicleCo2: userVeCo2Data });
           this.setState({ chartData: this.newChartData() });

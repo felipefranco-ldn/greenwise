@@ -7,7 +7,6 @@ import './ProfileInterface.scss';
 import planetIcon from '../../assets/images/icons/planet-icon.png';
 
 function ProfileInterface() {
-  // const [user, loading, error] = useAuthState(auth);
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const history = useHistory();
@@ -30,7 +29,6 @@ function ProfileInterface() {
     if (loading) return;
     if (!user) return history.replace('/login');
     fetchUserName();
-    // }, [user, loading, fetchUserName, history]);
   }, [user, loading, history, fetchUserName]);
 
   return (

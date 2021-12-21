@@ -228,7 +228,6 @@ export default class FlightsInterface extends Component {
         })
         .then((response) => {
           const data = response.data;
-          console.log('flights data:', data);
           const userFlCo2Data = data.data.attributes.carbon_kg;
           const userFlDistanceData = data.data.attributes.distance_value;
           this.setState({ userFlightCo2: userFlCo2Data });
