@@ -265,7 +265,7 @@ export default class FlightsInterface extends Component {
           userFlightClass={this.state.userFlightClass}
           totalFlightCo2={this.state.totalFlightCo2}
           userFlightDistance={this.state.userFlightDistance}
-          saveFlCo2={this.state.saveFlCo2}
+          saveFlCo2={this.saveFlCo2}
           flightsChart={this.flightsChart}
         />
       </div>
