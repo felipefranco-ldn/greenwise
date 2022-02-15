@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import fuelIconsLanding from '../../assets/images/icons/fuel-icons-landing.png';
-import co2Logo from '../../assets/images/images/co2-logo.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import fuelIconsLanding from "../../assets/images/icons/fuel-icons-landing.png";
+import co2Logo from "../../assets/images/images/co2-logo.png";
 
 export default function VehiclesOutput({
   chartData,
@@ -25,29 +25,29 @@ export default function VehiclesOutput({
           {vehiclesChart()}
           <div className="ve-output__content-text">
             <div className="ve-output__info-icon">i</div>
-            Your vehicle released approx.{' '}
+            Your vehicle released approx.{" "}
             <span className="span--bold">
-              {' '}
-              {Number(totalVehicleCo2).toFixed(0)} kilograms of CO2{' '}
-            </span>{' '}
+              {" "}
+              {Number(totalVehicleCo2).toFixed(0)} kilograms of CO2{" "}
+            </span>{" "}
             into the atmosphere. Covering the same distance by train would have
-            generated{' '}
+            generated{" "}
             <span className="span--bold">
-              {' '}
+              {" "}
               {Number(
-                (userDistanceUnits === 'km'
+                (userDistanceUnits === "km"
                   ? userDistance * 0.041
                   : userDistance * 0.066
                 ).toFixed(0)
-              )}{' '}
+              )}{" "}
               kilograms of CO2
-            </span>{' '}
+            </span>{" "}
             instead.
           </div>
           <div className="ve-output__content-button-box">
             <Link onClick={saveVeCo2} className="ve-output__link" to="/reduce">
               <div className="ve-output__content-button ve-output__content-button--next">
-                Go to Next Step <span className="span"> {'>>'} </span>
+                Go to Next Step <span className="span"> {">>"} </span>
               </div>
             </Link>
           </div>
