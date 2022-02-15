@@ -1,7 +1,7 @@
-import React from 'react';
-import co2Logo from '../../assets/images/images/co2-logo.svg';
-import flightsMap from '../../assets/images/images/flights-map.png';
-import { Link } from 'react-router-dom';
+import React from "react";
+import co2Logo from "../../assets/images/images/co2-logo.png";
+import flightsMap from "../../assets/images/images/flights-map.png";
+import { Link } from "react-router-dom";
 
 export default function FlightsOutput({
   chartData,
@@ -16,7 +16,7 @@ export default function FlightsOutput({
       {chartData ? (
         <div className="fl-output__content">
           <div className="fl-output__content-title">
-            Kilograms of CO2 released by <br /> your flight in {userFlightClass}{' '}
+            Kilograms of CO2 released by <br /> your flight in {userFlightClass}{" "}
             Class. <br />
             Comparison with other classes and <br /> to an equivalent distance
             covered by train.
@@ -24,17 +24,17 @@ export default function FlightsOutput({
           {flightsChart()}
           <div className="fl-output__content-text">
             <div className="fl-output__info-icon">i</div>
-            Your flight released approx.{' '}
+            Your flight released approx.{" "}
             <span className="span--bold">
-              {' '}
-              {Number(totalFlightCo2).toFixed(0)} kilograms of CO2{' '}
-            </span>{' '}
+              {" "}
+              {Number(totalFlightCo2).toFixed(0)} kilograms of CO2{" "}
+            </span>{" "}
             into the atmosphere. Covering the same distance by train would have
-            generated{' '}
+            generated{" "}
             <span className="span--bold">
-              {' '}
+              {" "}
               {Number((userFlightDistance * 0.021).toFixed(0))} kilograms of CO2
-            </span>{' '}
+            </span>{" "}
             instead.
           </div>
           <div className="fl-output__content-button-box">
@@ -44,7 +44,7 @@ export default function FlightsOutput({
               to="/estimate/vehicles"
             >
               <div className="fl-output__content-button fl-output__content-button--next">
-                Go to Next Step <span className="span"> {'>>'} </span>
+                Go to Next Step <span className="span"> {">>"} </span>
               </div>
             </Link>
           </div>

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ElectricityChart from '../ElectricityChart/ElectricityChart';
-import ligthBulb from '../../assets/images/images/light-bulb.jpg';
-import co2Logo from '../../assets/images/images/co2-logo.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import ElectricityChart from "../ElectricityChart/ElectricityChart";
+import ligthBulb from "../../assets/images/images/light-bulb.jpg";
+import co2Logo from "../../assets/images/images/co2-logo.png";
 
 export default function ElectricityOutput({
   userElValue,
@@ -22,21 +22,21 @@ export default function ElectricityOutput({
           <ElectricityChart chartData={chartData} />
           <div className="el-output__content-text">
             <div className="el-output__info-icon">i</div>
-            Your home consumes approx.{' '}
+            Your home consumes approx.{" "}
             <span className="span--bold"> {userElValue} kwh per year </span>
             ,
             <br />
-            which releases{' '}
+            which releases{" "}
             <span className="span--bold">
-              {' '}
-              {userElCo2} kilograms of CO2{' '}
-            </span>{' '}
+              {" "}
+              {userElCo2} kilograms of CO2{" "}
+            </span>{" "}
             into the atmosphere. <br />
-            This is{' '}
+            This is{" "}
             <span className="span--bold">
-              {' '}
-              {Number((userElCo2 / 569).toFixed(2))} times{' '}
-            </span>{' '}
+              {" "}
+              {Number((userElCo2 / 569).toFixed(2))} times{" "}
+            </span>{" "}
             the consumption of an average home
             <br /> in the planet.
           </div>
@@ -47,7 +47,7 @@ export default function ElectricityOutput({
               to="/estimate/flights"
             >
               <div className="el-output__content-button el-output__content-button--next">
-                Go to Next Step <span className="span"> {'>>'} </span>
+                Go to Next Step <span className="span"> {">>"} </span>
               </div>
             </Link>
           </div>
