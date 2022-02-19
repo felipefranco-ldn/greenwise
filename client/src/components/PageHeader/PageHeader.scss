@@ -1,20 +1,21 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .header {
   width: 100vw;
   background-color: theme.$gw-white;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-  z-index: 2;
+  z-index: 3;
+  position: relative;
 
   &__link {
     text-decoration: none;
-    height: 0.5rem;
     text-align: center;
-    margin: 0;
+    margin: 1.2rem;
     transition: all 0.25s ease-in-out;
+    width: 15rem;
 
     &:hover {
       cursor: pointer;
@@ -38,6 +39,39 @@
     }
   }
 
+  &__menu-icon {
+    height: 4rem;
+    filter: invert(50%);
+    transition: all 0.25s ease-in-out;
+
+    &-container {
+      position: absolute;
+      height: 5rem;
+      width: 5rem;
+      top: 3.5rem;
+      right: 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.25s ease-in-out;
+      border-radius: 50%;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        background-color: theme.$gw-yellow;
+      }
+
+      &:active {
+        background-color: theme.$gw-green;
+      }
+
+      &:hover .header__menu-icon {
+        filter: invert(0%);
+      }
+    }
+  }
+
   &__main-container {
     display: flex;
     flex-direction: column;
@@ -48,6 +82,7 @@
     height: 8rem;
     display: block;
     transition: all 0.25s ease-in-out;
+    margin: 2rem;
 
     &:hover {
       transform: scale(1.05);
@@ -64,6 +99,26 @@
     width: 100%;
     align-items: center;
     padding-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 12rem;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    &--hidden {
+      height: 0;
+    }
+  }
+
+  &__buttons-subcontainer {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.25s ease-in-out;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__button-spacer {
@@ -72,10 +127,12 @@
   }
 
   &__button-text {
-    @include f.labels-links-buttons('Titillium Web');
+    @include f.labels-links-buttons("Titillium Web");
     margin: -1.5rem 0.5rem 0;
     color: theme.$gw-slate;
     transition: all 0.25s ease-in-out;
+    display: flex;
+    justify-content: space-between;
 
     &--active {
       color: theme.$gw-black;
@@ -89,12 +146,13 @@
     justify-content: center;
 
     &__main-container {
-      padding: 2rem 0;
+      padding: 0;
       flex-direction: row;
       justify-content: space-between;
-      align-items: flex-start;
       width: 100%;
       max-width: 110rem;
+      display: flex;
+      flex-direction: column;
     }
 
     &__buttons-container {
@@ -106,6 +164,12 @@
     &__link {
       width: auto;
       margin: 0;
+      height: 0.5rem;
+    }
+
+    &__button-spacer {
+      width: 5rem;
+      transition: all 0.25s ease-in-out;
     }
   }
 }

@@ -1,7 +1,7 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .hero {
   display: flex;
@@ -12,7 +12,7 @@
   align-items: flex-start;
 
   &::before {
-    content: '';
+    content: "";
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(../../assets/images/images/hero.png);
@@ -49,14 +49,14 @@
   }
 
   &__title {
-    @include f.subheader('Titillium Web');
+    @include f.subheader("Titillium Web");
     text-align: center;
     margin: 0 0 1rem 0;
     color: theme.$gw-black;
   }
 
   &__subtitle {
-    @include f.body-xlarge('Titillium Web');
+    @include f.body-xlarge("Titillium Web");
     text-align: center;
     margin: 0;
     text-decoration: none;
@@ -97,7 +97,7 @@
     flex-direction: column;
     justify-content: center;
     height: 20rem;
-    @include f.page-header('Titillium Web');
+    @include f.page-header("Titillium Web");
     color: theme.$gw-graphite;
     vertical-align: middle;
   }
@@ -134,7 +134,7 @@
 
     &-label {
       height: 4rem;
-      @include f.body-large('Titillium Web');
+      @include f.body-large("Titillium Web");
       font-weight: 600;
       color: theme.$gw-white;
       padding: 0.3rem 3rem;
@@ -180,7 +180,7 @@
     }
 
     &-text {
-      @include f.subheader('Titillium Web');
+      @include f.subheader("Titillium Web");
       text-align: center;
       color: theme.$gw-white;
       padding-top: 2rem;
