@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './ReduceInterface.scss';
-import pointerIcon from '../../assets/images/icons/pointer-icon.png';
-import worldIcon from '../../assets/images/icons/world-icon.svg';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./ReduceInterface.scss";
+import pointerIcon from "../../assets/images/icons/pointer-icon.png";
+import worldIcon from "../../assets/images/icons/world-icon.svg";
 
 export default class ReduceInterface extends Component {
   state = {
@@ -59,13 +59,12 @@ export default class ReduceInterface extends Component {
         <div className="re-top-box">
           <div className="re-top-box__left">
             <h1 className="re-title">
-              <span className="span">{'>>'}</span> Useful tips to start reducing{' '}
-              <br />
+              <span className="span">{">>"}</span> Useful tips to start reducing
               your carbon footprint
             </h1>
             <p className="re-text">
-              You can start helping the environment from home. <br />
-              And remember: every action counts, big or small!
+              You can start helping the environment from home. And remember:
+              every action counts, big or small!
               <br />
               <br />
               Have a look at the suggestions below. Select those you would like
@@ -88,12 +87,12 @@ export default class ReduceInterface extends Component {
                   The selected suggestions allow <br />
                   you to reduce your emissions
                   <br />
-                  by{' '}
+                  by{" "}
                   <span className="span--bold span--green-bkgrd">
                     {this.addCo2Saving()} kilograms of CO2
-                  </span>{' '}
+                  </span>{" "}
                   every year. <br />
-                  Besides helping the evironment, you would also save{' '}
+                  Besides helping the evironment, you would also save{" "}
                   <span className="span--bold span--green-bkgrd">
                     £{this.addMoneySaving()}
                   </span>
@@ -102,11 +101,11 @@ export default class ReduceInterface extends Component {
                 <div className="re-content__button-box re-content__button-box--top">
                   <div className="re-content__button">
                     Save estimate in dashboard
-                    <span className="span"> {'>>'} </span>
+                    <span className="span"> {">>"} </span>
                   </div>
                   <Link className="re-content__link" to="/compensate">
                     <div className="re-content__button re-content__button--next">
-                      Go to Next Step <span className="span"> {'>>'} </span>
+                      Go to Next Step <span className="span"> {">>"} </span>
                     </div>
                   </Link>
                 </div>
@@ -147,12 +146,11 @@ export default class ReduceInterface extends Component {
             </div>
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Turn off your TV instead <br />
-                of putting it on standby
+                Turn off your TV instead of putting it on standby
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold">£2 saved</span> <br />
+                  <span className="span--bold">£2 saved </span>
                   per year
                 </div>
                 <div className="re-article__reduction">
@@ -179,8 +177,7 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Turn your dishwasher down <br />
-                from 65⁰C to 55⁰C{' '}
+                Turn your dishwasher down from 65⁰C to 55⁰C{" "}
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -211,8 +208,7 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                When using your kettle, <br />
-                only boil the water you need
+                When using your kettle, only boil the water you need
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -243,8 +239,7 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Stop using your tumble dryer,
-                <br /> hang your washing instead
+                Stop using your tumble dryer, hang your washing instead
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -253,7 +248,7 @@ export default class ReduceInterface extends Component {
                   per year
                 </div>
                 <div className="re-article__reduction">
-                  Reduction of <br />{' '}
+                  Reduction of <br />{" "}
                   <span className="span--bold">153kg of CO2 </span> a year
                 </div>
               </div>
@@ -276,8 +271,7 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Turn down the heating by 1⁰C <br />
-                and wear warmer clothes at home
+                Turn down the heating by 1⁰C and wear warmer clothes at home
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -308,8 +302,8 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Replace 5 traditional lightbulbs
-                <br /> with long-lasting LED lightbulbs
+                Replace 5 traditional lightbulbs with long-lasting LED
+                lightbulbs
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -341,7 +335,7 @@ export default class ReduceInterface extends Component {
 
             <div className="re-article__main-box">
               <p className="re-article__title">
-                Swap 1 portion of beef for <br /> 1 portion of chicken each week
+                Swap 1 portion of beef for 1 portion of chicken each week
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
@@ -358,8 +352,8 @@ export default class ReduceInterface extends Component {
         </article>
 
         <h1 className="re-title re-title--bottom">
-          <span className="span">{'>>'}</span> For more tips visit the links
-          below:{' '}
+          <span className="span">{">>"}</span> For more tips visit the links
+          below:{" "}
         </h1>
 
         <div className="re-content__button-box re-content__button-box--bottom">
@@ -371,7 +365,7 @@ export default class ReduceInterface extends Component {
           >
             <div className="re-content__button re-content__button--half-length">
               WWF - Environmental footprint
-              <span className="span"> {'>>'} </span>
+              <span className="span"> {">>"} </span>
             </div>
           </a>
 
@@ -382,8 +376,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              Future Learn - 20 tips to reduce your CO2{' '}
-              <span className="span"> {'>>'} </span>
+              Future Learn - 20 tips to reduce your CO2{" "}
+              <span className="span"> {">>"} </span>
             </div>
           </a>
 
@@ -395,7 +389,7 @@ export default class ReduceInterface extends Component {
           >
             <div className="re-content__button re-content__button--half-length">
               BBC - Climate change food calculator
-              <span className="span"> {'>>'} </span>
+              <span className="span"> {">>"} </span>
             </div>
           </a>
 
@@ -406,8 +400,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              Our World in Data - Food gas emissions{' '}
-              <span className="span"> {'>>'} </span>
+              Our World in Data - Food gas emissions{" "}
+              <span className="span"> {">>"} </span>
             </div>
           </a>
         </div>
