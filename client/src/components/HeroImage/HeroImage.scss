@@ -44,7 +44,8 @@
 
   &__top-box {
     background-color: rgba(255, 255, 255, 0.65);
-    width: 75%;
+    width: 100%;
+    max-width: 57.6rem;
     padding: 2rem;
   }
 
@@ -199,6 +200,10 @@
 
 @include bp.tablet {
   .hero {
+    &__top-box {
+      width: 75%;
+    }
+
     &__middle-box {
       flex-direction: row;
       flex-wrap: wrap;
@@ -214,7 +219,7 @@
     &__arrow-icon {
       position: relative;
       transform: rotate(-90deg);
-      bottom: 2.5rem;
+      bottom: 5rem;
     }
   }
 }

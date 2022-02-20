@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './PageFooter.scss';
-import githubIcon from '../../assets/images/icons/github-icon.png';
-import linkedInIcon from '../../assets/images/icons/linkedin-icon.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./PageFooter.scss";
+import githubIcon from "../../assets/images/icons/github-icon.png";
+import linkedInIcon from "../../assets/images/icons/linkedin-icon.png";
 
 export default function PageFooter() {
   return (
     <footer className="footer">
       <div className="footer__main-container">
         <Link className="footer__link" to="/">
-          <p className="footer__text">
+          <p className="footer__text footer__title">
             <span className="span--bold">GreenWise</span> | 2021
           </p>
         </Link>
-        <div className="footer__right-box">
+        <div className="footer__middle-box">
           <div className="footer__text-box">
             <a
               className="footer__anchor"
@@ -27,16 +27,17 @@ export default function PageFooter() {
           <Link className="footer__link" to="/about">
             <div className="footer__text-box">
               <p className="footer__text">About</p>
-            </div>{' '}
+            </div>{" "}
           </Link>
-
           <Link className="footer__link" to="/intro">
             <div className="footer__text-box">
               <p className="footer__text">by Felipe Franco</p>
-            </div>{' '}
+            </div>{" "}
           </Link>
+        </div>
 
-          <div className="footer__text-box">
+        <div className="footer__icon-container">
+          <div className="footer__icon-box">
             <a
               href="https://github.com/felipefranco-ldn"
               rel="noreferrer"
@@ -49,7 +50,7 @@ export default function PageFooter() {
               />
             </a>
           </div>
-          <div className="footer__text-box">
+          <div className="footer__icon-box">
             <a
               href="https://www.linkedin.com/in/felipefranco-ldn/"
               rel="noreferrer"

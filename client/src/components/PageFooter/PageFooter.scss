@@ -1,18 +1,18 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .footer {
   position: relative;
-
   width: 100vw;
-  height: 8rem;
+  // height: 16rem;
   display: flex;
   justify-content: center;
+  padding: 2rem;
 
   &::before {
-    content: '';
+    content: "";
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(../../assets/images/images/water-image.jpg);
@@ -29,6 +29,7 @@
   &__main-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 2;
@@ -38,23 +39,35 @@
     text-decoration: none;
   }
 
-  &__right-box {
+  &__middle-box {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
   }
 
   &__text-box {
-    padding: 0 0 0 5rem;
+    // padding: 0 0 0 5rem;
+    padding: 0 3rem;
     vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 
   &__anchor {
     text-decoration: none;
   }
 
+  &__title {
+    width: 13rem;
+  }
+
   &__text {
     position: relative;
-    @include f.body-large('Titillium Web');
+    @include f.body-large("Titillium Web");
     color: theme.$gw-slate;
     font-weight: 400;
     margin: 0;
@@ -71,6 +84,12 @@
     height: 3rem;
     transition: all 0.25s ease-in-out;
 
+    &-container {
+      display: flex;
+      width: 13rem;
+      justify-content: space-between;
+    }
+
     &--light {
       filter: brightness(1.15);
     }
@@ -83,9 +102,13 @@
 
 @include bp.tablet {
   .footer {
+    padding: 0 5rem;
+    height: 8rem;
+
     &__main-container {
       max-width: 110rem;
       width: 100%;
+      flex-direction: row;
     }
   }
 }
