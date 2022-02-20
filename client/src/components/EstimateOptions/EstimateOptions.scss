@@ -1,19 +1,20 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .aside {
-  width: 10%;
+  width: 90%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
 
   &__link {
     text-decoration: none;
-    height: 100%;
+    width: 33.3333%;
     background-color: theme.$gw-light-grey;
     transition: all 0.25s ease-in-out;
+    cursor: pointer;
 
     &:hover .aside__card-title {
       color: theme.$gw-black;
@@ -35,8 +36,8 @@
       color: theme.$gw-black;
 
       & .aside__card {
-        border-right: 0;
-        border-left: 10px solid theme.$gw-green;
+        border-bottom: 10px;
+        border-top: 10px solid theme.$gw-green;
       }
 
       & .aside__card-title {
@@ -62,12 +63,11 @@
     justify-content: center;
     align-items: center;
     border: 1px solid theme.$gw-white;
-    border-right: -3px;
-    border-left: 0;
-    border-left: 11px solid theme.$gw-light-grey;
+    border-top: 11px solid theme.$gw-light-grey;
+    padding: 1rem 0;
 
     &-title {
-      @include f.labels-links-buttons('Titillium Web');
+      @include f.labels-links-buttons("Titillium Web");
       color: theme.$gw-slate;
       margin: 0 0 1rem 0;
       transition: all 0.25s ease-in-out;
@@ -83,8 +83,40 @@
       transition: all 0.25s ease-in-out;
     }
   }
+}
 
-  &__link {
-    cursor: pointer;
+@include bp.desktop {
+  .aside {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+
+    &__link {
+      width: 100%;
+      height: 100%;
+
+      &.active {
+        & .aside__card {
+          border-top: 0;
+          border-right: 0;
+          border-left: 10px solid theme.$gw-green;
+        }
+      }
+    }
+
+    &__card {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid theme.$gw-white;
+      border-right: -3px;
+      border-left: 11px solid theme.$gw-light-grey;
+      padding: 1rem 0;
+    }
   }
 }

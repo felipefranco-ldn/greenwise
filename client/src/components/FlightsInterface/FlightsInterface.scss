@@ -1,19 +1,19 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .fl-container {
   display: flex;
+  flex-direction: column-reverse;
   padding: 2rem;
-  height: 100%;
+  min-height: 72rem;
 }
 
 .fl-input {
-  width: 35%;
-  border-right: 2px solid theme.$gw-light-grey;
-  padding: 0 2rem 0 0;
-  @include f.body-large('Titillium Web');
+  width: 100%;
+  padding: 2rem 0 0 0;
+  @include f.body-large("Titillium Web");
 
   &__break {
     height: 1rem;
@@ -26,16 +26,16 @@
     justify-content: space-between;
 
     &-label {
-      @include f.table-header('Titillium Web');
+      @include f.table-header("Titillium Web");
 
       &-title {
-        @include f.body-large('Titillium Web');
+        @include f.body-large("Titillium Web");
         color: theme.$gw-black;
         margin: 0;
         font-weight: 600;
 
         &-class {
-          @include f.body-large('Titillium Web');
+          @include f.body-large("Titillium Web");
 
           font-weight: 400;
           margin: 0;
@@ -43,7 +43,7 @@
       }
 
       &-info {
-        @include f.body-small('Titillium Web');
+        @include f.body-small("Titillium Web");
         margin: 0.5rem 0;
         padding: 0.5rem 0;
         border-top: 2px solid theme.$gw-light-grey;
@@ -51,7 +51,7 @@
       }
 
       &-example {
-        @include f.body-small('Titillium Web');
+        @include f.body-small("Titillium Web");
         color: theme.$gw-slate;
         margin: 0;
       }
@@ -132,10 +132,12 @@
 }
 
 .fl-output {
-  width: 65%;
+  width: 100%;
   padding-left: 2rem;
   display: flex;
   justify-content: center;
+  padding: 0 0 2rem 0;
+  border-bottom: 2px solid theme.$gw-light-grey;
 
   &__info-icon {
     font-family: courier;
@@ -162,7 +164,7 @@
     align-items: center;
 
     &-title {
-      @include f.table-header('Titillium Web');
+      @include f.table-header("Titillium Web");
       margin: 0;
       text-align: center;
     }
@@ -171,7 +173,7 @@
       width: 100%;
       border: 2px solid theme.$gw-yellow;
       background-color: theme.$gw-yellow50;
-      @include f.body-large('Titillium Web');
+      @include f.body-large("Titillium Web");
       margin: 1rem 0 2rem 0;
       padding: 1rem 6rem;
       text-align: center;
@@ -186,7 +188,7 @@
 
     &-button {
       height: 4rem;
-      @include f.body-large('Titillium Web');
+      @include f.body-large("Titillium Web");
       font-weight: 600;
       color: theme.$gw-white;
       padding: 0.3rem 2.5rem;
@@ -231,7 +233,7 @@
     justify-content: space-between;
 
     &-title {
-      @include f.subheader('Titillium Web');
+      @include f.subheader("Titillium Web");
       text-align: center;
       margin: 0 0 2rem 0;
       color: theme.$gw-slate;
@@ -246,6 +248,38 @@
       width: 20%;
       align-self: flex-end;
       bottom: 0;
+      margin-top: 2rem;
     }
+  }
+}
+
+@include bp.tablet {
+  .fl-container {
+    flex-direction: row;
+  }
+
+  .fl-input {
+    width: 35%;
+    border-right: 2px solid theme.$gw-light-grey;
+    padding: 0 2rem 0 0;
+    border-bottom: 0;
+  }
+
+  .fl-output {
+    width: 65%;
+    padding: 0 0 0 2rem;
+    border-bottom: 0;
+  }
+}
+
+@include bp.desktop {
+  .fl-input {
+    width: 35%;
+    padding: 0 2rem 0 0;
+  }
+
+  .fl-output {
+    width: 65%;
+    padding-left: 2rem;
   }
 }

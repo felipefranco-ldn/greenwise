@@ -1,7 +1,11 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
+
+.estimate__content-box {
+  height: auto;
+}
 
 .landing {
   display: flex;
@@ -12,7 +16,7 @@
   justify-content: space-between;
 
   &__title {
-    @include f.subheader('Titillium Web');
+    @include f.subheader("Titillium Web");
     text-align: center;
     margin: 0 0 2rem 0;
     color: theme.$gw-slate;
@@ -21,15 +25,18 @@
   &__middle-box {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
 
   &__image-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 31%;
+    align-items: center;
+    width: 100%;
     text-decoration: none;
     transition: all 0.25s ease-in-out;
+    border-top: 1px solid theme.$gw-light-grey;
+    padding-bottom: 2rem;
 
     &:hover {
       .landing__subtitle {
@@ -43,7 +50,7 @@
   }
 
   &__subtitle {
-    @include f.table-header('Titillium Web');
+    @include f.table-header("Titillium Web");
     text-align: center;
     margin: 0;
     color: theme.$gw-slate;
@@ -53,7 +60,7 @@
   }
 
   &__image {
-    width: 100%;
+    width: 70%;
     margin-top: auto;
     filter: saturate(0.4);
     transition: all 0.25s ease-in-out;
@@ -63,13 +70,16 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid theme.$gw-light-grey;
   }
 
   &__button {
     height: 4rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 26rem;
-    @include f.body-large('Titillium Web');
+    @include f.body-large("Titillium Web");
     font-weight: 600;
     color: theme.$gw-white;
     text-decoration: none;
@@ -102,4 +112,27 @@
 
 .span--dark {
   color: theme.$gw-black;
+}
+
+@include bp.tablet {
+  .landing {
+    &__middle-box {
+      flex-direction: row;
+    }
+
+    &__image-container {
+      width: 31%;
+      border-top: 0;
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__bottom-box {
+      flex-direction: row;
+      align-items: center;
+      border-top: 0;
+    }
+  }
 }

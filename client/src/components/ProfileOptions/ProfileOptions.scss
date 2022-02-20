@@ -1,90 +1,90 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+// @use "../../styles/partials/colors" as theme;
+// @use "../../styles/partials/fonts" as f;
+// @use "../../styles/partials/breakpoints" as bp;
+// @use "../../styles/partials/mixins" as *;
 
-.aside {
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+// .aside {
+//   width: 10%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
 
-  &__link {
-    text-decoration: none;
-    height: 100%;
-    background-color: theme.$gw-light-grey;
-    transition: all 0.25s ease-in-out;
+//   &__link {
+//     text-decoration: none;
+//     height: 100%;
+//     background-color: theme.$gw-light-grey;
+//     transition: all 0.25s ease-in-out;
 
-    &:hover .aside__card-title {
-      color: theme.$gw-black;
-      & .aside__card-title {
-        font-weight: 600;
-      }
-    }
+//     &:hover .aside__card-title {
+//       color: theme.$gw-black;
+//       & .aside__card-title {
+//         font-weight: 600;
+//       }
+//     }
 
-    &:hover {
-      & .aside__card-icon {
-        transform: scale(1.05);
-        filter: grayscale(50%);
-      }
-    }
+//     &:hover {
+//       & .aside__card-icon {
+//         transform: scale(1.05);
+//         filter: grayscale(50%);
+//       }
+//     }
 
-    &.active {
-      background-color: theme.$gw-smoke;
-      transition: all 0.25s ease-in-out;
-      color: theme.$gw-black;
+//     &.active {
+//       background-color: theme.$gw-smoke;
+//       transition: all 0.25s ease-in-out;
+//       color: theme.$gw-black;
 
-      & .aside__card {
-        border-right: 0;
-        border-left: 10px solid theme.$gw-green;
-      }
+//       & .aside__card {
+//         border-right: 0;
+//         border-left: 10px solid theme.$gw-green;
+//       }
 
-      & .aside__card-title {
-        color: theme.$gw-black;
-        font-weight: 600;
-        transition: all 0.25s ease-in-out;
-      }
+//       & .aside__card-title {
+//         color: theme.$gw-black;
+//         font-weight: 600;
+//         transition: all 0.25s ease-in-out;
+//       }
 
-      & .aside__card-icon {
-        filter: grayscale(25%);
-        transform: scale(1.05);
+//       & .aside__card-icon {
+//         filter: grayscale(25%);
+//         transform: scale(1.05);
 
-        transition: all 0.25s ease-in-out;
-      }
-    }
-  }
+//         transition: all 0.25s ease-in-out;
+//       }
+//     }
+//   }
 
-  &__card {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid theme.$gw-white;
-    border-right: -3px;
-    border-left: 0;
-    border-left: 11px solid theme.$gw-light-grey;
+//   &__card {
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid theme.$gw-white;
+//     border-right: -3px;
+//     border-left: 0;
+//     border-left: 11px solid theme.$gw-light-grey;
 
-    &-title {
-      @include f.labels-links-buttons('Titillium Web');
-      color: theme.$gw-slate;
-      margin: 0 0 1rem 0;
-      transition: all 0.25s ease-in-out;
+//     &-title {
+//       @include f.labels-links-buttons("Titillium Web");
+//       color: theme.$gw-slate;
+//       margin: 0 0 1rem 0;
+//       transition: all 0.25s ease-in-out;
 
-      &:hover {
-        color: theme.$gw-black;
-      }
-    }
+//       &:hover {
+//         color: theme.$gw-black;
+//       }
+//     }
 
-    &-icon {
-      width: 7rem;
-      filter: grayscale(100%);
-      transition: all 0.25s ease-in-out;
-    }
-  }
+//     &-icon {
+//       width: 7rem;
+//       filter: grayscale(100%);
+//       transition: all 0.25s ease-in-out;
+//     }
+//   }
 
-  &__link {
-    cursor: pointer;
-  }
-}
+//   &__link {
+//     cursor: pointer;
+//   }
+// }

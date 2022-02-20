@@ -10,7 +10,7 @@ export default function PageFooter() {
       <div className="footer__main-container">
         <Link className="footer__link" to="/">
           <p className="footer__text footer__title">
-            <span className="span--bold">GreenWise</span> | 2021
+            <span className="span--bold">GreenWise</span> | 2022
           </p>
         </Link>
         <div className="footer__middle-box">
