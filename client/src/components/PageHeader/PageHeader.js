@@ -3,6 +3,7 @@ import "./PageHeader.scss";
 import { Link, NavLink } from "react-router-dom";
 import greenWiseLogo from "../../assets/images/images/greenwise-logo.svg";
 import menuIcon from "../../assets/images/icons/menu-icon.png";
+import menuIconClose from "../../assets/images/icons/menu-icon-close.png";
 
 export default class PageHeader extends Component {
   state = {
@@ -28,7 +29,11 @@ export default class PageHeader extends Component {
             onClick={this.handleMenu}
             className="header__menu-icon-container"
           >
-            <img className="header__menu-icon" alt="menu icon" src={menuIcon} />
+            <img
+              className="header__menu-icon"
+              alt="menu icon"
+              src={this.state.menuVisible ? menuIconClose : menuIcon}
+            />
           </div>
 
           <div
@@ -47,15 +52,15 @@ export default class PageHeader extends Component {
             >
               <NavLink className="header__link" to="/estimate">
                 <h3 className="header__button-text ">
-                  <span>1. Estimate</span>{" "}
-                  <span className="span"> &gt;&gt; </span>{" "}
+                  <span>1. Estimate&nbsp;</span>
+                  <span className="span"> &gt;&gt; </span>
                 </h3>
               </NavLink>
               <div className="header__button-spacer"></div>
               <NavLink className="header__link" to="/reduce">
                 <h3 className="header__button-text">
-                  <span>2. Reduce</span>{" "}
-                  <span className="span"> &gt;&gt; </span>{" "}
+                  <span>2. Reduce&nbsp;</span>
+                  <span className="span"> &gt;&gt; </span>
                 </h3>
               </NavLink>
             </div>
@@ -70,14 +75,14 @@ export default class PageHeader extends Component {
               {" "}
               <NavLink className="header__link" to="/compensate">
                 <h3 className="header__button-text">
-                  <span>3. Compensate</span>{" "}
+                  <span>3. Compensate&nbsp;</span>
                   <span className="span"> &gt;&gt; </span>
                 </h3>
               </NavLink>
               <div className="header__button-spacer"></div>
               <NavLink className="header__link" to="/my-account">
                 <h3 className="header__button-text">
-                  <span>My Account</span>{" "}
+                  <span>My Account&nbsp;</span>
                   <span className="span"> &gt;&gt; </span>
                 </h3>
               </NavLink>

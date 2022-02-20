@@ -65,8 +65,10 @@
 
   &__middle-box {
     display: flex;
+    flex-direction: column;
     width: 75%;
     justify-content: space-between;
+    align-items: center;
     margin: 7rem 0;
   }
 
@@ -96,10 +98,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20rem;
+    // height: 20rem;
     @include f.page-header("Titillium Web");
     color: theme.$gw-graphite;
     vertical-align: middle;
+  }
+
+  &__arrow-icon {
+    height: 6rem;
+    // width: 3rem;
+    margin: 2rem;
   }
 
   &__icon-container {
@@ -185,6 +193,28 @@
       color: theme.$gw-white;
       padding-top: 2rem;
       transition: all 0.25s ease-in-out;
+    }
+  }
+}
+
+@include bp.tablet {
+  .hero {
+    &__middle-box {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 80%;
+      margin-bottom: 3rem;
+    }
+
+    &__steps {
+      margin-bottom: 4rem;
+    }
+
+    &__arrow-icon {
+      position: relative;
+      transform: rotate(-90deg);
+      bottom: 2.5rem;
     }
   }
 }

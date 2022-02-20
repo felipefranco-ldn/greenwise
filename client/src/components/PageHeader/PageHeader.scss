@@ -13,9 +13,10 @@
   &__link {
     text-decoration: none;
     text-align: center;
-    margin: 1.2rem;
+    margin: 1.5rem;
     transition: all 0.25s ease-in-out;
     width: 15rem;
+    height: 0.5rem;
 
     &:hover {
       cursor: pointer;
@@ -49,7 +50,7 @@
       height: 5rem;
       width: 5rem;
       top: 3.5rem;
-      right: 2rem;
+      right: 1rem;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -99,7 +100,7 @@
     width: 100%;
     align-items: center;
     padding-top: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(245, 245, 245, 0.95);
     position: absolute;
     top: 12rem;
     transition: all 0.25s ease-in-out;
@@ -158,18 +159,52 @@
     &__buttons-container {
       justify-content: flex-end;
       flex-direction: row;
-      height: 100%;
+      justify-content: center;
     }
 
     &__link {
       width: auto;
-      margin: 0;
-      height: 0.5rem;
+      margin: 2rem 0;
     }
 
     &__button-spacer {
       width: 5rem;
       transition: all 0.25s ease-in-out;
+    }
+  }
+}
+
+@include bp.desktop {
+  .header {
+    &__main-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__buttons-container {
+      position: relative;
+      top: 0;
+      box-shadow: 0 0 0 rgb(255, 255, 255);
+      background-color: rgb(255, 255, 255);
+      justify-content: flex-end;
+
+      &--hidden {
+        height: auto;
+        display: flex;
+      }
+    }
+
+    &__buttons-subcontainer {
+      &--hidden {
+        display: flex;
+        position: relative;
+        top: 0.5rem;
+      }
+    }
+
+    &__menu-icon-container {
+      display: none;
     }
   }
 }
