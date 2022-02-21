@@ -1,19 +1,19 @@
-@use '../../styles/partials/colors' as theme;
-@use '../../styles/partials/fonts' as f;
-@use '../../styles/partials/breakpoints' as bp;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/colors" as theme;
+@use "../../styles/partials/fonts" as f;
+@use "../../styles/partials/breakpoints" as bp;
+@use "../../styles/partials/mixins" as *;
 
 .account {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 6rem;
-  height: 100%;
+  justify-content: space-between;
+  padding: 4rem;
+  height: 72rem;
 
   &__title {
-    @include f.subheader('Titillium Web');
-    margin: 0 0 6rem 0;
+    @include f.subheader("Titillium Web");
+    margin: 0 0 3rem 0;
   }
 
   &__container {
@@ -35,7 +35,7 @@
     height: 4rem;
     width: 100%;
     margin: 1.2rem 0;
-    @include f.body-large('Titillium Web');
+    @include f.body-large("Titillium Web");
     color: theme.$gw-black;
     padding: 0 1.4rem;
     border-radius: 2rem;
@@ -57,8 +57,8 @@
   }
 
   &__text {
-    @include f.body-large('Titillium Web');
-    margin: 3rem 0 1rem 0;
+    @include f.body-large("Titillium Web");
+    margin: 2rem 0 1rem 0;
 
     &--bottom {
       margin: 0 0 1rem 0;
@@ -68,7 +68,7 @@
   &__button {
     height: 4rem;
     width: 100%;
-    @include f.body-large('Titillium Web');
+    @include f.body-large("Titillium Web");
     font-weight: 600;
     color: theme.$gw-white;
     padding: 0.3rem 2.5rem;

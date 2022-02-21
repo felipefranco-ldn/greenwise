@@ -35,6 +35,7 @@
     &__content-box {
       min-height: 76rem;
       margin-bottom: 0;
+      margin-bottom: 4rem;
     }
   }
 }
@@ -56,6 +57,7 @@
       border: 1px solid theme.$gw-white;
       border-left: 0;
       background-color: theme.$gw-smoke;
+      margin-bottom: 0;
     }
 
     &__content {

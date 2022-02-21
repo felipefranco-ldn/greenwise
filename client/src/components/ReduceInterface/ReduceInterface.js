@@ -84,10 +84,7 @@ export default class ReduceInterface extends Component {
               <>
                 <div className="re-summary__text">
                   <div className="re-summary__info-icon">i</div>
-                  The selected suggestions allow <br />
-                  you to reduce your emissions
-                  <br />
-                  by{" "}
+                  The selected suggestions allow you to reduce your emissions by{" "}
                   <span className="span--bold span--green-bkgrd">
                     {this.addCo2Saving()} kilograms of CO2
                   </span>{" "}
@@ -150,8 +147,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold">£2 saved </span>
-                  per year
+                  <span className="span--bold">£2 saved </span>&nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
@@ -181,8 +177,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold"> £9 saved</span>
-                  <br /> per year
+                  <span className="span--bold"> £9 saved</span>&nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
@@ -212,8 +207,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold">£23 saved</span> <br />
-                  per year
+                  <span className="span--bold">£23 saved</span> &nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of
@@ -244,8 +238,7 @@ export default class ReduceInterface extends Component {
               <div className="re-article__details">
                 <div className="re-article__savings">
                   <span className="span--bold">£42 saved </span>
-                  <br />
-                  per year
+                  &nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />{" "}
@@ -275,8 +268,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold"> £52 saved</span> <br />
-                  per year
+                  <span className="span--bold"> £52 saved</span>&nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />
@@ -308,8 +300,7 @@ export default class ReduceInterface extends Component {
               <div className="re-article__details">
                 <div className="re-article__savings">
                   <span className="span--bold">£60 saved </span>
-                  <br />
-                  per year
+                  &nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />
@@ -339,8 +330,7 @@ export default class ReduceInterface extends Component {
               </p>
               <div className="re-article__details">
                 <div className="re-article__savings">
-                  <span className="span--bold">£75 saved</span> <br />
-                  per year
+                  <span className="span--bold">£75 saved</span> &nbsp; per year
                 </div>
                 <div className="re-article__reduction">
                   Reduction of <br />
@@ -363,8 +353,8 @@ export default class ReduceInterface extends Component {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="re-content__button re-content__button--half-length">
-              WWF - Environmental footprint
+            <div className="re-content__button">
+              WWF - How big is you environmental footprint?
               <span className="span"> {">>"} </span>
             </div>
           </a>
@@ -376,7 +366,7 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              Future Learn - 20 tips to reduce your CO2{" "}
+              Future Learn - 20 top tips to reduce your CO2{" "}
               <span className="span"> {">>"} </span>
             </div>
           </a>
@@ -387,8 +377,8 @@ export default class ReduceInterface extends Component {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="re-content__button re-content__button--half-length">
-              BBC - Climate change food calculator
+            <div className="re-content__button">
+              BBC - Climate change food and diet calculator
               <span className="span"> {">>"} </span>
             </div>
           </a>
@@ -400,7 +390,7 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              Our World in Data - Food gas emissions{" "}
+              World in Data - Food greenhouse gas emissions{" "}
               <span className="span"> {">>"} </span>
             </div>
           </a>

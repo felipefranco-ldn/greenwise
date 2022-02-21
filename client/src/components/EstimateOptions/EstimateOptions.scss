@@ -86,7 +86,7 @@
   }
 }
 
-@include bp.tablet {
+@include bp.desktop {
   .aside {
     width: 10%;
     display: flex;

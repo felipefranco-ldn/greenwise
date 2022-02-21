@@ -9,6 +9,7 @@
   align-items: center;
   margin: 0 auto;
   padding: 4rem;
+  max-width: 85rem;
 }
 
 .re-top-box {
@@ -110,75 +111,6 @@
   border-radius: 1.5rem;
 }
 
-.re-content {
-  &__button-box {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin: 3rem 0 0 0;
-
-    &--top {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &--bottom {
-      flex-wrap: wrap;
-      height: 14rem;
-      margin-bottom: 4rem;
-      justify-content: space-between;
-    }
-
-    &--compensate {
-      padding: 0 6rem;
-    }
-  }
-
-  &__button {
-    height: 4rem;
-    @include f.body-large("Titillium Web");
-    font-weight: 600;
-    color: theme.$gw-white;
-    padding: 0.3rem 2.5rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    border: 2px solid theme.$gw-slate;
-    background-color: theme.$gw-slate;
-    transition: all 0.25s ease-in-out;
-    text-align: center;
-    margin: 1rem 0;
-
-    &:active {
-      border-color: theme.$gw-black;
-      background-color: theme.$gw-black;
-      color: theme.$gw-white;
-    }
-
-    &:hover {
-      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
-      border: 2px solid theme.$gw-graphite;
-      background-color: theme.$gw-graphite;
-    }
-
-    &--next {
-      border: 2px solid theme.$gw-graphite;
-      background-color: theme.$gw-graphite;
-
-      &:hover {
-        color: theme.$gw-green;
-      }
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-
-    &--half-width {
-      width: 48%;
-    }
-  }
-}
-
 .re-article {
   width: 100%;
   display: flex;
@@ -256,7 +188,7 @@
     width: 100%;
     padding: 0.5rem;
     border-radius: 2rem;
-    margin: 0 2rem 0 0;
+    margin: 2rem 0;
     text-align: center;
   }
 
@@ -273,112 +205,133 @@
   }
 }
 
+.re-content {
+  &__button-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 3rem 0 0 0;
+
+    &--top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--bottom {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &--compensate {
+      padding: 0 6rem;
+    }
+  }
+
+  &__button {
+    @include f.body-large("Titillium Web");
+    font-weight: 600;
+    color: theme.$gw-white;
+    padding: 0.3rem 5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid theme.$gw-slate;
+    background-color: theme.$gw-slate;
+    transition: all 0.25s ease-in-out;
+    text-align: center;
+    margin: 1rem 0;
+
+    &:active {
+      border-color: theme.$gw-black;
+      background-color: theme.$gw-black;
+      color: theme.$gw-white;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
+    }
+
+    &--next {
+      border: 2px solid theme.$gw-graphite;
+      background-color: theme.$gw-graphite;
+
+      &:hover {
+        color: theme.$gw-green;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--half-width {
+      // width: 48%;
+      width: 100%;
+    }
+  }
+}
+
 @include bp.tablet {
   .re-top-box {
     flex-direction: row;
 
     &__left {
       width: 45%;
-      // height: 32rem;
       margin-bottom: 0;
-      height: 100%;
     }
 
     &__right {
       width: 45%;
-      // height: 32rem;
       height: 100%;
     }
   }
 
   .re-article {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    &__check {
-      display: none;
-      width: 100%;
-
-      &:checked + label {
-        background-color: theme.$gw-green50;
-        border: 2px solid theme.$gw-green;
-        font-weight: 600;
-      }
-    }
-
-    &__container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      padding: 2rem;
-      margin: 2rem 0;
-      background-color: theme.$gw-light-grey;
-      border: 2px solid theme.$gw-light-grey;
-      border-radius: 2rem;
-      transition: all 0.25s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        border: 2px solid theme.$gw-green;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    &__number-box {
-      display: flex;
-      border-right: 1px solid theme.$gw-cloud;
-      align-items: center;
-    }
-
-    &__number {
-      @include f.subheader("Titillium Web");
-      background-color: theme.$gw-smoke;
-      border: 1px solid theme.$gw-cloud;
-      width: 4rem;
-      height: 4rem;
-      text-align: center;
-      padding: 0.3rem;
-      border-radius: 50%;
-      margin: 0 3rem 0 0;
-    }
-
-    &__main-box {
-      display: flex;
-      margin-left: 3rem;
-      width: 100%;
-    }
-
-    &__title {
-      @include f.table-header("Titillium Web");
-      margin: 0 auto 0 0;
-    }
-
     &__details {
-      display: flex;
-      justify-content: space-between;
+      flex-direction: row;
     }
 
     &__savings {
-      @include f.body-large("Titillium Web");
-      background-color: theme.$gw-smoke;
-      border: 1px solid theme.$gw-cloud;
       width: 12rem;
-      padding: 0.5rem;
-      border-radius: 2rem;
-      margin: 0 2rem 0 0;
-      text-align: center;
+      padding: 0.5rem 2rem;
+      margin: 2rem 0 0 0;
     }
 
     &__reduction {
-      @include f.body-large("Titillium Web");
-      background-color: theme.$gw-smoke;
-      border: 1px solid theme.$gw-cloud;
       width: 18rem;
-      padding: 0.5rem;
-      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      margin: 2rem 0 0 0;
+    }
+  }
+
+  .re-content {
+    &__link {
+      text-decoration: none;
+
+      &--half-width {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@include bp.desktop {
+  .re-article {
+    &__main-box {
+      flex-direction: row;
+    }
+
+    &__title {
+      margin-right: 4rem;
+    }
+
+    &__savings {
+      margin: 0 2rem 0 0;
+    }
+
+    &__reduction {
       margin: 0;
-      text-align: center;
     }
   }
 }
