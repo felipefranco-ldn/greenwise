@@ -27,15 +27,16 @@ export default function FlightsOutput({
             Your flight released approx.{" "}
             <span className="span--bold">
               {" "}
-              {Number(totalFlightCo2).toFixed(0)} kilograms of CO2{" "}
+              {Number(totalFlightCo2).toFixed(0)} kg of CO2.{" "}
             </span>{" "}
-            into the atmosphere. Covering the same distance by train would have
-            generated{" "}
+            Travelling the same distance by train would have generated{" "}
             <span className="span--bold">
-              {" "}
-              {Number((userFlightDistance * 0.021).toFixed(0))} kilograms of CO2
+              {Number((userFlightDistance * 0.021).toFixed(0))} kg of CO2
             </span>{" "}
-            instead.
+            instead. <br />
+            <span className="span--bold">Interesting fact:</span> First class
+            seats can occupy up to 6 times more space than an economy class
+            seat; that is the footprint of 6 people flying in economy!
           </div>
           <div className="fl-output__content-button-box">
             <Link

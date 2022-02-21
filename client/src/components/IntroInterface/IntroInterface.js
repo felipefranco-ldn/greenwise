@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './IntroInterface.scss';
-import greenWiseLogo from '../../assets/images/images/greenwise-logo.svg';
-import profilePicture from '../../assets/images/images/felipe-profile-pic.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./IntroInterface.scss";
+import greenWiseLogo from "../../assets/images/images/greenwise-logo.svg";
+import profilePicture from "../../assets/images/images/felipe-profile-pic.jpg";
 
 export default function IntroInterface() {
   return (
@@ -20,9 +20,9 @@ export default function IntroInterface() {
       <img className="about__image" alt="felipe franco" src={profilePicture} />
 
       <p className="about__text about__text--bold">
-        Product Designer, Architect
+        Full Stack Web Developer,
         <br />
-        and Web Developer!
+        Architect and Product Designer
       </p>
 
       <a
@@ -55,13 +55,13 @@ export default function IntroInterface() {
       <div className="about__bottom-box">
         <Link className="about__link" to="/">
           <p className="about__text about__text--bold">
-            <span className="span"> {'<<'} </span> Home
+            <span className="span"> {"<<"} </span> Home
           </p>
         </Link>
 
         <Link className="about__link" to="/about">
           <p className="about__text about__text--bold">
-            About GreenWise <span className="span"> {'>>'} </span>
+            About GreenWise <span className="span"> {">>"} </span>
           </p>
         </Link>
       </div>

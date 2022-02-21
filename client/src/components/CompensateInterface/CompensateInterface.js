@@ -1,12 +1,12 @@
-import React from 'react';
-import './CompensateInterface.scss';
-import geothermalImage from '../../assets/images/images/geothermal-wayang-windu.jpg';
-import reforestationlImage from '../../assets/images/images/reforestation-brazil.jpg';
-import solarImage from '../../assets/images/images/solar-acme-india.jpg';
-import solarCookerImage from '../../assets/images/images/solar-cooker-heqing.jpg';
-import purifiersImage from '../../assets/images/images/water-purifiers-cambodia.jpg';
-import windImage from '../../assets/images/images/wind-larimar-domrep.jpg';
-import offsetIcon from '../../assets/images/icons/offset-icon.png';
+import React from "react";
+import "./CompensateInterface.scss";
+import geothermalImage from "../../assets/images/images/geothermal-wayang-windu.jpg";
+import reforestationlImage from "../../assets/images/images/reforestation-brazil.jpg";
+import solarImage from "../../assets/images/images/solar-acme-india.jpg";
+import solarCookerImage from "../../assets/images/images/solar-cooker-heqing.jpg";
+import purifiersImage from "../../assets/images/images/water-purifiers-cambodia.jpg";
+import windImage from "../../assets/images/images/wind-larimar-domrep.jpg";
+import offsetIcon from "../../assets/images/icons/offset-icon.png";
 
 export default function CompensateInterface() {
   return (
@@ -14,7 +14,7 @@ export default function CompensateInterface() {
       <div className="comp__container">
         <section className="comp__gallery">
           <h1 className="comp__title">
-            <span className="span">{'>>'}</span> A selection of outstanding
+            <span className="span">{">>"}</span> A selection of outstanding
             <br />
             Carbon Offseting Projects
           </h1>
@@ -47,7 +47,7 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Solar Farm by ACME Group
+                <span className="span">{">>"}</span> Solar Farm by ACME Group
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Technology /
@@ -62,7 +62,7 @@ export default function CompensateInterface() {
                 </p>
               </div>
               <p className="article__text">
-                <span className="span"> {'>> '} </span> The project activity
+                <span className="span"> {">> "} </span> The project activity
                 generates electricity using solar energy. The generated
                 electricity is exported to the regional electricty grid system
                 in India. It seeks to enable investment in large and small grid
@@ -70,7 +70,7 @@ export default function CompensateInterface() {
                 regional / national electricity grid in India.
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 730,500 tCO2e per year
               </p>
               <a
@@ -79,7 +79,7 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
@@ -94,7 +94,7 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Larimar Wind Farm
+                <span className="span">{">>"}</span> Larimar Wind Farm
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Technology /
@@ -109,7 +109,7 @@ export default function CompensateInterface() {
                 </p>
               </div>
               <p className="article__text">
-                <span className="span"> {'>> '} </span> The project involves the
+                <span className="span"> {">> "} </span> The project involves the
                 construction and operation of two wind farms located in
                 Enriquillo Region of the Dominican Republic. “Larimar I” has 15
                 wind turbines with a total installed capacity of 49.5 MW; and
@@ -118,7 +118,7 @@ export default function CompensateInterface() {
                 farm is 97.8 MW.
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 246,800 tCO2e per year
               </p>
               <a
@@ -127,7 +127,7 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
@@ -142,8 +142,8 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Access to Ceramic Water
-                Purifiers{' '}
+                <span className="span">{">>"}</span> Access to Ceramic Water
+                Purifiers{" "}
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Tech / Clean
@@ -158,7 +158,7 @@ export default function CompensateInterface() {
                 </p>
               </div>
               <p className="article__text">
-                <span className="span"> {'>> '} </span> In Cambodia, nearly two
+                <span className="span"> {">> "} </span> In Cambodia, nearly two
                 million rural households do not have access to safe, potable
                 water. While boiling water helps reduce exposure to water-borne
                 diseases, the indoor air pollution created by wood fires causes
@@ -170,7 +170,7 @@ export default function CompensateInterface() {
                 vulnerable forests.
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 20,550 tCO2e per year
               </p>
               <a
@@ -179,7 +179,7 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
@@ -203,7 +203,7 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Wayang Windu Geothermal
+                <span className="span">{">>"}</span> Wayang Windu Geothermal
                 Power
               </h3>
               <p className="article__info article__info--full-length">
@@ -220,15 +220,15 @@ export default function CompensateInterface() {
               </div>
 
               <p className="article__text">
-                <span className="span"> {'>> '} </span> Wayang Windu is a 117MW
+                <span className="span"> {">> "} </span> Wayang Windu is a 117MW
                 geothermal power station, which is an additional power unit to
                 an existing grid-connected renewable power plant. The project
                 reduces greenhouse gas emissions through the displacement of
                 fossil fuel electricity generation with a clean, renewable
-                energy source.{' '}
+                energy source.{" "}
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 795,000 tCO2e per year
               </p>
               <a
@@ -237,7 +237,7 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
@@ -252,7 +252,7 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Portel-Pará Reforestation
+                <span className="span">{">>"}</span> Portel-Pará Reforestation
                 Project
               </h3>
               <p className="article__info article__info--full-length">
@@ -269,7 +269,7 @@ export default function CompensateInterface() {
               </div>
 
               <p className="article__text">
-                <span className="span"> {'>> '} </span> Portel-Pará REDD (Reduce
+                <span className="span"> {">> "} </span> Portel-Pará REDD (Reduce
                 Deforestation) project is working to prevent unplanned
                 deforestation in native forests, which has occurred due to
                 logging, squatting and attempts to implement pastures. The
@@ -280,7 +280,7 @@ export default function CompensateInterface() {
                 and enforcement.
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 553,250 tCO2e per year
               </p>
               <a
@@ -289,7 +289,7 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
@@ -304,7 +304,7 @@ export default function CompensateInterface() {
             </div>
             <div className="article__info-box">
               <h3 className="article__title">
-                <span className="span">{'>>'}</span> Heqing Solar Cooker Project{' '}
+                <span className="span">{">>"}</span> Heqing Solar Cooker Project{" "}
               </h3>
               <p className="article__info article__info--full-length">
                 <span className="span--bold"> Category:</span> Household solar
@@ -320,7 +320,7 @@ export default function CompensateInterface() {
               </div>
 
               <p className="article__text">
-                <span className="span"> {'>> '} </span> Coal is overwhelmingly
+                <span className="span"> {">> "} </span> Coal is overwhelmingly
                 the main energy source for rural residents in this region of
                 China. The proposed project will enable the rural residents to
                 efficiently substitute solar energy for coal used in daily
@@ -329,7 +329,7 @@ export default function CompensateInterface() {
                 49,000 solar cookers for the rural residents.
               </p>
               <p className="article__info article__info--green article__info--full-length">
-                <span className="span--bold"> Estimated Reductions: </span>{' '}
+                <span className="span--bold"> Estimated Reductions: </span>{" "}
                 143,750 tCO2e per year
               </p>
               <a
@@ -338,19 +338,19 @@ export default function CompensateInterface() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Support this project <span className="span"> {' >>'} </span>
+                Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
           </article>
         </section>
       </div>
 
-      <h1 className="re-title re-title--bottom">
-        <span className="span">{'>>'}</span> More Carbon Offsetting Projects and
-        how you can support them:
-      </h1>
+      <div className="comp__container comp__container-bottom">
+        <h1 className="re-title re-title--bottom">
+          <span className="span">{">>"}</span> More Carbon Offsetting Projects
+          and how you can support them:
+        </h1>
 
-      <div className="re-content__button-box re-content__button-box--bottom re-content__button-box--compensate ">
         <a
           className="re-content__link re-content__link--half-width"
           href="https://sustainabletravel.org/our-work/carbon-offsets/calculate-footprint/"
@@ -358,8 +358,8 @@ export default function CompensateInterface() {
           rel="noreferrer"
         >
           <div className="re-content__button re-content__button--half-length">
-            Sustainable Travel International - Offset your flights
-            <span className="span"> {'>>'} </span>
+            Sustainable Travel - Offset your flights
+            <span className="span"> {">>"} </span>
           </div>
         </a>
 
@@ -370,8 +370,8 @@ export default function CompensateInterface() {
           rel="noreferrer"
         >
           <div className="re-content__button ">
-            EcoAct - Carbon Offsetting Projects{' '}
-            <span className="span"> {'>>'} </span>
+            EcoAct - Carbon Offsetting Projects{" "}
+            <span className="span"> {">>"} </span>
           </div>
         </a>
 
@@ -383,7 +383,7 @@ export default function CompensateInterface() {
         >
           <div className="re-content__button re-content__button--half-length">
             Wren - Planet-saving, life-changing projects
-            <span className="span"> {'>>'} </span>
+            <span className="span"> {">>"} </span>
           </div>
         </a>
 
@@ -395,7 +395,7 @@ export default function CompensateInterface() {
         >
           <div className="re-content__button ">
             Ecologi - Carbon offsetting monthly subscription
-            <span className="span"> {'>>'} </span>
+            <span className="span"> {">>"} </span>
           </div>
         </a>
       </div>

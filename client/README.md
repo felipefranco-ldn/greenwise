@@ -10,7 +10,7 @@ Felipe Franco
 
 ## 🚀 About Me
 
-Hello! I'm a Product Designer, Architect and Full Stack Web Developer!
+Hello! I'm a Full Stack Web Developer, Architect and Product Designer!
 
 I am from Bogota, Colombia, and am currently based in London but have also lived in Italy, Germany and Sweden.
 
