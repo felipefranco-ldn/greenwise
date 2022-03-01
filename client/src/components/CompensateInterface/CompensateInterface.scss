@@ -19,7 +19,6 @@
 
   &__text {
     @include f.body-large("Titillium Web");
-    // padding: 4rem 4rem 2rem 4rem;
     margin: 0;
   }
 
@@ -30,14 +29,10 @@
     width: 100%;
   }
 
-  &__break {
-    display: none;
-  }
-
   &__icon {
     width: 15rem;
     align-self: flex-end;
-    margin: 4rem 6rem 0 0;
+    margin: 8rem auto 4rem auto;
     filter: grayscale(100%);
   }
 }
@@ -150,23 +145,15 @@
       }
     }
 
-    &__title {
-      margin: 3rem 0 0 4rem;
-    }
-
     &__gallery {
       max-width: 43rem;
-      margin: 2%;
-    }
-
-    &__break {
-      height: 25rem;
+      margin: 0 2%;
     }
 
     &__icon {
       width: 15rem;
       align-self: flex-end;
-      margin: 4rem 4rem 0 0;
+      margin: 8rem 0 4rem 0;
       filter: grayscale(100%);
     }
   }

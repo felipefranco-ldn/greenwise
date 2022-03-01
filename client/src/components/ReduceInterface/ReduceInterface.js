@@ -361,7 +361,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button">
-              WWF - How big is you environmental footprint?
+              WWF - How big is <br />
+              you environmental footprint?
               <span className="span"> {">>"} </span>
             </div>
           </a>
@@ -373,8 +374,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              Future Learn - 20 top tips to reduce your CO2{" "}
-              <span className="span"> {">>"} </span>
+              Future Learn - 20 top tips <br />
+              to reduce your CO2 <span className="span"> {">>"} </span>
             </div>
           </a>
 
@@ -385,7 +386,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button">
-              BBC - Climate change food and diet calculator
+              BBC - Climate change <br />
+              food and diet calculator
               <span className="span"> {">>"} </span>
             </div>
           </a>
@@ -397,7 +399,8 @@ export default class ReduceInterface extends Component {
             rel="noreferrer"
           >
             <div className="re-content__button ">
-              World in Data - Food greenhouse gas emissions{" "}
+              Our World in Data - <br />
+              Food greenhouse gas emissions{" "}
               <span className="span"> {">>"} </span>
             </div>
           </a>

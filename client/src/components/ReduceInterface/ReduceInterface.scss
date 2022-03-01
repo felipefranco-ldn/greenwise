@@ -10,6 +10,10 @@
   margin: 0 auto;
   padding: 4rem;
   max-width: 85rem;
+
+  &-inner {
+    flex-direction: row;
+  }
 }
 
 .re-top-box {
@@ -266,8 +270,8 @@
     text-decoration: none;
 
     &--half-width {
-      // width: 48%;
       width: 100%;
+      max-width: 42rem;
     }
   }
 }
@@ -310,7 +314,8 @@
       text-decoration: none;
 
       &--half-width {
-        width: 48%;
+        width: 50rem;
+        // width: 48%;
       }
     }
   }
