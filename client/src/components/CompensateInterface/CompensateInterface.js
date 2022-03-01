@@ -39,7 +39,7 @@ export default function CompensateInterface() {
             <br /> <br />
             Happy browsing! 🌎 🌳
           </p>
-          {projectsData.slice(0, 3).map((project) => (
+          {projectsData.slice(0, projectsData.length / 2).map((project) => (
             <OffsettingProjectCard
               key={project.title}
               title={project.title}
@@ -53,7 +53,7 @@ export default function CompensateInterface() {
               website={project.website}
             />
           ))}
-          <article className="article__container">
+          {/* <article className="article__container">
             <div className="article__image-container">
               <img
                 className="article__image"
@@ -198,7 +198,7 @@ export default function CompensateInterface() {
                 Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
-          </article>
+          </article> */}
         </section>
 
         <section className="comp__gallery">
@@ -209,22 +209,24 @@ export default function CompensateInterface() {
           />
           <div className="comp__break"></div>
 
-          {projectsData.slice(3, 6).map((project) => (
-            <OffsettingProjectCard
-              key={project.title}
-              title={project.title}
-              img={project.img}
-              imgAlt={project.imgAlt}
-              category={project.category}
-              location={project.location}
-              standard={project.standard}
-              description={project.description}
-              reductions={project.reductions}
-              website={project.website}
-            />
-          ))}
+          {projectsData
+            .slice(projectsData.length / 2, projectsData.length + 1)
+            .map((project) => (
+              <OffsettingProjectCard
+                key={project.title}
+                title={project.title}
+                img={project.img}
+                imgAlt={project.imgAlt}
+                category={project.category}
+                location={project.location}
+                standard={project.standard}
+                description={project.description}
+                reductions={project.reductions}
+                website={project.website}
+              />
+            ))}
 
-          <article className="article__container">
+          {/* <article className="article__container">
             <div className="article__image-container">
               <img
                 className="article__image"
@@ -372,7 +374,7 @@ export default function CompensateInterface() {
                 Support this project <span className="span"> {" >>"} </span>
               </a>
             </div>
-          </article>
+          </article> */}
         </section>
       </div>
 

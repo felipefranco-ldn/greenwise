@@ -12,7 +12,7 @@
   },
   {
     "title": "Larimar Wind Farm",
-    "img": "../../assets/images/images/wind-larimar-domrep.jpg",
+    "img": "http://localhost:3000/static/media/wind-larimar-domrep.71f73849.jpg",
     "imgAlt": "air shot of wind farm in dominican republic",
     "category": "Technology / Clean Energy production",
     "location": "Dominican Rep.",
@@ -23,7 +23,7 @@
   },
   {
     "title": " Access to Ceramic Water Purifiers",
-    "img": "../../assets/images/images/water-purifiers-cambodia.jpg",
+    "img": "http://localhost:3000/static/media/water-purifiers-cambodia.29979812.jpg",
     "imgAlt": "family with ceramic water purifier",
     "category": "Tech / Clean water / Local communities",
     "location": "Cambodia",
@@ -34,7 +34,7 @@
   },
   {
     "title": "Wayang Windu Geothermal Power",
-    "img": "../../assets/images/images/geothermal-wayang-windu.jpg",
+    "img": "http://localhost:3000/static/media/geothermal-wayang-windu.4f333d4b.jpg",
     "imgAlt": "geothermal plant in indonesia",
     "category": "Technology / Clean Energy production",
     "location": "Java, Indonesia",
@@ -45,7 +45,7 @@
   },
   {
     "title": "Portel-Pará Reforestation Project",
-    "img": "../../assets/images/images/reforestation-brazil.jpg",
+    "img": "http://localhost:3000/static/media/reforestation-brazil.905e64c2.jpg",
     "imgAlt": "reforestation in brazil's rainforest",
     "category": "Social responsibility / Reforestation",
     "location": "Brazil",
@@ -56,7 +56,7 @@
   },
   {
     "title": "Heqing Solar Cooker Project",
-    "img": "../../assets/images/images/solar-cooker-heqing.jpg",
+    "img": "http://localhost:3000/static/media/solar-cooker-heqing.163bab68.jpg",
     "imgAlt": "heqing solar cooker used by community",
     "category": "Household solar power / Local communities",
     "location": "Gansu, China",
