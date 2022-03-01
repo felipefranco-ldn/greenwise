@@ -7,6 +7,8 @@ import solarCookerImage from "../../assets/images/images/solar-cooker-heqing.jpg
 import purifiersImage from "../../assets/images/images/water-purifiers-cambodia.jpg";
 import windImage from "../../assets/images/images/wind-larimar-domrep.jpg";
 import offsetIcon from "../../assets/images/icons/offset-icon.png";
+import projectsData from "../../data/offsetting-projects.json";
+import OffsettingProjectCard from "../OffsettingProjectCard/OffsettingProjectCard";
 
 export default function CompensateInterface() {
   return (
@@ -37,6 +39,20 @@ export default function CompensateInterface() {
             <br /> <br />
             Happy browsing! 🌎 🌳
           </p>
+          {projectsData.slice(0, 3).map((project) => (
+            <OffsettingProjectCard
+              key={project.title}
+              title={project.title}
+              img={project.img}
+              imgAlt={project.imgAlt}
+              category={project.category}
+              location={project.location}
+              standard={project.standard}
+              description={project.description}
+              reductions={project.reductions}
+              website={project.website}
+            />
+          ))}
           <article className="article__container">
             <div className="article__image-container">
               <img
@@ -192,6 +208,21 @@ export default function CompensateInterface() {
             src={offsetIcon}
           />
           <div className="comp__break"></div>
+
+          {projectsData.slice(3, 6).map((project) => (
+            <OffsettingProjectCard
+              key={project.title}
+              title={project.title}
+              img={project.img}
+              imgAlt={project.imgAlt}
+              category={project.category}
+              location={project.location}
+              standard={project.standard}
+              description={project.description}
+              reductions={project.reductions}
+              website={project.website}
+            />
+          ))}
 
           <article className="article__container">
             <div className="article__image-container">
