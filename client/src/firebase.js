@@ -1,15 +1,15 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAwoLZW4Y_eExvxkxr3keGXmXxtTbulNM8',
-  authDomain: 'ff-green-wise.firebaseapp.com',
-  projectId: 'ff-green-wise',
-  storageBucket: 'ff-green-wise.appspot.com',
-  messagingSenderId: '222346819801',
-  appId: '1:222346819801:web:8df26fc94123497197e6c8',
-  measurementId: 'G-ME3R21D2HC',
+  apiKey: "AIzaSyAwoLZW4Y_eExvxkxr3keGXmXxtTbulNM8",
+  authDomain: "ff-green-wise.firebaseapp.com",
+  projectId: "ff-green-wise",
+  storageBucket: "ff-green-wise.appspot.com",
+  messagingSenderId: "222346819801",
+  appId: "1:222346819801:web:8df26fc94123497197e6c8",
+  measurementId: "G-ME3R21D2HC",
 };
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -23,20 +23,20 @@ const signInWithGoogle = async () => {
     const res = await auth.signInWithPopup(googleProvider);
     const user = res.user;
     const query = await db
-      .collection('users')
-      .where('uid', '==', user.uid)
+      .collection("users")
+      .where("uid", "==", user.uid)
       .get();
     if (query.docs.length === 0) {
-      await db.collection('users').add({
+      await db.collection("users").add({
         uid: user.uid,
         name: user.displayName,
-        authProvider: 'google',
+        authProvider: "google",
         email: user.email,
       });
     }
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    // alert(err.message);
   }
 };
 const signInWithEmailAndPassword = async (email, password) => {
@@ -44,7 +44,9 @@ const signInWithEmailAndPassword = async (email, password) => {
     await auth.signInWithEmailAndPassword(email, password);
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    alert("Please make sure your email address and password are valid");
+    // alert(err.message);
+    // Firebase: The email address is badly formatted. (auth/invalid-email).
   }
 };
 
@@ -52,25 +54,25 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await auth.createUserWithEmailAndPassword(email, password);
     const user = res.user;
-    await db.collection('users').add({
+    await db.collection("users").add({
       uid: user.uid,
       name,
-      authProvider: 'local',
+      authProvider: "local",
       email,
     });
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    // alert(err.message);
   }
 };
 
 const sendPasswordResetEmail = async (email) => {
   try {
     await auth.sendPasswordResetEmail(email);
-    alert('Password reset link sent!');
+    alert("Password reset link sent!");
   } catch (err) {
     console.error(err);
-    alert(err.message);
+    // alert(err.message);
   }
 };
 

@@ -31,10 +31,9 @@ export default function AboutInterface() {
         the future I would like to incorporate more functionalities, like saving
         a history of estimates, as well as estimating your carbon footprint
         based on your diet and provide the environmental impact of everyday
-        goods, like clothing, appliances, hygiene products, etc.
-        <br /> If you have more ideas that you would like to see implemented on
-        GreenWise, please do get in touch. Suggestions are always welcome!
-        Cheers.
+        goods, like clothing, appliances, hygiene products, etc. If you have
+        more ideas that you would like to see implemented on GreenWise, please
+        do get in touch. Suggestions are always welcome! Cheers.
       </p>
 
       <h1 className="about__title">Tech Stack</h1>

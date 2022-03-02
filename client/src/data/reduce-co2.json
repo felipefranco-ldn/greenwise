@@ -1,0 +1,51 @@
+[
+  {
+    "number": "1",
+    "name": "tv",
+    "description": "Turn off your TV instead of putting it on standby",
+    "moneySaving": "2",
+    "co2Saving": "5"
+  },
+  {
+    "number": "2",
+    "name": "dishwasher",
+    "description": " Turn your dishwasher down from 65⁰C to 55⁰C",
+    "moneySaving": "9",
+    "co2Saving": "25"
+  },
+  {
+    "number": "3",
+    "name": "kettle",
+    "description": "When using your kettle, only boil the water you need",
+    "moneySaving": "23",
+    "co2Saving": "72"
+  },
+  {
+    "number": "4",
+    "name": "dryer",
+    "description": "Stop using your tumble dryer, hang your washing instead",
+    "moneySaving": "42",
+    "co2Saving": "153"
+  },
+  {
+    "number": "5",
+    "name": "heating",
+    "description": "Turn down the heating by 1⁰C and wear warmer clothes at home",
+    "moneySaving": "52",
+    "co2Saving": "184"
+  },
+  {
+    "number": "6",
+    "name": "bulbs",
+    "description": "Replace 5 traditional lightbulbs with long-lasting LED lightbulbs",
+    "moneySaving": "60",
+    "co2Saving": "260"
+  },
+  {
+    "number": "7",
+    "name": "meat",
+    "description": "Swap 1 portion of beef for 1 portion of chicken each week",
+    "moneySaving": "75",
+    "co2Saving": "331"
+  }
+]
