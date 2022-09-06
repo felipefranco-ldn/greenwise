@@ -1,6 +1,6 @@
 # GreenWise
 
-GreenWise is a web application that allows users to estimate their environmental footprint and, after visualising their results, users will be encouraged to take action to reduce and compensate their impact.
+GreenWise is a React web application that allows users to estimate their environmental footprint and, after visualising their results, users will be encouraged to take action to reduce and compensate their impact.
 
 ## Author
 
