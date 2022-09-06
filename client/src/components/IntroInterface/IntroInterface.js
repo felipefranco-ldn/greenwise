@@ -20,7 +20,7 @@ export default function IntroInterface() {
       <img className="about__image" alt="felipe franco" src={profilePicture} />
 
       <p className="about__text about__text--bold">
-        Full Stack Web Developer,
+        Full Stack Web Developer, Front End Developer @ FX Digital
         <br />
         Architect and Product Designer
       </p>
