@@ -1,11 +1,5 @@
 import React from "react";
 import "./CompensateInterface.scss";
-import geothermalImage from "../../assets/images/images/geothermal-wayang-windu.jpg";
-import reforestationlImage from "../../assets/images/images/reforestation-brazil.jpg";
-import solarImage from "../../assets/images/images/solar-acme-india.jpg";
-import solarCookerImage from "../../assets/images/images/solar-cooker-heqing.jpg";
-import purifiersImage from "../../assets/images/images/water-purifiers-cambodia.jpg";
-import windImage from "../../assets/images/images/wind-larimar-domrep.jpg";
 import offsetIcon from "../../assets/images/icons/offset-icon.png";
 import projectsData from "../../data/offsetting-projects.json";
 import OffsettingProjectCard from "../OffsettingProjectCard/OffsettingProjectCard";
@@ -39,7 +33,7 @@ export default function CompensateInterface() {
             <br /> <br />
             Happy browsing! 🌎 🌳
           </p>
-          {projectsData.slice(0, projectsData.length / 2).map((project) => (
+          {projectsData.slice(0, projectsData.length / 2).map(project => (
             <OffsettingProjectCard
               key={project.title}
               title={project.title}
@@ -64,7 +58,7 @@ export default function CompensateInterface() {
 
           {projectsData
             .slice(projectsData.length / 2, projectsData.length + 1)
-            .map((project) => (
+            .map(project => (
               <OffsettingProjectCard
                 key={project.title}
                 title={project.title}
