@@ -21,7 +21,7 @@ export default function AboutInterface() {
         target="_blank"
         rel="noreferrer"
       >
-        greenwise.netlify.app/
+        greenwise.netlify.app
       </a>
 
       <p className="about__description">
