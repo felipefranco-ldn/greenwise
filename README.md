@@ -79,7 +79,7 @@ GreenWise was created using Create React App.
 - The estimates’ data is fetched from an API called CarbonInterface.
 - Chartjs library was used to generate the charts.
 - User authentication was implemented using Firebase.
-- And the website was deployed using Heroku.
+- And the website was deployed using Netlify.
 
 **Server:**
 To be implemented
@@ -94,6 +94,6 @@ In the future I would like to incorporate more functionalities, like saving a hi
 
 ## Deployment
 
-GreenWise has been deployed using Heroku and can be accessed at the following link:
+GreenWise has been deployed using Netlify and can be accessed at the following link:
 
-[https://green-wise.herokuapp.com/]
+[https://greenwise.netlify.app/]
