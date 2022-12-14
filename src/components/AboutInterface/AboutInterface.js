@@ -16,12 +16,12 @@ export default function AboutInterface() {
       </Link>
 
       <a
-        href="https://green-wise.herokuapp.com"
+        href="https://greenwise.netlify.app/"
         className="about__text about__text--bold"
         target="_blank"
         rel="noreferrer"
       >
-        green-wise.herokuapp.com
+        greenwise.netlify.app/
       </a>
 
       <p className="about__description">
