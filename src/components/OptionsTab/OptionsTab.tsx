@@ -1,6 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
+// @ts-ignore
 export default function OptionsTab({ linkTo, cardTitle, imgAlt, imgSrc }) {
   return (
     <NavLink className="aside__link" to={linkTo}>

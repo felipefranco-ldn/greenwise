@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import CompensateInterface from '../../components/CompensateInterface/CompensateInterface';
-import Layout from '../../components/Layout/Layout';
-import './index.scss';
+import React, { Component } from "react";
+import CompensateInterface from "../../components/CompensateInterface/CompensateInterface";
+import Layout from "../../components/Layout/Layout";
+import "./index.scss";
 
 export default class Compensate extends Component {
   render() {

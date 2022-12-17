@@ -1,17 +1,28 @@
-import React from 'react';
+import React from "react";
 
 export default function RadioInput({
+  // @ts-ignore
   inputClass,
+  // @ts-ignore
   value,
+  // @ts-ignore
   name,
+  // @ts-ignore
   handleChange,
+  // @ts-ignore
   labelClass,
+  // @ts-ignore
   labelTitleClass,
+  // @ts-ignore
   labelTitle,
+  // @ts-ignore
   imgBoxClass,
+  // @ts-ignore
   imgClass,
+  // @ts-ignore
   imgAlt,
-  imgSrc,
+  // @ts-ignore
+  imgSrc
 }) {
   return (
     <>

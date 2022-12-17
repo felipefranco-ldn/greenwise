@@ -4,12 +4,18 @@ import flightsMap from "../../assets/images/images/flights-map.png";
 import { Link } from "react-router-dom";
 
 export default function FlightsOutput({
+  // @ts-ignore
   chartData,
+  // @ts-ignore
   userFlightClass,
+  // @ts-ignore
   totalFlightCo2,
+  // @ts-ignore
   userFlightDistance,
+  // @ts-ignore
   saveFlCo2,
-  flightsChart,
+  // @ts-ignore
+  flightsChart
 }) {
   return (
     <div className="fl-output">

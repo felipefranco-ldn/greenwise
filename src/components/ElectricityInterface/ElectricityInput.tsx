@@ -1,20 +1,27 @@
-import React from 'react';
-import RadioInput from '../RadioInput/RadioInput';
+import React from "react";
+import RadioInput from "../RadioInput/RadioInput";
 
+// @ts-ignore
 export default function ElectricityInput({
+  // @ts-ignore
   apartmentIcon,
+  // @ts-ignore
   houseIcon,
+  // @ts-ignore
   userCountry,
+  // @ts-ignore
   handleCountryChange,
+  // @ts-ignore
   handleChange,
-  handleBedroomsChange,
+  // @ts-ignore
+  handleBedroomsChange
 }) {
   return (
     <div className="el-input">
       <form className="el-input__form">
         <div className="el-input__form-question">
           <label htmlFor="userCountry" className="el-input__form-label">
-            <span className="span">{'>>'}</span> First, please select your
+            <span className="span">{">>"}</span> First, please select your
             country of residence
           </label>
           <select

@@ -1,15 +1,24 @@
 import React from "react";
 
 export default function OffsettingProjectCard({
+  // @ts-ignore
   title,
+  // @ts-ignore
   img,
+  // @ts-ignore
   imgAlt,
+  // @ts-ignore
   category,
+  // @ts-ignore
   location,
+  // @ts-ignore
   standard,
+  // @ts-ignore
   description,
+  // @ts-ignore
   reductions,
-  website,
+  // @ts-ignore
+  website
 }) {
   return (
     <article className="article__container">

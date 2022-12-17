@@ -5,10 +5,14 @@ import ligthBulb from "../../assets/images/images/light-bulb.jpg";
 import co2Logo from "../../assets/images/images/co2-logo.png";
 
 export default function ElectricityOutput({
+  // @ts-ignore
   userElValue,
+  // @ts-ignore
   userElCo2,
+  // @ts-ignore
   saveElCo2,
-  chartData,
+  // @ts-ignore
+  chartData
 }) {
   return (
     <div className="el-output">

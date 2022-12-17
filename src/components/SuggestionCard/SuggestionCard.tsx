@@ -1,12 +1,18 @@
 import React from "react";
 
 export default function SuggestionCard({
+  // @ts-ignore
   number,
+  // @ts-ignore
   name,
+  // @ts-ignore
   description,
+  // @ts-ignore
   moneySaving,
+  // @ts-ignore
   co2Saving,
-  handleChange,
+  // @ts-ignore
+  handleChange
 }) {
   return (
     <article className="re-article">

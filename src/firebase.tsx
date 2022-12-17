@@ -9,7 +9,7 @@ const firebaseConfig = {
   storageBucket: "ff-green-wise.appspot.com",
   messagingSenderId: "222346819801",
   appId: "1:222346819801:web:8df26fc94123497197e6c8",
-  measurementId: "G-ME3R21D2HC",
+  measurementId: "G-ME3R21D2HC"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -24,14 +24,18 @@ const signInWithGoogle = async () => {
     const user = res.user;
     const query = await db
       .collection("users")
+      // @ts-ignore
       .where("uid", "==", user.uid)
       .get();
     if (query.docs.length === 0) {
       await db.collection("users").add({
+        // @ts-ignore
         uid: user.uid,
+        // @ts-ignore
         name: user.displayName,
         authProvider: "google",
-        email: user.email,
+        // @ts-ignore
+        email: user.email
       });
     }
   } catch (err) {
@@ -39,6 +43,8 @@ const signInWithGoogle = async () => {
     // alert(err.message);
   }
 };
+
+// @ts-ignore
 const signInWithEmailAndPassword = async (email, password) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
@@ -50,15 +56,17 @@ const signInWithEmailAndPassword = async (email, password) => {
   }
 };
 
+// @ts-ignore
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await auth.createUserWithEmailAndPassword(email, password);
     const user = res.user;
     await db.collection("users").add({
+      // @ts-ignore
       uid: user.uid,
       name,
       authProvider: "local",
-      email,
+      email
     });
   } catch (err) {
     console.error(err);
@@ -66,7 +74,8 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   }
 };
 
-const sendPasswordResetEmail = async (email) => {
+// @ts-ignore
+const sendPasswordResetEmail = async email => {
   try {
     await auth.sendPasswordResetEmail(email);
     alert("Password reset link sent!");
@@ -87,5 +96,5 @@ export {
   signInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
-  logout,
+  logout
 };

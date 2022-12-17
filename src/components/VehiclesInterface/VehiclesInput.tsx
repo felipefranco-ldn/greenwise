@@ -1,24 +1,25 @@
-import React from 'react';
-import cityCarIcon from '../../assets/images/icons/city-car.png';
-import compactCarIcon from '../../assets/images/icons/compact.png';
-import fullSizeCarIcon from '../../assets/images/icons/full-size.png';
-import minivanIcon from '../../assets/images/icons/minivan.png';
-import cuvIcon from '../../assets/images/icons/cuv.png';
-import suvIcon from '../../assets/images/icons/suv.png';
-import pickupIcon from '../../assets/images/icons/pickup.png';
-import otherIcon from '../../assets/images/icons/other.png';
-import fuelIcon from '../../assets/images/icons/fuel.png';
-import hybridIcon from '../../assets/images/icons/hybrid.png';
-import electricIcon from '../../assets/images/icons/electric.png';
-import RadioInput from '../RadioInput/RadioInput';
+import React from "react";
+import cityCarIcon from "../../assets/images/icons/city-car.png";
+import compactCarIcon from "../../assets/images/icons/compact.png";
+import fullSizeCarIcon from "../../assets/images/icons/full-size.png";
+import minivanIcon from "../../assets/images/icons/minivan.png";
+import cuvIcon from "../../assets/images/icons/cuv.png";
+import suvIcon from "../../assets/images/icons/suv.png";
+import pickupIcon from "../../assets/images/icons/pickup.png";
+import otherIcon from "../../assets/images/icons/other.png";
+import fuelIcon from "../../assets/images/icons/fuel.png";
+import hybridIcon from "../../assets/images/icons/hybrid.png";
+import electricIcon from "../../assets/images/icons/electric.png";
+import RadioInput from "../RadioInput/RadioInput";
 
+// @ts-ignore
 export default function VehiclesInput({ handleChange, handleSizeChange }) {
   return (
     <div className="ve-input">
       <form className="ve-input__form">
         <div className="ve-input__form-question">
           <label className="ve-input__form-label">
-            <span className="span">{'>>'} </span> How long have you driven?
+            <span className="span">{">>"} </span> How long have you driven?
           </label>
 
           <div className="ve-input__form-distance-box">
@@ -46,7 +47,7 @@ export default function VehiclesInput({ handleChange, handleSizeChange }) {
 
         <div className="ve-input__form-question">
           <label className="ve-input__form-label">
-            <span className="span">{'>>'} </span> Select type of vehicle
+            <span className="span">{">>"} </span> Select type of vehicle
           </label>
           <div className="ve-input__form-type-box">
             <RadioInput
@@ -173,7 +174,7 @@ export default function VehiclesInput({ handleChange, handleSizeChange }) {
 
         <div className="ve-input__form-question">
           <label className="ve-input__form-label">
-            <span className="span">{'>>'} </span> Select fuel / power source
+            <span className="span">{">>"} </span> Select fuel / power source
           </label>
 
           <div className="ve-input__form-power-box">

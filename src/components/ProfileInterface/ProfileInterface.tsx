@@ -8,6 +8,7 @@ import planetIcon from "../../assets/images/icons/planet-icon.png";
 
 function ProfileInterface() {
   // const [user, loading, error] = useAuthState(auth);
+  // @ts-ignore
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState("");
   const history = useHistory();
@@ -55,12 +56,14 @@ function ProfileInterface() {
             <div className="account__estimates-box">
               <p className="account__estimates-key">Home electricity:</p>
               <p className="account__estimates-value">
+                {/* @ts-ignore */}
                 {parseInt(sessionStorage.getItem("userElCo2"))} kg of CO2
               </p>
             </div>
             <div className="account__estimates-box">
               <p className="account__estimates-key">Travelling by plane:</p>
               <p className="account__estimates-value">
+                {/* @ts-ignore */}
                 {parseInt(sessionStorage.getItem("userFlCo2"))} kg of CO2
               </p>
             </div>
@@ -68,6 +71,7 @@ function ProfileInterface() {
             <div className="account__estimates-box">
               <p className="account__estimates-key"> Travelling by car:</p>
               <p className="account__estimates-value">
+                {/* @ts-ignore */}
                 {parseInt(sessionStorage.getItem("userVeCo2"))} kg of CO2
               </p>
             </div>
@@ -76,8 +80,11 @@ function ProfileInterface() {
                 Total emissions:
               </p>
               <p className="account__estimates-value--large">
+                {/* @ts-ignore */}
                 {parseInt(sessionStorage.getItem("userElCo2")) +
+                  // @ts-ignore
                   parseInt(sessionStorage.getItem("userFlCo2")) +
+                  // @ts-ignore
                   parseInt(sessionStorage.getItem("userVeCo2"))}{" "}
                 kg of CO2
               </p>

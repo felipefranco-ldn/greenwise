@@ -4,12 +4,18 @@ import fuelIconsLanding from "../../assets/images/icons/fuel-icons-landing.png";
 import co2Logo from "../../assets/images/images/co2-logo.png";
 
 export default function VehiclesOutput({
+  // @ts-ignore
   chartData,
+  // @ts-ignore
   vehiclesChart,
+  // @ts-ignore
   saveVeCo2,
+  // @ts-ignore
   totalVehicleCo2,
+  // @ts-ignore
   userDistance,
-  userDistanceUnits,
+  // @ts-ignore
+  userDistanceUnits
 }) {
   return (
     <div className="ve-output">

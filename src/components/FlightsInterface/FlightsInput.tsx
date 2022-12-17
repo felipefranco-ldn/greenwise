@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
+// @ts-ignore
 export default function FlightsInput({ handleChange, handleClassChange }) {
   return (
     <div className="fl-input">
       <form className="fl-input__form">
         <div className="fl-input__form-question">
           <label className="fl-input__form-label">
-            <span className="span">{'>>'} </span> How long was your flight?
+            <span className="span">{">>"} </span> How long was your flight?
           </label>
 
           <div className="fl-input__form-duration-box">
@@ -127,7 +128,7 @@ export default function FlightsInput({ handleChange, handleClassChange }) {
 
         <div className="fl-input__form-question">
           <label className="fl-input__form-label">
-            <span className="span">{'>>'} </span> What class did you fly in?
+            <span className="span">{">>"} </span> What class did you fly in?
           </label>
 
           <div className="fl-input__form-class-box">
@@ -157,7 +158,7 @@ export default function FlightsInput({ handleChange, handleClassChange }) {
             <label className="fl-input__form-class" htmlFor="premiumEconomy">
               <h3 className="fl-input__form-label-title-class">
                 💸 Premium
-                <br /> Economy{' '}
+                <br /> Economy{" "}
               </h3>
             </label>
           </div>

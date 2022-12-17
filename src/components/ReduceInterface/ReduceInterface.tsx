@@ -13,17 +13,18 @@ export default class ReduceInterface extends Component {
     dryer: false,
     heating: false,
     bulbs: false,
-    meat: false,
+    meat: false
   };
 
-  handleChange = (event) => {
+  // @ts-ignore
+  handleChange = event => {
     if (event.target.checked) {
       this.setState({
-        [event.target.name]: true,
+        [event.target.name]: true
       });
     } else {
       this.setState({
-        [event.target.name]: false,
+        [event.target.name]: false
       });
     }
   };
@@ -130,7 +131,7 @@ export default class ReduceInterface extends Component {
               )}
             </div>
           </div>
-          {reductionSuggestions.map((suggestion) => (
+          {reductionSuggestions.map(suggestion => (
             <SuggestionCard
               key={suggestion.number}
               number={suggestion.number}
