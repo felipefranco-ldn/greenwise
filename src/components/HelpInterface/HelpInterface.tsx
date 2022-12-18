@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ function Help() {
   const [user, loading] = useAuthState(auth);
 
   const history = useHistory();
+
   useEffect(() => {
     if (loading) return;
     if (user) history.replace("/my-account");
@@ -52,4 +53,5 @@ function Help() {
     </div>
   );
 }
+
 export default Help;

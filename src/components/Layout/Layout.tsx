@@ -3,8 +3,9 @@ import PageFooter from "../PageFooter/PageFooter";
 import PageHeader from "../PageHeader/PageHeader";
 import "./Layout.scss";
 
-// @ts-ignore
-export default function Layout({ children }) {
+type LayoutProps = { children: React.ReactNode };
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <PageHeader />
