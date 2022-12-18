@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./PageFooter.scss";
 import githubIcon from "../../assets/images/icons/github-icon.png";

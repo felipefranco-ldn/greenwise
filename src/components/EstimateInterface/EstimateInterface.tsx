@@ -1,4 +1,3 @@
-import React from "react";
 import "./EstimateInterface.scss";
 import electricityImage from "../../assets/images/images/electricity-image.png";
 import flightsImage from "../../assets/images/images/flights-image.png";

@@ -1,9 +1,8 @@
-import React from 'react';
-import './EstimateOptions.scss';
-import electricityIcon from '../../assets/images/icons/electricity-icon.png';
-import flightsIcon from '../../assets/images/icons/flights-icon.png';
-import vehiclesIcon from '../../assets/images/icons/vehicles-icon.png';
-import OptionsTab from '../OptionsTab/OptionsTab';
+import "./EstimateOptions.scss";
+import electricityIcon from "../../assets/images/icons/electricity-icon.png";
+import flightsIcon from "../../assets/images/icons/flights-icon.png";
+import vehiclesIcon from "../../assets/images/icons/vehicles-icon.png";
+import OptionsTab from "../OptionsTab/OptionsTab";
 
 export default function EstimateOptions() {
   return (

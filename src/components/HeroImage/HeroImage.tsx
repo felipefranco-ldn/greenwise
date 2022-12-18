@@ -1,4 +1,3 @@
-import React from "react";
 import "./HeroImage.scss";
 import estimateIcon from "../../assets/images/icons/estimate-icon.png";
 import reduceIcon from "../../assets/images/icons/reduce-icon.png";

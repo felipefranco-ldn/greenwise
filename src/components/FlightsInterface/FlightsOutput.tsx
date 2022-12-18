@@ -1,4 +1,3 @@
-import React from "react";
 import co2Logo from "../../assets/images/images/co2-logo.png";
 import flightsMap from "../../assets/images/images/flights-map.png";
 import { Link } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from "react";
 import RadioInput from "../RadioInput/RadioInput";
 
 // @ts-ignore

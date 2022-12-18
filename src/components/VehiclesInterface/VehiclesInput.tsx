@@ -1,4 +1,3 @@
-import React from "react";
 import cityCarIcon from "../../assets/images/icons/city-car.png";
 import compactCarIcon from "../../assets/images/icons/compact.png";
 import fullSizeCarIcon from "../../assets/images/icons/full-size.png";

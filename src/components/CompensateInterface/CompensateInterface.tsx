@@ -1,4 +1,3 @@
-import React from "react";
 import "./CompensateInterface.scss";
 import offsetIcon from "../../assets/images/icons/offset-icon.png";
 import projectsData from "../../data/offsetting-projects.json";

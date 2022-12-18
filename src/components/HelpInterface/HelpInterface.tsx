@@ -6,7 +6,7 @@ import { auth, sendPasswordResetEmail } from "../../firebase";
 import "./HelpInterface.scss";
 import planetIcon from "../../assets/images/icons/planet-icon.png";
 
-function Help() {
+export default function Help() {
   const [email, setEmail] = useState("");
   // @ts-ignore
   const [user, loading] = useAuthState(auth);
@@ -53,5 +53,3 @@ function Help() {
     </div>
   );
 }
-
-export default Help;

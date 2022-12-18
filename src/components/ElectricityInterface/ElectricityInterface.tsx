@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { EXT_API_KEY, EXT_API_URL } from "../../utils/api";
 import "./ElectricityInterface.scss";
 import axios from "axios";

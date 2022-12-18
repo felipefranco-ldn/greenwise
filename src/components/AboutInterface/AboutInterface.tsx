@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./AboutInterface.scss";
 import greenWiseLogo from "../../assets/images/images/greenwise-logo.svg";

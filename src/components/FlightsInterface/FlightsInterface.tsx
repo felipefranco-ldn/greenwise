@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { EXT_API_KEY, EXT_API_URL } from "../../utils/api";
 import "./FlightsInterface.scss";
 import axios from "axios";
@@ -257,14 +257,12 @@ export default class FlightsInterface extends Component {
     return (
       <div className="fl-container">
         {/* //! input section (left side) starts here */}
-
         <FlightsInput
           handleChange={this.handleChange}
           handleClassChange={this.handleClassChange}
         />
 
         {/* //! output section (right side) starts here */}
-
         <FlightsOutput
           chartData={this.state.chartData}
           userFlightClass={this.state.userFlightClass}
