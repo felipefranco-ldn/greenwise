@@ -20,7 +20,9 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const signInWithGoogle = async () => {
   try {
-    const res = await auth.signInWithRedirect(googleProvider);
+    const res = await auth
+      .signInWithPopup(googleProvider)
+      .catch((error) => alert(error.message));
     const user = res.user;
     const query = await db
       .collection("users")
@@ -36,7 +38,7 @@ const signInWithGoogle = async () => {
     }
   } catch (err) {
     console.error(err);
-    // alert(err.message);
+    alert(err.message);
   }
 };
 const signInWithEmailAndPassword = async (email, password) => {
@@ -45,7 +47,7 @@ const signInWithEmailAndPassword = async (email, password) => {
   } catch (err) {
     console.error(err);
     alert("Please make sure your email address and password are valid");
-    // alert(err.message);
+    console.error(err.message);
     // Firebase: The email address is badly formatted. (auth/invalid-email).
   }
 };
