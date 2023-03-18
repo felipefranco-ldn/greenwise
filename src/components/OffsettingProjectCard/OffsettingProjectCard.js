@@ -14,7 +14,11 @@ export default function OffsettingProjectCard({
   return (
     <article className="article__container">
       <div className="article__image-container">
-        <img className="article__image" alt={imgAlt} src={`${img}`} />
+        <img
+          className="article__image"
+          alt={imgAlt}
+          src={`${process.env.PUBLIC_URL + img}`}
+        />
       </div>
       <div className="article__info-box">
         <h3 className="article__title">
