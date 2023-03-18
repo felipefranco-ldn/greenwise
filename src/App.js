@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Estimate from "./pages/estimate";
 import Electricity from "./pages/estimate/Electricity";
 import Flights from "./pages/estimate/Flights";
@@ -19,7 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <HashRouter>
           <div className="app">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -41,7 +41,7 @@ export default class App extends Component {
               <Route exact path="/intro" component={IntroInterface} />
             </Switch>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }
