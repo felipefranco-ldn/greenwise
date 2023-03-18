@@ -20,7 +20,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const signInWithGoogle = async () => {
   try {
-    const res = await auth.signInWithPopup(googleProvider);
+    const res = await auth.signInWithRedirect(googleProvider);
     const user = res.user;
     const query = await db
       .collection("users")
