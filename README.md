@@ -88,8 +88,6 @@ To be implemented
 
 The immediate next step is to refactor portions of the code to use React components as much as possible, in order to exploit React's potential to make the code more concise and efficient, keeping it DRY and making it more easy to read and work with.
 
-Next step is to implement responsiveness, so that GreenWise can be used on mobile devices as well.
-
 In the future I would like to incorporate more functionalities, like saving a history of estimates, as well as estimating your carbon footprint based on your diet and provide the environmental impact of everyday goods, like clothing, appliances, hygiene products, etc.
 
 ## Deployment
