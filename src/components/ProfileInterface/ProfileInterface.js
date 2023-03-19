@@ -22,7 +22,7 @@ function ProfileInterface() {
       setName(data.name);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data. Please try again");
     }
   }, [user?.uid]);
 
@@ -41,14 +41,13 @@ function ProfileInterface() {
         <p className="account__text--large">
           👋 Hello {name}. <br /> Welcome to your Dashboard!
         </p>
-
         {sessionStorage.getItem("userElCo2") ||
         sessionStorage.getItem("userElCo2") ||
         sessionStorage.getItem("userFlCo2") ? (
           <div className="account__estimates">
-            <div>
+            <div className="account__estimates-title-box">
               <div className="fl-output__info-icon">i</div>
-              <p className="account__estimates-value--large">
+              <p className="account__estimates-title">
                 Summary of your latest estimates:
               </p>
             </div>
@@ -72,9 +71,7 @@ function ProfileInterface() {
               </p>
             </div>
             <div className="account__estimates-box">
-              <p className="account__estimates-value--large">
-                Total emissions:
-              </p>
+              <p className="account__estimates-key--large">Total emissions:</p>
               <p className="account__estimates-value--large">
                 {parseInt(sessionStorage.getItem("userElCo2")) +
                   parseInt(sessionStorage.getItem("userFlCo2")) +
@@ -89,22 +86,22 @@ function ProfileInterface() {
             Come back later to see a summary of your estimates
           </div>
         )}
-
-        <Link className="profile__button" to="/estimate">
-          <span className="span">{"<<"}</span> Go back to Estimate
-        </Link>
-
-        <p className="account__text--small">
-          You are logged in with this email: <br />
-          {user?.email}
-        </p>
-        <button
-          className="profile__button--light profile__button"
-          onClick={logout}
-        >
-          Log out <span className="span">{">>"}</span>
-        </button>
-      </div>{" "}
+        <div className="account__container">
+          <Link className="profile__button" to="/estimate">
+            <span className="span">{"<<"}</span> Go back to Estimate
+          </Link>
+          <p className="account__text--small">
+            You are logged in with this email: <br />
+            {user?.email}
+          </p>
+          <button
+            className="profile__button--light profile__button"
+            onClick={logout}
+          >
+            Log out <span className="span">{">>"}</span>
+          </button>
+        </div>{" "}
+      </div>
       <img
         className="account__planet-icon"
         alt="planet earth icon"

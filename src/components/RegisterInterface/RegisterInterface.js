@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useHistory } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from '../../firebase';
-import './RegisterInterface.scss';
-import planetIcon from '../../assets/images/icons/planet-icon.png';
+} from "../../firebase";
+import "./RegisterInterface.scss";
+import planetIcon from "../../assets/images/icons/planet-icon.png";
 
 function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [user, loading] = useAuthState(auth);
   const history = useHistory();
   const register = () => {
-    if (!name) alert('Please enter name');
+    if (!name) alert("Please enter name");
     registerWithEmailAndPassword(name, email, password);
   };
 
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace('/my-account');
+    if (user) history.replace("/my-account");
   }, [user, loading, history]);
 
   return (
     <div className="account">
       <h1 className="account__title">
-        {' '}
-        <span className="span">{'>>'}</span> Register to create a GreenWise
+        {" "}
+        <span className="span">{">>"}</span> Register to create a GreenWise
         account
       </h1>
       <div className="account__container">
@@ -55,24 +55,21 @@ function Register() {
           placeholder="Password"
         />
         <button className="account__button" onClick={register}>
-          Register! <span className="span">{'>>'}</span>
+          Register! <span className="span">{">>"}</span>
         </button>
 
         <div className="account__text">
-          <span className="span">{'>>'}</span> Alternatively, you can also:
+          <span className="span">{">>"}</span> Alternatively, you can also:
         </div>
 
-        <button
-          className="account__button account__button__google"
-          onClick={signInWithGoogle}
-        >
-          Register with Google <span className="span">{'>>'}</span>
+        <button className="account__button" onClick={signInWithGoogle}>
+          Register with Google <span className="span">{">>"}</span>
         </button>
         <div className="account__text">
-          <span className="span">{'>>'}</span> Already have an account?{' '}
+          <span className="span">{">>"}</span> Already have an account?{" "}
           <Link className="account__link" to="/login">
             Login
-          </Link>{' '}
+          </Link>{" "}
           now
         </div>
       </div>

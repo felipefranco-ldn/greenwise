@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 4rem;
-  height: 72rem;
+  min-height: 72rem;
 
   &__title {
     @include f.subheader("Titillium Web");
@@ -71,7 +71,7 @@
     @include f.body-large("Titillium Web");
     font-weight: 600;
     color: theme.$gw-white;
-    padding: 0.3rem 2.5rem;
+    padding: 0.3rem 1rem;
     border-radius: 2rem;
     cursor: pointer;
     border: 2px solid theme.$gw-slate;
@@ -104,6 +104,16 @@
 
     &:hover {
       background-color: theme.$gw-green50;
+    }
+  }
+}
+
+@include bp.mobile {
+  .account {
+    &__container {
+      width: 100%;
+      max-width: 30rem;
+      min-width: 20rem;
     }
   }
 }
