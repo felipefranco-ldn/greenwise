@@ -206,6 +206,7 @@
 
     &-title {
       @include f.table-header("Titillium Web");
+      width: 90%;
       margin: 0 0 2rem 0;
       text-align: center;
     }
@@ -216,9 +217,15 @@
       background-color: theme.$gw-yellow50;
       @include f.body-large("Titillium Web");
       margin: 2rem 0 2rem 0;
-      padding: 1rem 6rem;
+      padding: 1rem;
       text-align: center;
       position: relative;
+      display: flex;
+      justify-content: center;
+
+      &-box {
+        max-width: 80%;
+      }
     }
 
     &-button-box {
@@ -276,6 +283,7 @@
 
     &-title {
       @include f.subheader("Titillium Web");
+      width: 90%;
       text-align: center;
       margin: 0 0 2rem 0;
       color: theme.$gw-slate;
