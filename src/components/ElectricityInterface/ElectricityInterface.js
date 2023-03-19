@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import { EXT_API_KEY, EXT_API_URL } from '../../utils/api';
-import './ElectricityInterface.scss';
-import axios from 'axios';
-import { cloneDeep } from 'lodash';
-import { chartData } from '../ElectricityChart/chartData';
-import { apartment, house } from './elValues';
-import apartmentIcon from '../../assets/images/icons/building-icon.png';
-import houseIcon from '../../assets/images/icons/house-icon.png';
-import ElectricityInput from './ElectricityInput';
-import ElectricityOutput from './ElectricityOutput';
+import React, { Component } from "react";
+import { EXT_API_KEY, EXT_API_URL } from "../../utils/api";
+import "./ElectricityInterface.scss";
+import axios from "axios";
+import { cloneDeep } from "lodash";
+import { chartData } from "../ElectricityChart/chartData";
+import { apartment, house } from "./elValues";
+import apartmentIcon from "../../assets/images/icons/building-icon.png";
+import houseIcon from "../../assets/images/icons/house-icon.png";
+import ElectricityInput from "./ElectricityInput";
+import ElectricityOutput from "./ElectricityOutput";
+import scrollToTop from "../../utils/helpers/scrollToTop";
 
 export default class ElectricityInterface extends Component {
   state = {
-    userCountry: '',
+    userCountry: "",
     userElValue: 0,
     userElCo2: 0,
     bedroomNumber: 0,
@@ -29,14 +30,14 @@ export default class ElectricityInterface extends Component {
   };
 
   handleChange = (event) => {
-    if (event.target.value === 'apartment') {
+    if (event.target.value === "apartment") {
       this.setState(
         {
           isApartment: true,
         },
         this.getData
       );
-    } else if (event.target.value === 'house') {
+    } else if (event.target.value === "house") {
       this.setState(
         {
           isApartment: false,
@@ -65,13 +66,14 @@ export default class ElectricityInterface extends Component {
 
   getData = () => {
     if (this.state.userCountry && this.state.bedroomNumber) {
+      scrollToTop();
       axios
         .post(
           `${EXT_API_URL}`,
           {
-            type: 'electricity',
+            type: "electricity",
             country: this.state.userCountry,
-            electricity_unit: 'kwh',
+            electricity_unit: "kwh",
             electricity_value: this.getUserElValue(),
           },
           {
@@ -90,7 +92,7 @@ export default class ElectricityInterface extends Component {
         })
         .catch((err) =>
           console.log(
-            'Something went wrong while fetching the electricity consumption data: ',
+            "Something went wrong while fetching the electricity consumption data: ",
             err
           )
         );
@@ -98,7 +100,7 @@ export default class ElectricityInterface extends Component {
   };
 
   saveElCo2 = () => {
-    sessionStorage.setItem('userElCo2', this.state.userElCo2);
+    sessionStorage.setItem("userElCo2", this.state.userElCo2);
   };
 
   render() {
