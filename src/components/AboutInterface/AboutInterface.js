@@ -27,13 +27,14 @@ export default function AboutInterface() {
       <p className="about__description">
         Hello! Thanks for visiting GreenWise.
         <br /> This website was conceived and developed as my capstone project
-        at the end of the Web Development Diploma Programme at BrainStation. In
-        the future I would like to incorporate more functionalities, like saving
-        a history of estimates, as well as estimating your carbon footprint
-        based on your diet and provide the environmental impact of everyday
-        goods, like clothing, appliances, hygiene products, etc. If you have
-        more ideas that you would like to see implemented on GreenWise, please
-        do get in touch. Suggestions are always welcome! Cheers.
+        at the end of the Web Development Diploma Programme at BrainStation.
+        Since then, I have added new functionalities but in the future I would
+        like to incorporate even more, such as saving a history of estimates, as
+        well as estimating your carbon footprint based on your diet and provide
+        the environmental impact of everyday goods, like clothing, appliances,
+        hygiene products, etc. If you have more ideas that you would like to see
+        implemented on GreenWise, please do get in touch. Suggestions are always
+        welcome! Cheers.
       </p>
 
       <h1 className="about__title">Tech Stack</h1>
