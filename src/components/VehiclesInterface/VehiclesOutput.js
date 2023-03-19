@@ -16,33 +16,33 @@ export default function VehiclesOutput({
       {chartData ? (
         <div className="ve-output__content">
           <div className="ve-output__content-title">
-            Kilograms of CO2 emitted by your vehicle.
-            <br />
-            Comparison with other types of vehicle and power sources,
-            <br />
-            and to the same distance travelled on train.
+            Kilograms of CO2 emitted by your vehicle. Comparison with other
+            types of vehicle and power sources, and to the same distance
+            travelled on train.
           </div>
           {vehiclesChart()}
           <div className="ve-output__content-text">
             <div className="ve-output__info-icon">i</div>
-            Your vehicle released approx.{" "}
-            <span className="span--bold">
-              {" "}
-              {Number(totalVehicleCo2).toFixed(0)} kilograms of CO2{" "}
-            </span>{" "}
-            into the atmosphere. Covering the same distance by train would have
-            generated{" "}
-            <span className="span--bold">
-              {" "}
-              {Number(
-                (userDistanceUnits === "km"
-                  ? userDistance * 0.041
-                  : userDistance * 0.066
-                ).toFixed(0)
-              )}{" "}
-              kilograms of CO2
-            </span>{" "}
-            instead.
+            <div className="ve-output__content-text-box">
+              Your vehicle released approx.{" "}
+              <span className="span--bold">
+                {" "}
+                {Number(totalVehicleCo2).toFixed(0)} kilograms of CO2{" "}
+              </span>{" "}
+              into the atmosphere. Covering the same distance by train would
+              have generated{" "}
+              <span className="span--bold">
+                {" "}
+                {Number(
+                  (userDistanceUnits === "km"
+                    ? userDistance * 0.041
+                    : userDistance * 0.066
+                  ).toFixed(0)
+                )}{" "}
+                kilograms of CO2
+              </span>{" "}
+              instead.
+            </div>
           </div>
           <div className="ve-output__content-button-box">
             <Link onClick={saveVeCo2} className="ve-output__link" to="/reduce">
@@ -55,11 +55,8 @@ export default function VehiclesOutput({
       ) : (
         <div className="ve-output__intro">
           <h3 className="ve-output__intro-title">
-            We know Hybrid and Electric vehicles
-            <br />
-            are better for the environment <br />
-            than those which run on fossil fuels... <br />
-            but by how much?
+            We know Hybrid and Electric vehicles are better for the environment
+            than those which run on fossil fuels... but by how much?
           </h3>
           <img
             className="ve-output__intro-image"
